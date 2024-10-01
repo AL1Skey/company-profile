@@ -32,9 +32,9 @@ export default function Page() {
                     
                     {/*=====service details box end=======*/}
                     {/*=====service details binifet end=======*/}
-                    <div className="service-details-binifite sp2 page-bg">
-                        <div className="container">
-                            <div className="row align-items-center w-10!">
+                    <div className="">
+                        <div className="p-10">
+                            <div className="row align-items-center">
                                 <div className="col-md-6">
                                     <div className="apartment-imgs">
                                         <div className="apartment-img1">
