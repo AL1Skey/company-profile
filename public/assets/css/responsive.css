@@ -1,0 +1,16 @@
+/*================= 
+    home1-start 
+===================*/
+@media screen and (max-width: 768px) {
+  .home1-hero-hadding {
+    padding: 150px 0 20px 0;
+  }
+  .home1-main-hero-img {
+    padding-top: 75px;
+    margin-right: 10px;
+  }
+}
+
+/*================= 
+    home1-end
+===================*/

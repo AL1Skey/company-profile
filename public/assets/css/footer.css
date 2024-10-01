@@ -1,0 +1,242 @@
+/*----===========FOOTER AREA CSS----============*/
+.single-footer ul {
+  list-style: none;
+}
+.single-footer ul li a {
+  color: #09120e;
+  font-size: 16px;
+  padding: 10px 0;
+  display: inline-block;
+  transition: all.3s;
+}
+.single-footer ul li a:hover {
+  color: #006fff;
+  transition: all.3s;
+  margin-left: 5px;
+}
+
+.footer-area3 .single-footer ul li a:hover {
+  color: #ff008a;
+}
+
+.single-footer h3 {
+  margin-left: 0;
+  margin-bottom: 20px;
+}
+.copyright2 {
+  border-top: 1px solid #E9ECEA;
+  padding: 16px 0;
+  margin-top: 30px;
+}
+
+.copyright4 {
+  border-top: 1px solid #737373;
+  padding: 16px 0;
+  margin-top: 30px;
+}
+
+.copyright5 {
+  border-top: 1px solid #192D6A;
+  padding: 16px 0;
+  margin-top: 30px;
+}
+
+
+
+.social1 ul {
+  list-style: none;
+}
+.social1 ul li {
+  display: inline-block;
+  margin-left: 4px;
+}
+
+.social1 ul li a {
+  background: #f2f2f2;
+  height: 40px;
+  width: 40px;
+  display: inherit;
+  border-radius: 50%;
+  text-align: center;
+  color: #006fff;
+  line-height: 40px;
+  transition: all.4s;
+}
+.social1 ul li a:hover {
+  background-color: #006fff;
+  color: #fff;
+  transition: all.4s;
+}
+
+@media screen and (max-width: 426px) {
+  .social.social1 {
+    display: flex;
+    justify-content: center;
+  }
+
+  .social1.comon-footer-icons {
+    margin-top: 24px;
+  }
+}
+
+.foonter-contact-icon-1 > div {
+  background: #2f81ed17;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+}
+.foonter-contact-p a {
+  color: #525975;
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+}
+.foonter-contact-1 {
+  display: flex;
+  align-items: start;
+}
+.foonter-contact-p {
+  padding-left: 8px;
+}
+.foonter-contact-1 {
+  padding-top: 24px;
+}
+/*----===========FOOTER AREA CSS----============*/
+
+/*----===========HOME4 FOOTER AREA CSS----============*/
+.footer-area4 {
+  background-image: url(../img/footer/footer4.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.single-footer4 ul li a {
+  color: #B2B4B7;
+}
+.single-footer4 p {
+  color: #B2B4B7;
+}
+
+.social.social4 ul {
+  margin: 0;
+  padding: 0;
+}
+.social.social4 {
+  margin-top: 30px;
+}
+
+.social.social4 ul li a {
+  font-size: 20px;
+  color: #000410;
+  background: #fff;
+  /* padding: 5px; */
+  height: 24px;
+  width: 24px;
+  display: inline-block;
+  border-radius: 5px;
+  text-align: center;
+  transition: all.3s;
+}
+.social.social4 ul li a:hover {
+  transition: all.3s;
+  background-color: #006fff;
+  transform: scale(1.1);
+}
+
+.social.social4 ul li {
+  display: inline-block;
+  margin-right: 7px;
+}
+
+
+/*----===========HOME4 FOOTER AREA CSS----============*/
+
+/*----===========HOME5 FOOTER AREA CSS----============*/
+
+.footer-area5 {
+  background-image: url(../img/bg/footer5-bg.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.footer5-p {
+  color: #CCD0DE;
+}
+
+.footer5-from {
+  position: relative;
+  margin-top: 50px;
+}
+
+
+.social1 ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 0;
+}
+
+.social.social1.social5.text-start ul li a {
+  background-color: #192D6A;
+  color: #fff;
+}
+
+.social.social1.social5.text-start ul li a:hover {
+  background-color: #24BA96;
+}
+
+.foorer5-list li a {
+  color: rgba(255, 255, 255, 0.90);
+    transition: all.3s;
+    display: block;
+    padding: 10px 0;
+}
+
+.foorer5-list li a:hover {
+  color: #fff;
+  margin-left: 5px;
+}
+
+ul.foorer5-list {
+  padding: 0;
+  margin-top: 0;
+}
+
+.foonter-contact-p.foonter-contact-p5 a {
+  color: rgba(255, 255, 255, 0.90);
+}
+
+.foonter-contact-p.foonter-contact-p5 a {
+  display: block;
+  margin-left: 5px;
+}
+
+.footer5-from-input input {
+  border: none;
+  background: none;
+  padding: 13px;
+  border-bottom: 1px solid #fff;
+  color: #fff;
+  width: 160px;
+}
+
+.button5.button5-footer5 {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.footer5-p p {
+  color: rgba(255, 255, 255, 0.90);
+
+}
+
+.foonter-contact-icon-1 {
+  margin-right: 10px;
+}
+
+
+/*----===========HOME5 FOOTER AREA CSS----============*/
+
+

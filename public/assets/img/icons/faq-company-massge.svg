@@ -1,0 +1,14 @@
+<svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="chat-round-content 1">
+<mask id="mask0_1213_3577" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="34" height="34">
+<rect id="chat-round-content 1 (Background/Mask)" width="34" height="34" fill="white"/>
+</mask>
+<g mask="url(#mask0_1213_3577)">
+<g id="Group">
+<path id="Vector" d="M31.0127 20.0361C31.6428 18.6398 31.9787 17.1301 32 15.6C32 8.67 25.0955 3 16.5 3C7.90455 3 1 8.67 1 15.6C1 22.53 7.90455 28.2 16.5 28.2C17.9687 28.1792 19.4318 28.0151 20.8682 27.71L29.1818 31L28.3364 23.72C29.4719 22.6862 30.3827 21.4325 31.0127 20.0361Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_2" d="M9 13H23" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_3" d="M9 18H17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+</g>
+</svg>
