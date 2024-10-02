@@ -11,6 +11,7 @@ export default function Page() {
                             <div className="row">
                                 <div className="col-lg-12">
                                     <div className="blogs">
+                                    {/* Start Detail Blog Page (Author, Date Category) */}
                                         <article className="post-blog post-format-image">
                                             <div className="single-blog">
                                                 <div className="execution-images">
@@ -48,6 +49,7 @@ export default function Page() {
                                                 </div>
                                             </div>
                                         </article>
+                                    {/* End Detail Blog Page (Author, Date Category) */}
                                         <article className="post-blog">
                                             <div className="space10" />
                                             <div className="hadding2">
