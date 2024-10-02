@@ -53,10 +53,11 @@ const swiperOptions = {
     }
 }
 
-export default function Slider() {
+export default function Slider({mockup,...props}) {
     return (
         <>
             <Swiper {...swiperOptions} className="about-team-slider-all  comon-slider">
+                {Array.from({ length: mockup })?.map((_,index)=>(
                 <SwiperSlide className="about-slider-single text-center">
                     <div className="about-slider-img">
                         <img src="/assets/img/image/about-team1.png" alt="" />
@@ -81,6 +82,7 @@ export default function Slider() {
                         <p className="font-f-2 weight-400 line-height-28 font-16">CEO  Founder</p>
                     </div>
                 </SwiperSlide>
+                ))}
             </Swiper>
         </>
     )

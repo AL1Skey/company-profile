@@ -1,9 +1,9 @@
 
 'use client'
 import Layout from "@/components/layout/Layout"
-import TeamSlider1 from "@/components/slider/TeamSlider1"
 import Link from "next/link"
 import { useState } from 'react'
+import Slider from "./component/Slider"
 export default function Page() {
     const [isActive, setIsActive] = useState({
         status: false,
@@ -100,10 +100,42 @@ export default function Page() {
                     
                     {/*=====about mission end=======*/}
                     {/*=====about choose us start=======*/}
-                    
+                    <div className="about-team sp2 page-bg">
+                        <div className="container">
+                            <div className="row">
+                                <div className="col-md-6">
+                                    <div className="hadding2">
+                                        <h1 className="font-f-2 weight-700 font-30 font-lg-45 line-height-30 line-height-lg-45">
+                                            Alumni <span className="after">member</span>
+                                        </h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="space60" />
+                            <div className="row">
+                                <Slider mockup={10} />
+                            </div>
+                        </div>
+                    </div>
                     {/*=====about choose us end=======*/}
                     {/*=====about vision start=======*/}
-                   
+                    <div className="about-team sp2 page-bg">
+                        <div className="container">
+                            <div className="row">
+                                <div className="col-md-6">
+                                    <div className="hadding2">
+                                        <h1 className="font-f-2 weight-700 font-30 font-lg-45 line-height-30 line-height-lg-45">
+                                            Dewan <span className="after">Pengurus</span>
+                                        </h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="space60" />
+                            <div className="row">
+                                <Slider mockup={10} />
+                            </div>
+                        </div>
+                    </div>
                     {/*=====about vision end=======*/}
                     {/*=====about team start=======*/}
                     <div className="about-team sp2 page-bg">
@@ -112,14 +144,14 @@ export default function Page() {
                                 <div className="col-md-6">
                                     <div className="hadding2">
                                         <h1 className="font-f-2 weight-700 font-30 font-lg-45 line-height-30 line-height-lg-45">
-                                            Our team <span className="after">member</span>
+                                            Dewan <span className="after">Direksi</span>
                                         </h1>
                                     </div>
                                 </div>
                             </div>
                             <div className="space60" />
                             <div className="row">
-                                <TeamSlider1 />
+                                <Slider mockup={10} />
                             </div>
                         </div>
                     </div>

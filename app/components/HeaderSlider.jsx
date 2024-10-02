@@ -8,9 +8,8 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
-import Hero from '@/components/homepages/home1/Hero'
 
-export default function AutoSlideHeader1(props) {
+export default function HeaderSlider(props) {
   const slides = [
     {
       title: "Welcome to Our Site",

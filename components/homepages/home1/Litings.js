@@ -56,7 +56,7 @@ export default function Litings() {
                         <div className="col-md-6">
                             <div className="hadding2" data-aos="fade-up" data-aos-duration={600}>
                                 <h1 className="font-f-2 weight-700 font-30 font-lg-45 line-height-30 line-height-lg-45">
-                                    Our featured <span className="after">listing</span>
+                                    Our <span className="after">Blog</span>
                                 </h1>
                             </div>
                         </div>

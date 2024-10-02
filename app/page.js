@@ -10,16 +10,20 @@ import Porperties from "@/components/homepages/home1/Porperties"
 import Subscribe from "@/components/homepages/home1/Subscribe"
 import Works from "@/components/homepages/home1/Works"
 import Layout from "@/components/layout/Layout"
+import Blog from "./components/Blog"
+import Karir from "./components/Karir"
+import Header from "./components/Header"
+import About from "./components/About"
 export default function Page() {
 
     return (
         <>
             <Layout headerStyle={1} footerStyle={1}>
-                <Hero />
-                <Apartment />
+                <Header />
+                <About />
                 {/* <Brand /> */}
-                <Cities />
-                <Litings />
+                <Karir />
+                <Blog />
                 {/* <Works /> */}
                 {/* <Porperties /> */}
                 {/* <Litings2 /> */}

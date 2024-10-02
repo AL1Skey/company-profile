@@ -2,8 +2,8 @@
 'use client'
 import Link from 'next/link'
 import { useState } from "react"
-import AutoSlideHeader1 from '@/components/feature/AutoSlider'
-export default function Hero() {
+import HeaderSlider from './HeaderSlider'
+export default function Header() {
 
     const [activeIndex, setActiveIndex] = useState(1)
     const handleOnClick = (index) => {
@@ -12,7 +12,7 @@ export default function Hero() {
     return (
         <>
         <div className="hero-area" style={{ marginTop:"7rem" }}>
-        <AutoSlideHeader1>
+        <HeaderSlider>
                 <div className="container">
                     <div className="row align-items-center">
                     <div className="bg-cover bg-center bg-no-repeat" style={{ backgroundImage:'url("/assets/img/image/home2-main-img.png")', backgroundSize:"100% 100%"}}>
@@ -31,7 +31,7 @@ export default function Hero() {
                         
                     </div>
                 </div>
-        </AutoSlideHeader1>
+        </HeaderSlider>
         </div>
         </>
 
