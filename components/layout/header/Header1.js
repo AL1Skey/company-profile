@@ -19,8 +19,8 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu }) {
                                             <li><Link href="/">Home</Link></li>
                                             <li><Link href="/about">About Us</Link>
                                             </li>
-                                            <li><Link href="/service-details">Karir</Link></li>
-                                            <li><Link href="/faq">Alumni</Link></li>
+                                            <li><Link href="/karir">Karir</Link></li>
+                                            <li><Link href="/alumni">Alumni</Link></li>
                                             <li><Link href="/blog">Our Blog</Link></li>
                                             {/* <li className="dropdown-menu-parrent"><Link href="#">Pages <i className="fa-solid fa-angle-down" /></Link>
                                                 <ul>

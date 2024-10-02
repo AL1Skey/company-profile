@@ -1,0 +1,344 @@
+[
+    {
+        "angkatan": 19,
+        "total":12,
+        "alumni": [
+            {
+            "Jurusan": "Teknik Informatika",
+            "Alumni": [
+                "Achmad Fauzi",
+                "Ade Fadilah",
+                "Ade Setiawan",
+                "Adi Pratama",
+                "Aditya Pratama",
+                "Agus Setiawan"
+            ],
+            "total": 6
+            },
+            {
+            "Jurusan": "Teknik Elektro",
+            "Alumni": [
+                "Budi Santoso",
+                "Citra Dewi",
+                "Dewi Sartika",
+                "Eko Prasetyo",
+                "Fajar Nugraha",
+                "Gita Permata"
+            ],
+            "total": 6
+            },
+            {
+            "Jurusan": "Teknik Mesin",
+            "Alumni": [
+                "Hendra Wijaya",
+                "Indra Gunawan",
+                "Joko Susilo",
+                "Kurnia Dewi",
+                "Linda Sari",
+                "Mega Putri"
+            ],
+            "total": 6
+            },
+            {
+            "Jurusan": "Jurusan 7",
+            "Alumni": [
+                "Alumni 7.1",
+                "Alumni 7.2",
+                "Alumni 7.3",
+                "Alumni 7.4",
+                "Alumni 7.5",
+                "Alumni 7.6"
+            ],
+            "total": 6
+            },
+            {
+            "Jurusan": "Jurusan 8",
+            "Alumni": [
+                "Alumni 8.1",
+                "Alumni 8.2",
+                "Alumni 8.3",
+                "Alumni 8.4",
+                "Alumni 8.5",
+                "Alumni 8.6"
+            ],
+            "total": 6
+            },
+            {
+            "Jurusan": "Jurusan 9",
+            "Alumni": [
+                "Alumni 9.1",
+                "Alumni 9.2",
+                "Alumni 9.3",
+                "Alumni 9.4",
+                "Alumni 9.5",
+                "Alumni 9.6"
+            ],
+            "total": 6
+            },
+            {
+            "Jurusan": "Jurusan 10",
+            "Alumni": [
+                "Alumni 10.1",
+                "Alumni 10.2",
+                "Alumni 10.3",
+                "Alumni 10.4",
+                "Alumni 10.5",
+                "Alumni 10.6"
+            ],
+            "total": 6
+            },
+            {
+            "Jurusan": "Jurusan 11",
+            "Alumni": [
+                "Alumni 11.1",
+                "Alumni 11.2",
+                "Alumni 11.3",
+                "Alumni 11.4",
+                "Alumni 11.5",
+                "Alumni 11.6"
+            ],
+            "total": 6
+            },
+            {
+            "Jurusan": "Jurusan 12",
+            "Alumni": [
+                "Alumni 12.1",
+                "Alumni 12.2",
+                "Alumni 12.3",
+                "Alumni 12.4",
+                "Alumni 12.5",
+                "Alumni 12.6"
+            ],
+            "total": 6
+            }
+        ]
+    },
+    {
+        "angkatan": 18,
+        "total":42,
+        "alumni": [
+            {
+            "Jurusan": "Teknik Informatika",
+            "Alumni": [
+                "Achmad Fauzi",
+                "Ade Fadilah",
+                "Ade Setiawan",
+                "Adi Pratama",
+                "Aditya Pratama",
+                "Agus Setiawan"
+            ],
+            "total": 6
+            },
+            {
+            "Jurusan": "Teknik Elektro",
+            "Alumni": [
+                "Budi Santoso",
+                "Citra Dewi",
+                "Dewi Sartika",
+                "Eko Prasetyo",
+                "Fajar Nugraha",
+                "Gita Permata"
+            ],
+            "total": 6
+            },
+            {
+            "Jurusan": "Teknik Mesin",
+            "Alumni": [
+                "Hendra Wijaya",
+                "Indra Gunawan",
+                "Joko Susilo",
+                "Kurnia Dewi",
+                "Linda Sari",
+                "Mega Putri"
+            ],
+            "total": 6
+            },
+            {
+            "Jurusan": "Jurusan 7",
+            "Alumni": [
+                "Alumni 7.1",
+                "Alumni 7.2",
+                "Alumni 7.3",
+                "Alumni 7.4",
+                "Alumni 7.5",
+                "Alumni 7.6"
+            ],
+            "total": 6
+            },
+            {
+            "Jurusan": "Jurusan 8",
+            "Alumni": [
+                "Alumni 8.1",
+                "Alumni 8.2",
+                "Alumni 8.3",
+                "Alumni 8.4",
+                "Alumni 8.5",
+                "Alumni 8.6"
+            ],
+            "total": 6
+            },
+            {
+            "Jurusan": "Jurusan 9",
+            "Alumni": [
+                "Alumni 9.1",
+                "Alumni 9.2",
+                "Alumni 9.3",
+                "Alumni 9.4",
+                "Alumni 9.5",
+                "Alumni 9.6"
+            ],
+            "total": 6
+            },
+            {
+            "Jurusan": "Jurusan 10",
+            "Alumni": [
+                "Alumni 10.1",
+                "Alumni 10.2",
+                "Alumni 10.3",
+                "Alumni 10.4",
+                "Alumni 10.5",
+                "Alumni 10.6"
+            ],
+            "total": 6
+            },
+            {
+            "Jurusan": "Jurusan 11",
+            "Alumni": [
+                "Alumni 11.1",
+                "Alumni 11.2",
+                "Alumni 11.3",
+                "Alumni 11.4",
+                "Alumni 11.5",
+                "Alumni 11.6"
+            ],
+            "total": 6
+            },
+            {
+            "Jurusan": "Jurusan 12",
+            "Alumni": [
+                "Alumni 12.1",
+                "Alumni 12.2",
+                "Alumni 12.3",
+                "Alumni 12.4",
+                "Alumni 12.5",
+                "Alumni 12.6"
+            ],
+            "total": 6
+            }
+        ]
+    },
+    {
+        "angkatan": 17,
+        "total":2,
+        "alumni": [
+            {
+            "Jurusan": "Teknik Informatika",
+            "Alumni": [
+                "Achmad Fauzi",
+                "Ade Fadilah",
+                "Ade Setiawan",
+                "Adi Pratama",
+                "Aditya Pratama",
+                "Agus Setiawan"
+            ],
+            "total": 6
+            },
+            {
+            "Jurusan": "Teknik Elektro",
+            "Alumni": [
+                "Budi Santoso",
+                "Citra Dewi",
+                "Dewi Sartika",
+                "Eko Prasetyo",
+                "Fajar Nugraha",
+                "Gita Permata"
+            ],
+            "total": 6
+            },
+            {
+            "Jurusan": "Teknik Mesin",
+            "Alumni": [
+                "Hendra Wijaya",
+                "Indra Gunawan",
+                "Joko Susilo",
+                "Kurnia Dewi",
+                "Linda Sari",
+                "Mega Putri"
+            ],
+            "total": 6
+            },
+            {
+            "Jurusan": "Jurusan 7",
+            "Alumni": [
+                "Alumni 7.1",
+                "Alumni 7.2",
+                "Alumni 7.3",
+                "Alumni 7.4",
+                "Alumni 7.5",
+                "Alumni 7.6"
+            ],
+            "total": 6
+            },
+            {
+            "Jurusan": "Jurusan 8",
+            "Alumni": [
+                "Alumni 8.1",
+                "Alumni 8.2",
+                "Alumni 8.3",
+                "Alumni 8.4",
+                "Alumni 8.5",
+                "Alumni 8.6"
+            ],
+            "total": 6
+            },
+            {
+            "Jurusan": "Jurusan 9",
+            "Alumni": [
+                "Alumni 9.1",
+                "Alumni 9.2",
+                "Alumni 9.3",
+                "Alumni 9.4",
+                "Alumni 9.5",
+                "Alumni 9.6"
+            ],
+            "total": 6
+            },
+            {
+            "Jurusan": "Jurusan 10",
+            "Alumni": [
+                "Alumni 10.1",
+                "Alumni 10.2",
+                "Alumni 10.3",
+                "Alumni 10.4",
+                "Alumni 10.5",
+                "Alumni 10.6"
+            ],
+            "total": 6
+            },
+            {
+            "Jurusan": "Jurusan 11",
+            "Alumni": [
+                "Alumni 11.1",
+                "Alumni 11.2",
+                "Alumni 11.3",
+                "Alumni 11.4",
+                "Alumni 11.5",
+                "Alumni 11.6"
+            ],
+            "total": 6
+            },
+            {
+            "Jurusan": "Jurusan 12",
+            "Alumni": [
+                "Alumni 12.1",
+                "Alumni 12.2",
+                "Alumni 12.3",
+                "Alumni 12.4",
+                "Alumni 12.5",
+                "Alumni 12.6"
+            ],
+            "total": 6
+            }
+        ]
+    }
+]
