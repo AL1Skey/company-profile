@@ -27,10 +27,10 @@ export default function Page() {
                                         </div>
                                         <div className="space20" />
                                         <div className="contact-hadding">
-                                            <h4><Link href="#" className="font-f-2 font-24 line-height-24 weight-700">United States of America</Link></h4>
+                                            <h4><Link href="https://maps.app.goo.gl/wQVRctU2sPtNLaWH8" className="font-f-2 font-24 line-height-24 weight-700">United States of America</Link></h4>
                                             <div className="space20" />
-                                            <Link href="#" className="font-f-2 font-20 weight-400 line-height-30">984 West College St. Sun City,</Link>
-                                            <Link href="#" className="font-f-2 font-20 weight-400 line-height-30">United States of America</Link>
+                                            <Link href="https://maps.app.goo.gl/wQVRctU2sPtNLaWH8" className="font-f-2 font-20 weight-400 line-height-30">984 West College St. Sun City,</Link>
+                                            <Link href="https://maps.app.goo.gl/wQVRctU2sPtNLaWH8" className="font-f-2 font-20 weight-400 line-height-30">United States of America</Link>
                                         </div>
                                     </div>
                                 </div>
@@ -55,7 +55,7 @@ export default function Page() {
                                         </div>
                                         <div className="space20" />
                                         <div className="contact-hadding">
-                                            <h4><Link href="#" className="font-f-2 font-24 line-height-24 weight-700">Our Location</Link></h4>
+                                            <h4><Link href="" className="font-f-2 font-24 line-height-24 weight-700">Our Location</Link></h4>
                                             <div className="space20" />
                                             <Link href="/mailto:Maryjane38@gmail.com " className="font-f-2 font-20 weight-400 line-height-30">Maryjane38@gmail.com
                                             </Link>
@@ -64,7 +64,7 @@ export default function Page() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="space70" />
+                            {/* <div className="space70" />
                             <div className="row align-items-center">
                                 <div className="col-lg-6">
                                     <div className="contact-from-all">
@@ -117,7 +117,7 @@ export default function Page() {
                             <div className="space70" />
                             <div className="contact-map">
                                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d196064.65881483705!2d88.93201515862421!3d24.061083775097945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39febca82f6a21ed%3A0x4040980d7c6874f8!2sKushtia%20District!5e0!3m2!1sen!2sbd!4v1673751720794!5m2!1sen!2sbd" width={600} height={450} style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                     {/*=====SUBSRIBE START=======*/}

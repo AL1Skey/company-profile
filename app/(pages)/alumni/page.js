@@ -143,7 +143,7 @@ export default function Page() {
                                                 <input type="number" placeholder="No. HP**" name="nomor" />
                                             </div>
                                             <div className="massge-single-inputs">
-                                                <input type="text" placeholder="Kerja dimana**" name="perusahaan" />
+                                                <input type="text" placeholder="Pekerjaan**" name="perusahaan" />
                                             </div>
                                             <div className="massge-single-inputs">
                                                 <input type="text" placeholder="Angkatan-ke**" name="angkatan" />

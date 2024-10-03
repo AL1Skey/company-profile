@@ -63,8 +63,7 @@ export default function Page() {
                                             </div>
                                             <div >
                                                 <div className="hadding2">
-                                                    <h4 className="font-f-2 font-22 line-height-22 weight-500"> <Link href="#">Company
-                                                        benefit</Link></h4>
+                                                    <h4 className="font-f-2 font-22 line-height-22 weight-500"> <Link href="#">Visi</Link></h4>
                                                     <div className="space12" />
                                                     <p className="font-f-2 weight-400 line-height-28 font-16">You focus on building the
                                                         product, we focus on getting it out there!</p>
@@ -79,8 +78,7 @@ export default function Page() {
                                             </div>
                                             <div >
                                                 <div className="hadding2">
-                                                    <h4 className="font-f-2 font-22 line-height-22 weight-400"> <Link href="#">Cometitve
-                                                        salay</Link></h4>
+                                                    <h4 className="font-f-2 font-22 line-height-22 weight-400"> <Link href="#">Misi</Link></h4>
                                                     <div className="space12" />
                                                     <p className="font-f-2 weight-400 line-height-28 font-16">You focus on building the
                                                         product, we focus on getting it out there!</p>
@@ -106,14 +104,14 @@ export default function Page() {
                                 <div className="col-md-6">
                                     <div className="hadding2">
                                         <h1 className="font-f-2 weight-700 font-30 font-lg-45 line-height-30 line-height-lg-45">
-                                            Alumni <span className="after">member</span>
+                                             <span className="after">Alumni</span>
                                         </h1>
                                     </div>
                                 </div>
                             </div>
                             <div className="space60" />
                             <div className="row">
-                                <Slider mockup={10} />
+                                <Slider mockup={10} className="tw-scale-100 tw-w-full group-hover:tw-scale-110" />
                             </div>
                         </div>
                     </div>
@@ -125,7 +123,7 @@ export default function Page() {
                                 <div className="col-md-6">
                                     <div className="hadding2">
                                         <h1 className="font-f-2 weight-700 font-30 font-lg-45 line-height-30 line-height-lg-45">
-                                            Dewan <span className="after">Pengurus</span>
+                                            Dewan <span className="after">Pembina</span>
                                         </h1>
                                     </div>
                                 </div>
@@ -144,7 +142,7 @@ export default function Page() {
                                 <div className="col-md-6">
                                     <div className="hadding2">
                                         <h1 className="font-f-2 weight-700 font-30 font-lg-45 line-height-30 line-height-lg-45">
-                                            Dewan <span className="after">Direksi</span>
+                                            Tim <span className="after">Kepengurusan</span>
                                         </h1>
                                     </div>
                                 </div>

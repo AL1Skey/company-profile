@@ -58,7 +58,7 @@ export default function KarirSlider() {
         <>
             <div className="citi-slider-all comon-slider ">
                 <Swiper {...swiperOptions}>
-                    <SwiperSlide className="citie-box">
+                    {Array.from({length:9}).map((_,index)=>(<SwiperSlide className="citie-box">
                         <div className="citie-box-img text-center">
                             <img src="/assets/img/image/citie-1.png" alt="" />
                         </div>
@@ -70,18 +70,18 @@ export default function KarirSlider() {
                                     </h4>
                                     <div className="space10" />
                                     <p className="font-f-2 font-16 line-height-16 weight-400">
-                                        25,690 Listing Available.
+                                        Berakhir pada 29 October, 2029
                                     </p>
                                 </div>
                             </div>
                             <div >
                                 <div className="citie-bottom-btn">
-                                    <Link className="font-f-2 font-16 weight-500" href="#">View Listing</Link>
+                                    <Link className="font-f-2 font-16 weight-500" href="#">Details</Link>
                                 </div>
                             </div>
                         </div>
-                    </SwiperSlide>
-                    <SwiperSlide className="citie-box">
+                    </SwiperSlide>))}
+                    {/* <SwiperSlide className="citie-box">
                         <div className="citie-box-img text-center">
                             <img src="/assets/img/image/citie-2.png" alt="" />
                         </div>
@@ -156,7 +156,7 @@ export default function KarirSlider() {
                                 <Link className="font-f-2 font-16 weight-500" href="#">View Listing</Link>
                             </div>
                         </div>
-                    </SwiperSlide>
+                    </SwiperSlide> */}
                 </Swiper>
                 <div className="owl-nav">
                     <button type="button" role="presentation" className="owl-prev h1p">
