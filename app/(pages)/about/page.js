@@ -32,15 +32,15 @@ export default function Page() {
                             <div className="row">
                                 <div className="col-md-6">
                                     <div className="apartment-imgs">
-                                        <div className="apartment-img1">
+                                        {/* <div className="apartment-img1">
                                             <img src="/assets/img/shapes/apartment-img-1.svg" alt="" />
-                                        </div>
+                                        </div> */}
                                         <div className="apartment-img2">
                                             <img src="/assets/img/image/about-image1.png" alt="" />
                                         </div>
-                                        <div className="apartment-img3">
+                                        {/* <div className="apartment-img3">
                                             <img src="/assets/img/shapes/apartment-img-3.svg" alt="" />
-                                        </div>
+                                        </div> */}
                                     </div>
                                 </div>
                                 <div className="col-md-6">
@@ -111,7 +111,7 @@ export default function Page() {
                             </div>
                             <div className="space60" />
                             <div className="row">
-                                <Slider mockup={10} className="tw-scale-100 tw-w-full group-hover:tw-scale-110" />
+                                <Slider mockup={10} className="tw-scale-100 tw-w-full group-hover:tw-scale-110" useIcon={false} />
                             </div>
                         </div>
                     </div>

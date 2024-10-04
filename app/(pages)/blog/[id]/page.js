@@ -104,6 +104,9 @@ export default function BlogDetails() {
                                                             <li>
                                                                 <Link href="#"><i className="fa-brands fa-instagram" /></Link>
                                                             </li>
+                                                            <li>
+                                                                <Link href="whatsapp://send?text=The text to share!" data-action="share/whatsapp/share"><i className="fa-brands fa-whatsapp" /></Link>
+                                                            </li>
                                                         </ul>
                                                     </div>
                                                 </div>

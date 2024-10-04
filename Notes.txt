@@ -1,0 +1,262 @@
+<div className="" style={{ backgroundImage:'url("/assets/img/image/home2-main-img.png")' }}>
+
+/ about
+alumni gambarnya dipersempit
+klo di arahin gambar di zoom
+
+component->Karir
+klo kadaluarsa/ tanggal berakhir lewat, otomatis hilang
+klo di klik akan ke halaman karir dengan id yang dituju
+
+component->Footer
+tambahin alamat jalan
+
+miro koyetin->author
+lifestyle->category
+tanggal->tanggal dibuat
+
+/blog/id
+tambahin share wa
+
+/ Data alumni->(faq)
+form
+nama
+email
+no.hp
+kerja dimana
+angkatan
+jurusan
+**Jurusan itu dropdown
+**Angkatan itu dropdown
+pagination di Daftar alumni
+Deskripsi di Daftar alumni
+
+
+Table
+|jurusan1(total)|jurusan2(total)|
+|nama		|nama		|
+
+/nav->(header1)
+home
+about
+blog
+career
+alumni
+contact us
+
+/blog
+sambungin langsung ke detail v/
+(blog)->(blog-single)	v/
+
+/career->(Services Detail)
+Image
+Judul
+Nama perusahaan
+Detail Pekerjaan
+button->send mail
+
+
+Working Progress
+navbar->header1
+homepage->page
+footer->footer1
+
+
+
+Backend
+Home
+|
+--Banner
+---Banner
+---Title
+---Description
+|
+About Us(Home)
+|
+---Image
+---Title
+---Description
+Karir(Home)
+|
+---Image
+---Title
+---End Date
+---Description
+---id
+Blog(Home)
+|
+---Image
+---Title
+---End Date
+---Description
+---id
+Footer
+|
+--[About Us]
+--Footer Info
+    	|
+	---alamat
+	---No Telepon/WA
+	---Email
+	---Social Media
+
+About Us
+About Us(About Us)
+|
+---Image
+---Title
+---Description
+---Visi
+---Misi
+
+Alumni
+|
+---Image
+---Nama
+---Job
+
+Dewan Pembina
+|
+---Image
+---Nama
+---Jabatan
+---Deskripsi
+---Social Media
+
+Tim Kepengurusan
+|
+---Image
+---Nama
+---Jabatan
+---Deskripsi
+---Social Media
+
+Karir
+|
+---Image
+---End Date
+---Judul
+---Deskripsi
+---Url
+---id
+
+Daftar Alumni
+|
+---Nama
+---Email
+---No. Telepon
+---Pekerjaan
+---Angkatan
+---Jurusan
+
+Request Alumni
+|
+---Nama
+---Email
+---No. Telepon
+---Pekerjaan
+---Angkatan
+---Jurusan
+---Approval/Rejected
+
+Registered Alumni
+|
+---Nama
+---Email
+---No. Telepon
+---Pekerjaan
+---Angkatan
+---Jurusan
+
+Blog
+|
+---Image
+---Title
+---Tanggal dibuat
+---Kategori
+---Author
+---Description
+
+
+Table
+Home
+|
+--Banner
+---Banner
+---Title
+---Description
+
+Footer Info
+|
+---alamat
+---No Telepon/WA
+---Email
+---Social Media
+
+Alumni
+|
+---Image
+---Nama
+---Job
+
+Dewan Pembina
+|
+---Image
+---Nama
+---Jabatan
+---Deskripsi
+---Social Media
+
+Tim Kepengurusan
+|
+---Image
+---Nama
+---Jabatan
+---Deskripsi
+---Social Media
+
+Karir
+|
+---Image
+---End Date
+---Judul
+---Deskripsi
+---Url
+---id
+
+Daftar Alumni
+|
+---Nama
+---Email
+---No. Telepon
+---Pekerjaan
+---Angkatan
+---Jurusan
+
+Request Alumni
+|
+---Nama
+---Email
+---No. Telepon
+---Pekerjaan
+---Angkatan
+---Jurusan
+---Approval/Rejected
+
+Registered Alumni
+|
+---Nama
+---Email
+---No. Telepon
+---Pekerjaan
+---Angkatan
+---Jurusan
+
+Blog
+|
+---Image
+---Title
+---Tanggal dibuat
+---Kategori
+---Author
+---Description

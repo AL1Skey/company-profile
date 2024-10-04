@@ -44,10 +44,11 @@ export default function Footer1() {
                                 <div>
                                     <ul className="font-f-2 font-16 line-height-26 pera-c-1">
                                         <li><Link href="/about">About us</Link></li>
-                                        <li><Link href="#">Licensing</Link></li>
-                                        <li><Link href="#">privacy Policy</Link></li>
-                                        <li><Link href="#">Terms of Use</Link></li>
-                                        <li><Link href="#">Refund Policy</Link></li>
+                                        <li><Link href="#">Home</Link></li>
+                                        <li><Link href="#">Karir</Link></li>
+                                        <li><Link href="#">Alumni</Link></li>
+                                        <li><Link href="#">Our Blog</Link></li>
+                                        <li><Link href="#">Contact Us</Link></li>
                                     </ul>
                                 </div>
                             </div>
@@ -57,6 +58,17 @@ export default function Footer1() {
                                 <h3 className="font-f-2 font-20 weight-700 line-height-20">
                                     Get in touch
                                 </h3>
+                                <div className="foonter-contact-1">
+                                    <div className="foonter-contact-icon-1">
+                                        <div >
+                                        <Link href="#"><i className="tw-text-blue-700 fas fa-map-marker-alt" /></Link>
+                                        </div>
+                                    </div>
+                                    <div className="foonter-contact-p">
+                                        <Link href="/tel:+910225850556">United States of America</Link>
+                                        <Link href="/tel:+610225850556">984 West College St. Sun City,</Link>
+                                    </div>
+                                </div>
                                 <div className="foonter-contact-1">
                                     <div className="foonter-contact-icon-1">
                                         <div >

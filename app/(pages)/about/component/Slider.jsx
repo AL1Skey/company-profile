@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-export default function Slider({ className = "",mockup, ...props }) {
+export default function Slider({ className = "",useIcon=true,mockup, ...props }) {
   const swiperOptions = {
     modules: [Autoplay, Pagination, Navigation],
     slidesPerView: 4,
@@ -70,7 +70,8 @@ export default function Slider({ className = "",mockup, ...props }) {
                   alt="Team member"
                 />
               </div>
-              <div className="about-team-hover tw-translate-x-[-0.5rem]">
+              {useIcon && (
+                <div className="about-team-hover tw-translate-x-[-0.5rem]">
                 <div className="about-hover-icons">
                   <ul>
                     <li>
@@ -87,6 +88,8 @@ export default function Slider({ className = "",mockup, ...props }) {
                   </ul>
                 </div>
               </div>
+              )}
+              
             </div>
             <div className="hadding2">
               <div className="space20" />

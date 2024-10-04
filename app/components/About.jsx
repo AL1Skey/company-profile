@@ -9,15 +9,15 @@ export default function About() {
                     <div className="row align-items-center">
                         <div className="col-md-6">
                             <div className="apartment-imgs">
-                                <div className="apartment-img1">
+                                {/* <div className="apartment-img1">
                                     <img src="/assets/img/shapes/apartment-img-1.svg" alt="" />
-                                </div>
+                                </div> */}
                                 <div className="apartment-img2" data-aos="zoom-out" data-aos-duration={800}>
                                     <img src="/assets/img/image/apartment-img-2.png" alt="" />
                                 </div>
-                                <div className="apartment-img3" data-aos="zoom-out" data-aos-duration={1300}>
+                                {/* <div className="apartment-img3" data-aos="zoom-out" data-aos-duration={1300}>
                                     <img src="/assets/img/shapes/apartment-img-3.svg" alt="" />
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                         <div className="col-md-6">
