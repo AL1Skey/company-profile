@@ -5,10 +5,10 @@ export default function Footer1() {
             <footer className="footer-area padding-top font-f-2">
                 <div className="container">
                     <div className="row">
-                        <div className="col-lg-4 col-sm-6">
+                        <div className="col-lg-4 col-sm-6 android tw-py-10">
                             <div className="single-footer mr50 hadding2">
                                 <div className="site-logo home1-site-logo">
-                                    <Link href="#"><img src="/assets/img/logo/header-logo1.svg" alt="" />
+                                    <Link href="#"><img src="/assets/img/logo/header-logo1.svg" className="android:tw-size-20" alt="" />
                                     </Link>
                                     <span className="font-f-2">We’re hiring</span>
                                 </div>
@@ -36,7 +36,7 @@ export default function Footer1() {
                                 </div>
                             </div>
                         </div> */}
-                        <div className="col-lg col-sm-6 hadding2" style={{ transform:"translateX(8rem)" }}>
+                        <div className="android:tw-hidden lg:tw-grid col-lg hadding2" style={{ transform:"translateX(8rem)" }}>
                             <div className="single-footer">
                                 <h3 className="font-f-2 font-20 weight-700 line-height-20">
                                     Company

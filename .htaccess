@@ -1,0 +1,14 @@
+# <IfModule mod_rewrite.c>
+#   RewriteEngine On
+#   RewriteBase /
+#   RewriteRule ^topazmaritime.co.id/index\.html$ - [L]
+#   RewriteCond %{REQUEST_FILENAME} !-f
+#   RewriteCond %{REQUEST_FILENAME} !-d
+#   RewriteRule . /topazmaritime.co.id/index.html [L]
+# </IfModule>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+#   RewriteRule ^(.*)$ public/$1 [L]
+  RewriteRule ^(.*)$ topazmaritime.co.id/$1 [L]
+</IfModule>

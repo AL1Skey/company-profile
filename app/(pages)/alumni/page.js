@@ -201,7 +201,7 @@ export default function Page() {
                                 </div>
                                 {/* Right */}
                                 <div className="col-lg-6 text-center">
-                                    <div className="faq-massge-box-all">
+                                    <div className="faq-massge-box-all android:tw-w-full android:tw-m-0">
                                         <div className="massge-box-img">
                                             <img src="/assets/img/icons/faq-company-massge.svg" alt="" />
                                         </div>

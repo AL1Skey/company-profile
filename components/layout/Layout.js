@@ -71,7 +71,7 @@ export default function Layout({ headerStyle, footerStyle, headTitle, breadcrumb
 
             <div className="body-overlay" />
             <div className="hero hero1" />
-            <DemoSidebar />
+            {/* <DemoSidebar /> */}
         </>
     )
 }
