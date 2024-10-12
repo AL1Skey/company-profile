@@ -2,23 +2,23 @@
 // 'app/blog/[id]/page.js' (for the new app directory structure in Next.js 13)
 
 import Layout from "@/components/layout/Layout";
-import data from "./../blogTemplate.json"; // Assuming static data for simplicity
+// import data from "./../blogTemplate.json"; // Assuming static data for simplicity
 import Link from 'next/link';
 // import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import ModalVideo from 'react-modal-video';
 
-export default function BlogDetails({ id }) {
+export default function BlogDetails({data }) {
     const [isOpen, setOpen] = useState(false);
     // const Router = useParams(); // Get the dynamic ID from the URL
-    const [blogPost, setBlogPost] = useState(null);
+    const [blogPost, setBlogPost] = useState(data);
     // Get the dynamic id // Default to 1 if no ID is provided
 
-    useEffect(() => {
-        // Fetch blog post by id on the client side
-        const post = data.find((post) => post.id == id);
-        setBlogPost(post); // Set the blog post
-    }, [id]); // Trigger on id change
+    // useEffect(() => {
+    //     // Fetch blog post by id on the client side
+    //     const post = data?.find((post) => post.id == id);
+    //     setBlogPost(post); // Set the blog post
+    // }, [id]); // Trigger on id change
 
     return (
         <>
@@ -38,7 +38,7 @@ export default function BlogDetails({ id }) {
                                                             <img src="/assets/img/shapes/service-details-shaop-bg.svg" alt="" />
                                                         </div>
                                                         <div className="execution-img2">
-                                                            <img src={"/assets/img/image/" + blogPost.img} alt="" />
+                                                            <img src={blogPost.img} alt="" />
                                                         </div>
                                                         <div className="execution-img3">
                                                             <img src="/assets/img/shapes/service-details-shape.svg" alt="" />
@@ -48,17 +48,17 @@ export default function BlogDetails({ id }) {
                                                     <div className="author-bio mt-4 mb-3">
                                                         <div className="author-name">
                                                             <Link href="#" className="font-f-2">
-                                                                <i className="fa-solid fa-user" /> Miro koyetin
+                                                                <i className="fa-solid fa-user" /> {blogPost.author}
                                                             </Link>
                                                         </div>
                                                         <div className="blog-category">
                                                             <Link href="#" className="font-f-2">
-                                                                <i className="fa-solid fa-tag" /> Lifestyle
+                                                                <i className="fa-solid fa-tag" /> {blogPost.category}
                                                             </Link>
                                                         </div>
                                                         <div className="blog-date">
                                                             <Link href="#" className="font-f-2">
-                                                                <i className="fa-solid fa-calendar-days" /> 18 March 2023
+                                                                <i className="fa-solid fa-calendar-days" /> {blogPost.date}
                                                             </Link>
                                                         </div>
                                                     </div>
@@ -69,9 +69,9 @@ export default function BlogDetails({ id }) {
                                                         </h4>
                                                         <div className="space32" />
                                                         <p className="font-f-2 weight-400 line-height-28 font-16">
-                                                            {blogPost.content.split("\n").map((value, index) => (
+                                                            {blogPost?.content?.split("\n")?.length > 0 ? blogPost.content.split("\n").map((value, index) => (
                                                                 <p key={index}>{value}</p>
-                                                            ))}
+                                                            )) : blogPost.content}
                                                         </p>
                                                         <div className="space40" />
                                                     </div>

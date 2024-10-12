@@ -80,7 +80,7 @@ export default function KarirSlider({ data }) {
                   <div className="citie-bottom-btn">
                     <Link
                       className="font-f-2 font-16 weight-500"
-                      href={`/karir#${karir.id}${karir.end_date}`}
+                      href={`/karir#${karir.id}${karir.title}`}
                     >
                       Details
                     </Link>

@@ -41,7 +41,7 @@ Requirements:
 If you meet criteria or know who interest vacancy might be above, please send CV to email recruitmenttopaz@pttm.co.id
 `
 
-export default function Page() {
+export default function Karir({data}) {
     const [isActive, setIsActive] = useState({
         status: false,
         key: "",
@@ -69,34 +69,38 @@ export default function Page() {
                     {/*=====service details binifet end=======*/}
                     <div className="service-details-binifite sp2 ">
                         <div className="container">
-                        {[1,2,3,4,5,6,7].map((value,index)=>(
-                            <div key={index} className="row align-items-center w-10!">
+                        {data?.map((value,index)=>(
+                            <div key={index} id={`${value.id}${value.title}`} className="row align-items-center w-10!">
                                 <div className="space100" />
                                 <div className="col-md-6">
                                     <div className="apartment-imgs">
                                         <div className="apartment-img2 border15">
-                                            <img src="/assets/img/image/service-details1.png" alt="" />
+                                            <img src={value?.image} alt="" />
                                         </div>
                                     </div>
                                 </div>
                                 <div className="col-md-6">
                                     <div className="">
                                         {/* Heading Title */}
-                                        <h4 className="font-f-2 font-22 line--height-22 weight-500"> <Link href="#">Berakhir Pada 29 October, 2023</Link></h4>
+                                        <h4 className="font-f-2 font-2 line--height-22 weight-500 tw-py-3"> <Link href="#">Berakhir Pada {value?.end_date}</Link></h4>
                                         {/* <div className="space24" /> */}
                                         {/* Title */}
                                         <h1 className="font-f-2 weight-700 font-32 font-lg-44 line-height-38 line-height-lg-44">
-                                        BOSUN-PUMPMAN-FITTER
+                                        {value?.title}
                                         {/* <span className="after">consultaing</span> */}
                                         </h1>
                                         {/* Description */}
                                         <div className="space12" />
-                                        {textTemplate.split("\n").map((text, index) => (
+                                        {value?.description?.split("\n").length > 0 ? value?.description.split("\n").map((text, index) => (
                                         <p key={index} className="font-16 font-f-2 line-height-p-30 font-18 weight-400">
                                             {text}
                                             {/* <br /> */}
                                         </p>
-                                        ))}
+                                        )) : (
+                                            <p className="font-16 font-f-2 line-height-p-30 font-18 weight-400">
+                                            {value?.description}
+                                            </p>
+                                        )}
 {/*                                         
                                         <div className="space16" />
                                         <p className="font-f-2 weight-400 line-height-28 font-16">We won’t just tell you what to do; we will show the ‘how to’ execute the proven strategies and systems.</p>
@@ -106,7 +110,7 @@ export default function Page() {
                                         <p className="font-f-2 weight-400 line-height-28 font-16">If you do the work, your investment in coaching will more than 10 times pay for itself in financial returns.</p> */}
                                         <div className="space40" />
                                         <div className="home2-btn">
-                                            <Link className="font-18 line-height-30 font-f-2 font-w" href="mailto:adamnurramadan@gmail.com">Send</Link>
+                                            <Link className="font-18 line-height-30 font-f-2 font-w" href={`mailto:${data?.email}`}>Send</Link>
                                         </div>
                                     </div>
                                 </div>

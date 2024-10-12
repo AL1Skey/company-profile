@@ -78,7 +78,7 @@ export default function Blog({data,...props}) {
                             <SwiperSlide className="siting-single-sliider">
                                 <div className="liting-slider-img comon-slider-img">
                                     <div className="img-border">
-                                        <img src={`${blog?.image}`} alt={`${blog?.image}`} className='tw-w-72 tw-h-40' />
+                                        <img src={`${blog?.image}`} alt={`${blog?.image}`} className='tw-w-full tw-h-52' />
                                     </div>
 
                                 </div>

@@ -7,7 +7,7 @@ export default function BlogCard1({ item }) {
             <div className="col-lg-4">
                 <div className="blog-page-boxs blog-page-boxs1">
                     <div className="blog-boxs-img">
-                        <img src={`/assets/img/image/${item.img}`} alt="" />
+                        <img src={`${item.img}`} alt="" className='tw-w-full tw-h-52' />
                     </div>
                     <div className="space24" />
                     <div className="hadding2 blog-page-hadding">

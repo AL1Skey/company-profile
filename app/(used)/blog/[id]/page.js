@@ -1,19 +1,26 @@
 import BlogDetails from "../components/BlogDetails";
 
-export default function Pages({ params }) {
+export default async function Pages({ params }) {
     const { id } = params
+    const data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/blog/${id}`,{cache:'no-store'}).then(res => res.json())
     return(
-        <BlogDetails id={id} />
+        <BlogDetails data={data} />
     )
 }
 
-// Step 1: Define static IDs
-const staticIds = Array.from({length:100}, (_, i) => i + 1);
 
-// Step 2: Implement generateStaticParams
-export function generateStaticParams() {
-  return staticIds.map(id => ({
-    id: id.toString(),
+
+export async function generateStaticParams() {
+  const ids = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/blog`, { cache: 'no-store' })
+    .then(res => res.json());
+
+  console.log('Fetched IDs:', ids); // Debug line
+
+  return ids.map(blog => ({
+    params: { id: blog.id.toString() }, // Ensuring id is a string
+    revalidate: 1
   }));
 }
+
+
 

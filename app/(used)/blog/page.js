@@ -1,7 +1,8 @@
 import BlogPost from './components/BlogPost'
 import Layout from '@/components/layout/Layout'
-import data from './blogTemplate.json'
-export default function Blog() {
+// import data from './blogTemplate.json'
+export default async function Blog() {
+    const data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/blog?reformat=1`,{cache:'no-store'}).then(res => res.json())
     return (
         <>
             <Layout headerStyle={1} footerStyle={1} breadcrumbTitle="Our blog">
