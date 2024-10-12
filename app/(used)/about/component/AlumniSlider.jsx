@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-export default function Slider({ className = "",useIcon=true,mockup, ...props }) {
+export default function AlumniSlider({ className = "",useIcon=false,data, ...props }) {
   const swiperOptions = {
     modules: [Autoplay, Pagination, Navigation],
     slidesPerView: 4,
@@ -60,12 +60,12 @@ export default function Slider({ className = "",useIcon=true,mockup, ...props })
         {...swiperOptions}
         className="about-team-slider-all tw-overflow-visible! comon-slider"
       >
-        {Array.from({ length: mockup })?.map((_, index) => (
+        {data?.map((alumni, index) => (
           <SwiperSlide key={index} className="about-slider-single text-center">
             <div className="tw-group tw-relative tw-overflow-hidden tw-rounded-lg tw-transition-all tw-duration-300 tw-ease-in-out hover:tw-z-10 hover:tw-shadow-xl">
               <div className=" tw-overflow-hidden">
                 <img
-                  src="/assets/img/image/about-team1.png"
+                  src={alumni?.image}
                   className={`tw-transition-transform tw-duration-300 tw-ease-in-out ${className !=="" ?  className : "tw-scale-75 tw-w-full group-hover:tw-scale-100"}`}
                   alt="Team member"
                 />
@@ -95,16 +95,13 @@ export default function Slider({ className = "",useIcon=true,mockup, ...props })
               <div className="space20" />
               <h4 className="font-f-2 font-22 line--height-22 weight-500">
                 {" "}
-                <Link href="#">Topo industry specialist</Link>
+                <Link href="#">{alumni.name}</Link>
               </h4>
               {/* <div className="space10" /> */}
               <p className="font-f-2 weight-400 line-height-28 font-16">
-                CEO Founder
+                {alumni.jobs}
               </p>
               <div className="space10" />
-              <p className="font-f-2 weight-400 line-height-28 font-16">
-                Deskripsi
-              </p>
             </div>
           </SwiperSlide>
         ))}

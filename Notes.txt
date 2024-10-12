@@ -255,6 +255,22 @@ Blog
 ---Author
 ---Description
 
+
+
+Basic:
+Blog->[Buletin,Blog]->(slide)->[ref: Home->Karir]
+Admin->Blog(Author)->Berdasarkan Yang Login
+Blog->Published On-> Ditamplikan saat Published On < Sekarang
+Karir->Dirapihin->Nama Karir di Navbar Jadiin Bahasa Inggris
+Rombak Blog untuk category dengan menambahkan table baru
+Rombak Alumni untuk jurusan dengan menambahkan table baru
+Rombak User untuk role dengan menambahkan table baru
+
+
+
+
+
+
 Checkpoint
 npx sequelize-cli model:generate --name Dewan --attributes image:string,name:string,position:string,description:string,phone:string,email:string,facebook:string,instagram:string,twitter:string
 npx sequelize-cli model:generate --name Footer --attributes address:string,phone:string,email:string,facebook:string,instagram:string,twitter:string

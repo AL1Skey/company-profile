@@ -3,8 +3,9 @@
 import Layout from "@/components/layout/Layout"
 import Link from "next/link"
 import { useState } from 'react'
-import Slider from "./component/Slider"
-export default function Page() {
+import Slider from "./Slider"
+import AlumniSlider from "./AlumniSlider"
+export default function AboutUs({data}) {
     const [isActive, setIsActive] = useState({
         status: false,
         key: "",
@@ -36,7 +37,7 @@ export default function Page() {
                                             <img src="/assets/img/shapes/apartment-img-1.svg" alt="" />
                                         </div> */}
                                         <div className="apartment-img2">
-                                            <img src="/assets/img/image/about-image1.png" alt="" />
+                                            <img src={data?.aboutUs?.data?.image} alt="" />
                                         </div>
                                         {/* <div className="apartment-img3">
                                             <img src="/assets/img/shapes/apartment-img-3.svg" alt="" />
@@ -46,14 +47,11 @@ export default function Page() {
                                 <div className="col-md-6">
                                     <div className="hadding2 font-f-2">
                                         <h1 className="font-f-2 weight-700 font-30 font-lg-45 line-height-30 line-height-lg-55">
-                                            Business protential by the constant <span className="after">innovation.</span>
+                                            {data?.aboutUs?.data?.title}
                                         </h1>
                                         <div className="space20" />
                                         <p className="font-18 line-height-p-30 weight-400 fotn-f-2">
-                                            Your perfect home is waiting for you on Uphome. Browse thousands
-                                            of apartments worldwide, negotiate terms and prices, sign lease
-                                            online, and communicate with your landlord right on your laptop
-                                            or smartphone.
+                                            {data?.aboutUs?.data?.description}
                                         </p>
                                         <div className="about-icon-box">
                                             <div >
@@ -65,8 +63,7 @@ export default function Page() {
                                                 <div className="hadding2">
                                                     <h4 className="font-f-2 font-22 line-height-22 weight-500"> <Link href="#">Visi</Link></h4>
                                                     <div className="space12" />
-                                                    <p className="font-f-2 weight-400 line-height-28 font-16">You focus on building the
-                                                        product, we focus on getting it out there!</p>
+                                                    <p className="font-f-2 weight-400 line-height-28 font-16">{data?.aboutUs?.data?.visi}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -80,8 +77,7 @@ export default function Page() {
                                                 <div className="hadding2">
                                                     <h4 className="font-f-2 font-22 line-height-22 weight-400"> <Link href="#">Misi</Link></h4>
                                                     <div className="space12" />
-                                                    <p className="font-f-2 weight-400 line-height-28 font-16">You focus on building the
-                                                        product, we focus on getting it out there!</p>
+                                                    <p className="font-f-2 weight-400 line-height-28 font-16">{data?.aboutUs?.data?.misi}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -111,7 +107,7 @@ export default function Page() {
                             </div>
                             <div className="space60" />
                             <div className="row">
-                                <Slider mockup={10} className="tw-scale-100 tw-w-full group-hover:tw-scale-110" useIcon={false} />
+                                <AlumniSlider data={data?.alumni} className="tw-scale-100 tw-w-full group-hover:tw-scale-110" useIcon={false} />
                             </div>
                         </div>
                     </div>
@@ -130,7 +126,7 @@ export default function Page() {
                             </div>
                             <div className="space60" />
                             <div className="row">
-                                <Slider mockup={10} />
+                                <Slider data={data?.dewan} />
                             </div>
                         </div>
                     </div>
@@ -149,7 +145,7 @@ export default function Page() {
                             </div>
                             <div className="space60" />
                             <div className="row">
-                                <Slider mockup={10} />
+                                <Slider data={data?.pengurus}  />
                             </div>
                         </div>
                     </div>

@@ -9,7 +9,7 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 
-export default function HeaderSlider(props) {
+export default function HeaderSlider({slider,...props}) {
   const slides = [
     {
       title: "Welcome to Our Site",
@@ -28,6 +28,8 @@ export default function HeaderSlider(props) {
     },
   ]
 
+  console.log(slider,"AAAAAAAAAAAAAAAAAAAASSFFFFFFFFF")
+
   return (
     <header className="w-full">
       <Swiper
@@ -40,9 +42,25 @@ export default function HeaderSlider(props) {
         modules={[Autoplay]}
         className="mySwiper"
       >
-        {(props?.slider ? props?.slider : slides).map((slide, index) => (
+        {slider?.map((slide, index) => (
           <SwiperSlide className='h-full' key={index}>
-            {props.children}
+            <div className="container">
+                    <div className="row align-items-center">
+                    <div className="bg-cover bg-center bg-no-repeat" style={{ backgroundImage:`url("${slide.image}")`, backgroundSize:"100% 100%"}}>
+                            <div className="home1-hero-hadding" style={{ height:"40rem" }}>
+                                <div className="hadding2 hadding2-main home2-header-hadding">
+                                    <h1 className="font-f-2 weight-700 font-40 font-lg-60 line-height-48 line-height-lg-65" data-aos="fade-right" data-aos-duration={900}>
+                                        {slide.title}
+                                    </h1>
+                                    <div className="space24" />
+                                    <p className="font-18 font-f-2 weight-400 line-height-p-30" data-aos="fade-right" data-aos-duration={1100}>
+                                        {slide.description}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
           </SwiperSlide>
         ))}
       </Swiper>

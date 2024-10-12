@@ -47,7 +47,7 @@ const swiperOptions = {
     }
 }
 
-export default function Blog({count,...props}) {
+export default function Blog({data,...props}) {
     return (
         <>
             <div className="litings sp2" id="listings">
@@ -74,11 +74,11 @@ export default function Blog({count,...props}) {
                     <div className="space60" />
                     <div className="row">
                         <Swiper {...swiperOptions} className="ml--15">
-                            {Array.from({ length: count ? count : 3 }).map((_, index) => (
+                            {data?.map((blog, index) => (
                             <SwiperSlide className="siting-single-sliider">
                                 <div className="liting-slider-img comon-slider-img">
                                     <div className="img-border">
-                                        <img src="/assets/img/image/home2-liting-1.png" alt="" />
+                                        <img src={`${blog?.image}`} alt={`${blog?.image}`} className='tw-w-72 tw-h-40' />
                                     </div>
 
                                 </div>
@@ -86,11 +86,11 @@ export default function Blog({count,...props}) {
                                 <div className="liting-hadding-all hadding2">
                                     <div className="liting-hadding hadding2">
                                         <h4 className="font-f-2 font-18 line-height-18 weight-500">
-                                        Scientists speculate that ours might not be held
+                                        {blog?.title}
                                         </h4>
                                         <div className="space8" />
                                         <p className="font-16 line-height-16 weight-400">
-                                        Emprise builds complete BPM solutions for clients around the world. It allows for low cost of ownership and puts the decision making in the hands of the Business with expert consultant.
+                                        {blog?.description}
                                         </p>
                                         <div className="space24" />
                                         <div className="all-read-btn">

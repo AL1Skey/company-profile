@@ -3,7 +3,8 @@ import CitySlider1 from '@/components/slider/CitySlider1'
 import Link from 'next/link'
 import KarirSlider from './KarirSlider'
 
-export default function Karir() {
+export default function Karir({data}) {
+    console.log(data,"KARIRAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
     return (
         <>
             <div className="cities sp2 _relative" id="cities">
@@ -20,7 +21,7 @@ export default function Karir() {
                 </div>
                 <div className="container" data-aos="zoom-out" data-aos-duration={800}>
                     <div className="row">
-                        <KarirSlider/>
+                        <KarirSlider data={data}/>
                     </div>
                 </div>
             </div>

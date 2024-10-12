@@ -1,7 +1,7 @@
 
 import Link from 'next/link'
 
-export default function About() {
+export default function About({data}) {
     return (
         <>
             <div className="apartment sp2" id="apartment">
@@ -13,7 +13,7 @@ export default function About() {
                                     <img src="/assets/img/shapes/apartment-img-1.svg" alt="" />
                                 </div> */}
                                 <div className="apartment-img2" data-aos="zoom-out" data-aos-duration={800}>
-                                    <img src="/assets/img/image/apartment-img-2.png" alt="" />
+                                    <img src={data.image} alt="" />
                                 </div>
                                 {/* <div className="apartment-img3" data-aos="zoom-out" data-aos-duration={1300}>
                                     <img src="/assets/img/shapes/apartment-img-3.svg" alt="" />
@@ -27,7 +27,7 @@ export default function About() {
                                 </h1>
                                 <div className="space32" />
                                 <p className="font-18 line-height-p-30" data-aos="fade-left" data-aos-duration={1100}>
-                                Your perfect home is waiting for you on Uphome. Browse thousands of apartments worldwide, negotiate terms and prices, sign lease online, and communicate with your landlord right on your laptop or smartphone.
+                                {data.description}
                                 </p>
                                 <div className="space50" />
                                 <div className="home2-btn" data-aos="fade-left" data-aos-duration={1300}>

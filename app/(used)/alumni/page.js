@@ -1,4 +1,3 @@
-
 'use client'
 import Layout from "@/components/layout/Layout"
 import AboutSlider1 from "@/components/slider/AboutSlider1"
