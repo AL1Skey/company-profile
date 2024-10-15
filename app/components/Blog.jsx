@@ -1,6 +1,7 @@
 
 'use client'
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
 import { Navigation} from "swiper/modules"
 import { Swiper, SwiperSlide } from "swiper/react"
 
@@ -47,7 +48,15 @@ const swiperOptions = {
     }
 }
 
-export default function Blog({data,...props}) {
+export default function Blog({...props}) {
+    const [data, setData] = useState()
+    useEffect(()=>{
+        const fetchData = async()=>{
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/blog`,{cache:'no-store'}).then(res=>res.json())
+            setData(response)
+        }
+        fetchData()
+    },[])
     return (
         <>
             <div className="litings sp2" id="listings">
@@ -94,7 +103,7 @@ export default function Blog({data,...props}) {
                                         </p>
                                         <div className="space24" />
                                         <div className="all-read-btn">
-                                            <Link href={`/blog/${index}`} className="font-f-2 line--height-16 font-16 weight-700">Read more <i className="fa-solid fa-arrow-right" /></Link>
+                                            <Link href={`/blog/${index+1}`} className="font-f-2 line--height-16 font-16 weight-700">Read more <i className="fa-solid fa-arrow-right" /></Link>
                                         </div>
                                     </div>
                                     <div className="space24" />

@@ -1,7 +1,16 @@
+"use client"
+import React from "react"
 import Layout from "@/components/layout/Layout"
 import Link from "next/link"
 export default function Page() {
-
+    const [data, setData] = React.useState([])
+    React.useEffect(() => {
+        const fetchData = async () => {
+            const data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/footer`, { cache: 'no-store' }).then(res => res.json())
+            setData(data[0])
+        }
+        fetchData()
+    }, [])
     return (
         <>
             <Layout headerStyle={1} footerStyle={1} breadcrumbTitle="Contact Us">
@@ -27,10 +36,8 @@ export default function Page() {
                                         </div>
                                         <div className="space20" />
                                         <div className="contact-hadding">
-                                            <h4><Link href="https://maps.app.goo.gl/wQVRctU2sPtNLaWH8" className="font-f-2 font-24 line-height-24 weight-700">United States of America</Link></h4>
+                                            <h4><Link href={data?.addressUrl ? data?.addressUrl : "#"} className="font-f-2 font-24 line-height-24 weight-700">{data?.address}</Link></h4>
                                             <div className="space20" />
-                                            <Link href="https://maps.app.goo.gl/wQVRctU2sPtNLaWH8" className="font-f-2 font-20 weight-400 line-height-30">984 West College St. Sun City,</Link>
-                                            <Link href="https://maps.app.goo.gl/wQVRctU2sPtNLaWH8" className="font-f-2 font-20 weight-400 line-height-30">United States of America</Link>
                                         </div>
                                     </div>
                                 </div>
@@ -43,8 +50,7 @@ export default function Page() {
                                         <div className="contact-hadding">
                                             <h4><Link href="#" className="font-f-2 font-24 line-height-24 weight-700">Phone Number</Link></h4>
                                             <div className="space20" />
-                                            <Link href="/tel:674-493-4289" className="font-f-2 font-20 weight-400 line-height-30">674-493-4289</Link> <br />
-                                            <Link href="/tel:606-661-0241" className="font-f-2 font-20 weight-400 line-height-30">606-661-0241</Link>
+                                            <Link href={`https://wa.me/${data?.phone}`} className="font-f-2 font-20 weight-400 line-height-30">{data?.phone}</Link> <br />
                                         </div>
                                     </div>
                                 </div>
@@ -55,11 +61,11 @@ export default function Page() {
                                         </div>
                                         <div className="space20" />
                                         <div className="contact-hadding">
-                                            <h4><Link href="" className="font-f-2 font-24 line-height-24 weight-700">Our Location</Link></h4>
+                                            <h4><Link href="" className="font-f-2 font-24 line-height-24 weight-700">Email</Link></h4>
                                             <div className="space20" />
-                                            <Link href="/mailto:Maryjane38@gmail.com " className="font-f-2 font-20 weight-400 line-height-30">Maryjane38@gmail.com
+                                            <Link href={`/mailto:${data?.email}`} className="font-f-2 font-20 weight-400 line-height-30">{data?.email}
                                             </Link>
-                                            <Link href="/mailto:Businesscoaching@gmail.com" className="font-f-2 font-20 weight-400 line-height-30">Businesscoaching@gmail.com</Link>
+                                           
                                         </div>
                                     </div>
                                 </div>

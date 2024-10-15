@@ -53,7 +53,6 @@ export default function AlumniSlider({ className = "",useIcon=false,data, ...pro
       },
     },
   };
-
   return (
     <>
       <Swiper
@@ -66,7 +65,7 @@ export default function AlumniSlider({ className = "",useIcon=false,data, ...pro
               <div className=" tw-overflow-hidden">
                 <img
                   src={alumni?.image}
-                  className={`tw-transition-transform tw-duration-300 tw-ease-in-out ${className !=="" ?  className : "tw-scale-75 tw-w-full group-hover:tw-scale-100"}`}
+                  className={`tw-transition-transform tw-duration-300 tw-ease-in-out ${className !=="" ?  className : "tw-scale-75 tw-w-full tw-h-[25rem] group-hover:tw-scale-100"}`}
                   alt="Team member"
                 />
               </div>

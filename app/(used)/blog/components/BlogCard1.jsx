@@ -13,7 +13,7 @@ export default function BlogCard1({ item }) {
                     <div className="hadding2 blog-page-hadding">
                         <h4 className="font-f-2 font-20 line--height-24 weight-500"> <Link href={`/blog/${item.id}`}>{item.title}</Link></h4>
                         <div className="space16" />
-                        <p className="font-f-2 weight-400 line-height-28 font-16">Emprise builds complete BPM solutions for clients around the world. It allows for low cost of ownership and puts the decision making in the hands of the Business with expert consultant.</p>
+                        <p className="font-f-2 weight-400 line-height-28 font-16">${item?.content}</p>
                     </div>
                     <div className="space24" />
                     <div className="all-read-btn">

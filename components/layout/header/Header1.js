@@ -12,7 +12,7 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu }) {
                                     <div className="site-logo home1-site-logo">
                                         <Link href="/"><img src="/assets/img/logo/header-logo1.svg" className="tw-w-14 tw-h14" alt="" />
                                         </Link>
-                                        <span>We’re hiring</span>
+                                        
                                     </div>
                                     <div className="main-menu-ex main-menu-ex1">
                                         <ul>

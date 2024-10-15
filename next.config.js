@@ -3,8 +3,7 @@ const nextConfig = {
   images: {
     domains: ["res.cloudinary.com"],
   },
-   assetPrefix: './',
-  distDir: "dist",
+  distDir: "iaajofficial.com",
   output: "export",
 };
 

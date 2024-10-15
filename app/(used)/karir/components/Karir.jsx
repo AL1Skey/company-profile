@@ -5,7 +5,7 @@ import AboutSlider1 from "@/components/slider/AboutSlider1"
 
 import Link from 'next/link'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const textTemplate = `
                                             PT. Topaz Maritime
@@ -41,12 +41,19 @@ Requirements:
 If you meet criteria or know who interest vacancy might be above, please send CV to email recruitmenttopaz@pttm.co.id
 `
 
-export default function Karir({data}) {
+export default function Karir() {
     const [isActive, setIsActive] = useState({
         status: false,
         key: "",
     })
-
+    const [data, setData] = useState([])
+    useEffect(()=>{
+        const fetchData = async()=>{
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/karir`,{cache:'no-store'}).then(res=>res.json())
+            setData(response)
+        }
+        fetchData()
+    },[])
     const handleToggle = (key) => {
         if (isActive.key === key) {
             setIsActive({

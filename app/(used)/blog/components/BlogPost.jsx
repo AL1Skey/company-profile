@@ -4,10 +4,11 @@ import React, { useEffect, useState } from "react"
 
 import BlogCard1 from "./BlogCard1"
 import Pagination from "./Pagination"
-export default function BlogPost({ style, showItem, showPagination, data=null }) {
+export default function BlogPost({ style, showItem, showPagination,dataFetch }) {
     let [currentPage, setCurrentPage] = useState(1)
     let showLimit = showItem,
         paginationItem = 4
+    const [data, setData] = useState(dataFetch ?? [])
 
     let [pagination, setPagination] = useState([])
     let [limit, setLimit] = useState(showLimit)
@@ -55,7 +56,7 @@ export default function BlogPost({ style, showItem, showPagination, data=null })
                 <h3>No Products Found </h3>
             )}
 
-            {getPaginatedProducts.map((item,index) => (
+            {getPaginatedProducts?.map((item,index) => (
                 <React.Fragment key={index}>
                     {!style && <BlogCard1 item={item} />}
                     {style === 1 && <BlogCard1 item={item} />}

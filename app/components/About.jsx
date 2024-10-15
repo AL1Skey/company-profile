@@ -1,7 +1,17 @@
-
+"use client"
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
 
-export default function About({data}) {
+export default function About() {
+    const [data, setData] = useState()
+    useEffect(()=>{
+        const fetchData = async()=>{
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/about-us`,{cache:'no-store'}).then(res=>res.json())
+            setData(response.data)
+            console.log(response,"RESPONEDDDD")
+        }
+        fetchData()
+    },[])
     return (
         <>
             <div className="apartment sp2" id="apartment">
@@ -12,8 +22,8 @@ export default function About({data}) {
                                 {/* <div className="apartment-img1">
                                     <img src="/assets/img/shapes/apartment-img-1.svg" alt="" />
                                 </div> */}
-                                <div className="apartment-img2" data-aos="zoom-out" data-aos-duration={800}>
-                                    <img src={data.image} alt="" />
+                                <div className="apartment-img2" >
+                                    <img className="tw-w-[40rem] tw-h-[40rem]" src={data?.image} alt="" />
                                 </div>
                                 {/* <div className="apartment-img3" data-aos="zoom-out" data-aos-duration={1300}>
                                     <img src="/assets/img/shapes/apartment-img-3.svg" alt="" />
@@ -27,7 +37,7 @@ export default function About({data}) {
                                 </h1>
                                 <div className="space32" />
                                 <p className="font-18 line-height-p-30" data-aos="fade-left" data-aos-duration={1100}>
-                                {data.description}
+                                {data?.description}
                                 </p>
                                 <div className="space50" />
                                 <div className="home2-btn" data-aos="fade-left" data-aos-duration={1300}>

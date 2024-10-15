@@ -38,7 +38,7 @@ import Pagination from "./Pagination";
     )
 */
 
-export default function Alumni({showPagination=true, data }) {
+export default function Alumni({showPagination=true }) {
   const [isActive, setIsActive] = useState({
     status: false,
     key: "",
@@ -47,7 +47,14 @@ export default function Alumni({showPagination=true, data }) {
   let [currentPage, setCurrentPage] = useState(1);
   let showLimit = 6,
     paginationItem = 4;
-
+  const [data, setData] = useState([]);
+  useEffect(()=>{
+    const fetchData = async()=>{
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/alumni?reformat=1`,{cache:'no-store'}).then(res => res.json())
+      setData(response)
+    }
+    fetchData()
+  },[])
   let [pagination, setPagination] = useState([]);
   let [limit, setLimit] = useState(showLimit);
   let [pages, setPages] = useState(Math.ceil(data?.length / limit));
@@ -123,7 +130,7 @@ export default function Alumni({showPagination=true, data }) {
                     <div className="space20" />
                     {/* Alumni */}
                     <div className="accordion" id="accordionExample">
-                      {getPaginatedProducts.map((value, index) => (
+                      {getPaginatedProducts?.map((value, index) => (
                         <React.Fragment key={index}>
                           <div
                             key={index}

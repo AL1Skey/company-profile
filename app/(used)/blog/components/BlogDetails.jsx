@@ -6,19 +6,21 @@ import Layout from "@/components/layout/Layout";
 import Link from 'next/link';
 // import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import ModalVideo from 'react-modal-video';
 
-export default function BlogDetails({data }) {
+export default function BlogDetails({id, data }) {
     const [isOpen, setOpen] = useState(false);
     // const Router = useParams(); // Get the dynamic ID from the URL
     const [blogPost, setBlogPost] = useState(data);
     // Get the dynamic id // Default to 1 if no ID is provided
 
-    // useEffect(() => {
-    //     // Fetch blog post by id on the client side
-    //     const post = data?.find((post) => post.id == id);
-    //     setBlogPost(post); // Set the blog post
-    // }, [id]); // Trigger on id change
+    useEffect(() => {
+        // Fetch blog post by id on the client side
+        const fetchBlogPost = async () => {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/blog/${id}?reformat=1`,{cache:'no-store'}).then(res => res.json())
+            setBlogPost(response);
+        }
+        fetchBlogPost();
+    }, [id]); // Trigger on id change
 
     return (
         <>
@@ -114,7 +116,6 @@ export default function BlogDetails({data }) {
                                 </div>
                             </div>
                         </div>
-                        <ModalVideo channel="youtube" autoplay isOpen={isOpen} videoId="SZEflIVnhH8" onClose={() => setOpen(false)} />
                     </Layout>
                 </>
             )}

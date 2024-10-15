@@ -1,26 +1,38 @@
 import BlogDetails from "../components/BlogDetails";
+import { notFound } from "next/navigation";
+export async function generateStaticParams() {
+  // const posts = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/blog`, {
+  //   next: { revalidate: 10 } // Revalidate every 60 seconds
+  // }).then((res) => res.json())
 
-export default async function Pages({ params }) {
+  return Array.from({length:500}).map((post,index) => ({
+    id: `${index+1}`
+  }))
+}
+
+async function getPost(id) {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/blog/${id}`, {
+    next: { revalidate: 10 } // Revalidate every 60 seconds,
+    
+  })
+
+  if (!res.ok) {
+    notFound()
+  }
+
+  return res.json()
+}
+
+export const dynamicParams = true
+
+
+const  Pages=async({ params })=> {
     const { id } = params
-    const data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/blog/${id}`,{cache:'no-store'}).then(res => res.json())
     return(
-        <BlogDetails data={data} />
+        <BlogDetails id={id} />
     )
 }
 
-
-
-export async function generateStaticParams() {
-  const ids = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/blog`, { cache: 'no-store' })
-    .then(res => res.json());
-
-  console.log('Fetched IDs:', ids); // Debug line
-
-  return ids.map(blog => ({
-    params: { id: blog.id.toString() }, // Ensuring id is a string
-    revalidate: 1
-  }));
-}
-
+export default Pages
 
 

@@ -2,14 +2,15 @@
 'use client'
 import Layout from "@/components/layout/Layout"
 import Link from "next/link"
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Slider from "./Slider"
 import AlumniSlider from "./AlumniSlider"
-export default function AboutUs({data}) {
+export default function AboutUs() {
     const [isActive, setIsActive] = useState({
         status: false,
         key: "",
     })
+    const [data, setData] = useState()
 
     const handleToggle = (key) => {
         if (isActive.key === key) {
@@ -23,6 +24,19 @@ export default function AboutUs({data}) {
             })
         }
     }
+
+    useEffect(()=>{
+        const fetchData = async()=>{
+            const response ={
+                aboutUs: await fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/about-us`,{cache:'no-store'}).then(res => res.json()),
+                alumni: await fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/alumni?isShown=true`,{cache:'no-store'}).then(res => res.json()),
+                dewan: await fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/dewan`,{cache:'no-store'}).then(res => res.json()),
+                pengurus: await fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/pengurus`,{cache:'no-store'}).then(res => res.json()),
+            }
+            setData(response)
+        }
+        fetchData()
+    },[])
     return (
         <>
             <Layout headerStyle={1} footerStyle={1} breadcrumbTitle="About us">
@@ -37,7 +51,7 @@ export default function AboutUs({data}) {
                                             <img src="/assets/img/shapes/apartment-img-1.svg" alt="" />
                                         </div> */}
                                         <div className="apartment-img2">
-                                            <img src={data?.aboutUs?.data?.image} alt="" />
+                                            <img className="tw-w-[30rem] tw-h-[40rem]" src={data?.aboutUs?.data?.image} alt="" />
                                         </div>
                                         {/* <div className="apartment-img3">
                                             <img src="/assets/img/shapes/apartment-img-3.svg" alt="" />
@@ -56,7 +70,7 @@ export default function AboutUs({data}) {
                                         <div className="about-icon-box">
                                             <div >
                                                 <div className="about-icon-box-icon">
-                                                    <img src="/assets/img/icons/about-besniess-iocn-1.svg" alt="" />
+                                                    <img className="tw-w-[10rem] tw-h-[10rem]" src="/assets/img/icons/about-besniess-iocn-1.svg" alt="" />
                                                 </div>
                                             </div>
                                             <div >
@@ -70,7 +84,7 @@ export default function AboutUs({data}) {
                                         <div className="about-icon-box">
                                             <div >
                                                 <div className="about-icon-box-icon">
-                                                    <img src="/assets/img/icons/about-besniess-iocn-2.svg" alt="" />
+                                                    <img className="tw-w-[20rem] tw-h-[20rem]" src="/assets/img/icons/about-besniess-iocn-2.svg" alt="" />
                                                 </div>
                                             </div>
                                             <div >

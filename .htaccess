@@ -1,14 +1,14 @@
-# <IfModule mod_rewrite.c>
-#   RewriteEngine On
-#   RewriteBase /
-#   RewriteRule ^topazmaritime.co.id/index\.html$ - [L]
-#   RewriteCond %{REQUEST_FILENAME} !-f
-#   RewriteCond %{REQUEST_FILENAME} !-d
-#   RewriteRule . /topazmaritime.co.id/index.html [L]
-# </IfModule>
-
 <IfModule mod_rewrite.c>
-  RewriteEngine On
-#   RewriteRule ^(.*)$ public/$1 [L]
-  RewriteRule ^(.*)$ topazmaritime.co.id/$1 [L]
+   RewriteEngine On
+
+   # Check if the request is for admin.iaajofficial.com
+   RewriteCond %{HTTP_HOST} ^admin\.iaajofficial\.com$ [NC]
+   RewriteCond %{REQUEST_URI} !^/admin\.iaajofficial\.com/
+   RewriteRule ^(.*)$ /admin.iaajofficial.com/$1 [L]
+
+   # For the main domain iaajofficial.com
+   RewriteCond %{HTTP_HOST} ^(www\.)?iaajofficial\.com$ [NC]
+   RewriteCond %{REQUEST_URI} !^/iaajofficial\.com/
+   RewriteRule ^(.*)$ /iaajofficial.com/$1 [L]
+
 </IfModule>

@@ -15,20 +15,14 @@ import Karir from "./components/Karir"
 import Header from "./components/Header"
 import About from "./components/About"
 export default async function Page() {
-    const header = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/header`,{cache:'no-store'}).then(res => res.json())
-    const karir = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/karir`,{cache:'no-store'}).then(res => res.json())
-    const blog = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/blog`,{cache:'no-store'}).then(res => res.json())
-    const about = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/about-us`,{cache:'no-store'}).then(res => res.json())
-    console.log(header,karir,blog,"ASDG*EYF&EGFUICJNU")
-    if(!header || !karir || !blog) return <div>Loading...</div>
     return (
         <>
             <Layout headerStyle={1} footerStyle={1}>
-                <Header data={header} />
-                <About data={about.data} />
+                <Header />
+                <About />
                 {/* <Brand /> */}
-                <Karir data={karir} />
-                <Blog data={blog} />
+                <Karir />
+                <Blog />
                 {/* <Works /> */}
                 {/* <Porperties /> */}
                 {/* <Litings2 /> */}
