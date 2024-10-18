@@ -6,6 +6,38 @@ import { useEffect, useState } from "react";
 import React from "react";
 import Pagination from "./Pagination";
 import {handleSubmit} from "../action/action"
+
+
+function getMaxAlumniLength(data) {
+
+  let maxLength = 0; // Initialize maxLength to 0
+
+
+  // Iterate through each angkatan
+
+
+      data.forEach(alumniEntry => {
+
+          // Check the length of the Alumni array
+
+          const currentLength = alumniEntry.Alumni.length;
+
+          // Update maxLength if currentLength is greater
+
+          if (currentLength > maxLength) {
+
+              maxLength = currentLength;
+
+          }
+
+  });
+
+
+  return maxLength; // Return the maximum length found
+
+}
+
+
 /*
     
     return (
@@ -141,79 +173,71 @@ export default function Alumni({showPagination=true }) {
                     <div className="space20" />
                     {/* Alumni */}
                     <div className="accordion" id="accordionExample">
-                      {getPaginatedProducts?.map((value, index) => (
-                        <React.Fragment key={index}>
+                      {getPaginatedProducts?.map((value, index1) => (
+                        <React.Fragment key={index1}>
                           <div
-                            key={index}
+                            key={index1}
                             className="accordion-item accordion-item2 font-f-2"
                           >
                             <h2
                               className="accordion-header active-header active-header2"
-                              id={`heading1` + index}
-                              onClick={() => handleToggle(11 + index)}
+                              id={`heading1` + index1}
+                              onClick={() => handleToggle(11 + index1)}
                             >
                               <button
                                 className={
-                                  isActive.key == 11 + index
+                                  isActive.key == 11 + index1
                                     ? "accordion-button accordion-button2"
                                     : "accordion-button accordion-button2 collapsed"
                                 }
                                 type="button"
                                 data-bs-toggle="collapse"
-                                data-bs-target={`#collapse${index}`}
+                                data-bs-target={`#collapse${index1}`}
                                 aria-expanded="true"
-                                aria-controls={`collapse${index}`}
+                                aria-controls={`collapse${index1}`}
                               >
                                 Angkatan {value.angkatan} ({value.total})
                               </button>
                             </h2>
                             <div
-                              id={`collapse${index}`}
+                              id={`collapse${index1}`}
                               className={`${
-                                isActive.key == 11 + index
+                                isActive.key == 11 + index1
                                   ? "accordion-collapse collapse show"
                                   : "accordion-collapse collapse"
                               } tw-overflow-scroll`}
-                              aria-labelledby={`heading1` + index}
+                              aria-labelledby={`heading1` + index1}
                               data-bs-parent="#accordionExample"
                             >
                               <div className="accordion-body accordion-body2">
                                 <table className="tw-w-full tw-bg-white tw-shadow-lg tw-rounded-lg tw-overflow-hidden">
                                   <thead className="tw-bg-gradient-to-r tw-from-blue-500 tw-to-purple-600 tw-text-white">
-                                    {value.alumni.map((alumni, index) => (
+                                    {value.alumni.map((alumni, index2) => (
                                       <th
                                         className="tw-px-6 tw-py-3 tw-text-left tw-text-xs tw-font-medium tw-uppercase tw-tracking-wider"
-                                        key={index}
+                                        key={index2}
                                       >
                                         {alumni.Jurusan} ({alumni.total})
                                       </th>
                                     ))}
                                   </thead>
                                   <tbody className="tw-divide-y tw-divide-gray-200">
-                                    {value.alumni.map((alumni, index) => (
-                                      <td
+                                    {Array.from({length:getMaxAlumniLength(value.alumni)}).map((alumni, index2) => (
+                                      <tr
                                         className={
-                                          index % 2 === 0
+                                          index2 % 2 === 0
                                             ? "tw-bg-gray-50"
                                             : "tw-bg-white"
                                         }
-                                        key={index}
+                                        key={index2}
                                       >
-                                        {alumni.Alumni.map((nama, index) => (
-                                          <tr
-                                            className={
-                                              index % 2 === 0
-                                                ? "tw-bg-gray-50"
-                                                : "tw-bg-white"
-                                            }
-                                            key={index}
-                                          >
+                                        {Array.from({length:value.alumni.length}).map((nama, index3) => (
                                             <td className="tw-px-6 tw-py-4 tw-whitespace-nowrap tw-text-sm tw-font-medium">
-                                              {nama}
+                                              {value.alumni[index3].Alumni[index2]}
                                             </td>
-                                          </tr>
+                                      
                                         ))}
-                                      </td>
+                                      </tr>
                                     ))}
                                   </tbody>
                                 </table>
