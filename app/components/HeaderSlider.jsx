@@ -1,15 +1,15 @@
-"use client"
+"use client";
 
-import React from 'react'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Autoplay, Pagination, Navigation } from 'swiper/modules'
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
 // Import Swiper styles
-import 'swiper/css'
-import 'swiper/css/pagination'
-import 'swiper/css/navigation'
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
-export default function HeaderSlider({slider,...props}) {
+export default function HeaderSlider({ slider, ...props }) {
   const slides = [
     {
       title: "Welcome to Our Site",
@@ -26,9 +26,9 @@ export default function HeaderSlider({slider,...props}) {
       description: "Connect with like-minded individuals",
       image: "/placeholder.svg?height=400&width=800",
     },
-  ]
+  ];
 
-  console.log(slider,"AAAAAAAAAAAAAAAAAAAASSFFFFFFFFF")
+  console.log(slider, "AAAAAAAAAAAAAAAAAAAASSFFFFFFFFF");
 
   return (
     <header className="w-full">
@@ -43,27 +43,58 @@ export default function HeaderSlider({slider,...props}) {
         className="mySwiper"
       >
         {slider?.map((slide, index) => (
-          <SwiperSlide className='h-full' key={index}>
-            <div className="container">
-                    <div className="row align-items-center">
-                    <div className="bg-cover bg-center bg-no-repeat" style={{ backgroundImage:`url("${slide.image}")`, backgroundSize:"100% 100%"}}>
-                            <div className="home1-hero-hadding" style={{ height:"40rem" }}>
-                                <div className="hadding2 hadding2-main home2-header-hadding">
-                                    <h1 className="font-f-2 weight-700 font-40 font-lg-60 line-height-48 line-height-lg-65" data-aos="fade-right" data-aos-duration={900}>
-                                        {slide.title}
-                                    </h1>
-                                    <div className="space24" />
-                                    <p className="font-18 font-f-2 weight-400 line-height-p-30" data-aos="fade-right" data-aos-duration={1100}>
-                                        {slide.description}
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+          <SwiperSlide className="h-full" key={index}>
+            <div>
+              <div className="row align-items-center">
+                <div
+                  className="bg-cover bg-center bg-no-repeat"
+                  style={{
+                    backgroundImage: `url("${slide.image}")`,
+                    backgroundSize: 'cover',
+                    width: "100vw",
+                  }}
+                >
+                  <div
+                    className="home1-hero-hadding container"
+                    style={{ height: "40rem" }}
+                  >
+                    <div className="hadding2 hadding2-main home2-header-hadding">
+                      <h1
+                        className="font-f-2 weight-700 font-40 font-lg-60 line-height-48 line-height-lg-65"
+                        style={{
+                          color: "white",
+
+                          textShadow:
+                            "2px 2px 0 black, -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black",
+                        }}
+                        data-aos="fade-right"
+                        data-aos-duration={900}
+                      >
+                        {slide.title}
+                      </h1>
+                      <div className="space24" />
+                      <p
+                        className="font-18 font-f-2 weight-400 line-height-p-30"
+                        data-aos="fade-right"
+                        style={{
+                          color: "white",
+
+                          textShadow:
+                            "2px 2px 2px black, -2px -2px 2px black, 2px -2px 2px black, -2px 2px 2px black",
+                            fontSize: "1.5rem"
+                        }}
+                        data-aos-duration={1100}
+                      >
+                        {slide.description}
+                      </p>
                     </div>
+                  </div>
                 </div>
+              </div>
+            </div>
           </SwiperSlide>
         ))}
       </Swiper>
     </header>
-  )
+  );
 }

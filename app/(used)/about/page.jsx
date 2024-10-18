@@ -3,9 +3,9 @@ import AboutUs from './component/AboutUs'
 const page = async() => {
     
   return (
-    <div>
+    <>
       <AboutUs/>
-    </div>
+    </>
   )
 }
 

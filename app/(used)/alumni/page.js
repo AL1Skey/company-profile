@@ -4,9 +4,9 @@ const page = async() => {
     
  
   return (
-    <div>
+    <>
       <Alumni />
-    </div>
+    </>
   )
 }
 
