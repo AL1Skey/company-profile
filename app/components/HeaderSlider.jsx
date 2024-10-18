@@ -55,17 +55,17 @@ export default function HeaderSlider({ slider, ...props }) {
                   }}
                 >
                   <div
-                    className="home1-hero-hadding container"
+                    className="home1-hero-hadding container android:tw-px-10 android:-tw-translate-y-[10rem]"
                     style={{ height: "40rem" }}
                   >
                     <div className="hadding2 hadding2-main home2-header-hadding">
                       <h1
-                        className="font-f-2 weight-700 font-40 font-lg-60 line-height-48 line-height-lg-65"
+                        className="font-f-2 weight-700 font-40 font-lg-60 android:tw-text-[2rem] line-height-48 line-height-lg-65"
                         style={{
                           color: "white",
 
                           textShadow:
-                            "2px 2px 0 black, -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black",
+                            "2px 2px 2px black, -2px -2px 2px black, 2px -2px 2px black, -2px 2px 2px black",
                         }}
                         data-aos="fade-right"
                         data-aos-duration={900}
@@ -74,14 +74,14 @@ export default function HeaderSlider({ slider, ...props }) {
                       </h1>
                       <div className="space24" />
                       <p
-                        className="font-18 font-f-2 weight-400 line-height-p-30"
+                        className="font-18 font-f-2 weight-400 line-height-p-30 android:tw-text-[0.9rem] "
                         data-aos="fade-right"
                         style={{
                           color: "white",
 
                           textShadow:
                             "2px 2px 2px black, -2px -2px 2px black, 2px -2px 2px black, -2px 2px 2px black",
-                            fontSize: "1.5rem"
+                            
                         }}
                         data-aos-duration={1100}
                       >

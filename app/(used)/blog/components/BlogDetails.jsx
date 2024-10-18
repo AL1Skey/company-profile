@@ -40,7 +40,7 @@ export default function BlogDetails({id, data }) {
                                                             <img src="/assets/img/shapes/service-details-shaop-bg.svg" alt="" />
                                                         </div>
                                                         <div className="execution-img2">
-                                                            <img src={blogPost.img} alt="" />
+                                                            <img src={blogPost.img} alt="" className="tw-h-[40rem]" />
                                                         </div>
                                                         <div className="execution-img3">
                                                             <img src="/assets/img/shapes/service-details-shape.svg" alt="" />
