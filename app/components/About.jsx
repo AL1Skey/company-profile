@@ -1,17 +1,26 @@
 "use client"
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
-
+import Preloader from '@/components/elements/Preloader'
 export default function About() {
     const [data, setData] = useState()
+    const [loading, setLoading] = useState(true)
     useEffect(()=>{
         const fetchData = async()=>{
-            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/about-us`,{cache:'no-store'}).then(res=>res.json())
-            setData(response.data)
-            console.log(response,"RESPONEDDDD")
+            try {
+                setLoading(true)
+                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/about-us`,{cache:'no-store'}).then(res=>res.json())
+                setData(response.data)
+                console.log(response,"RESPONEDDDD")
+                setLoading(false)
+            } catch (error) {
+                setLoading(false)
+            }
         }
         fetchData()
     },[])
+    if (loading) return <Preloader/>;
+    
     return (
         <>
             <div className="apartment sp2" id="apartment">

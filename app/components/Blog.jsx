@@ -1,5 +1,6 @@
 
 'use client'
+import Preloader from '@/components/elements/Preloader'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { Navigation} from "swiper/modules"
@@ -50,13 +51,21 @@ const swiperOptions = {
 
 export default function Blog({...props}) {
     const [data, setData] = useState()
+    const [loading, setLoading] = useState(true)
     useEffect(()=>{
         const fetchData = async()=>{
-            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/blog`,{cache:'no-store'}).then(res=>res.json())
-            setData(response)
+            try {
+                setLoading(true)
+                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/blog`,{cache:'no-store'}).then(res=>res.json())
+                setData(response)
+                setLoading(false)
+            } catch (error) {
+                setLoading(false)
+            }
         }
         fetchData()
     },[])
+    if (loading) return <Preloader/>;
     return (
         <>
             <div className="litings sp2" id="listings">

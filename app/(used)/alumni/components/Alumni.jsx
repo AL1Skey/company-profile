@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import React from "react";
 import Pagination from "./Pagination";
 import {handleSubmit} from "../action/action"
+import Preloader from "@/components/elements/Preloader";
 
 
 function getMaxAlumniLength(data) {
@@ -147,7 +148,7 @@ export default function Alumni({showPagination=true }) {
     }
   };
   if(loading){
-    return <div>Loading.....</div>
+    return <Preloader/>
   }
   return (
     <>

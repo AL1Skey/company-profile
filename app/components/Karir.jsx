@@ -3,17 +3,25 @@ import CitySlider1 from '@/components/slider/CitySlider1'
 import Link from 'next/link'
 import KarirSlider from './KarirSlider'
 import { useEffect, useState } from 'react'
+import Preloader from '@/components/elements/Preloader'
 
 export default function Karir() {
     const [data, setData] = useState()
-    
+    const [loading, setLoading] = useState(true)
     useEffect(()=>{
         const fetchData = async()=>{
-            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/karir`,{cache:'no-store'}).then(res=>res.json())
-            setData(response)
+            try {
+                setLoading(true)
+                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/karir`,{cache:'no-store'}).then(res=>res.json())
+                setData(response)
+                setLoading(false)
+            } catch (error) {
+                setLoading(false)
+            }
         }
         fetchData()
     },[])
+    if (loading) return <Preloader />;
     console.log(data,"KARIRAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
     return (
         <>

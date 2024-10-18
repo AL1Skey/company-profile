@@ -5,13 +5,14 @@ import Link from "next/link"
 import { useEffect, useState } from 'react'
 import Slider from "./Slider"
 import AlumniSlider from "./AlumniSlider"
+import Preloader from "@/components/elements/Preloader"
 export default function AboutUs() {
     const [isActive, setIsActive] = useState({
         status: false,
         key: "",
     })
     const [data, setData] = useState()
-
+    const [loading, setLoading] = useState(true)
     const handleToggle = (key) => {
         if (isActive.key === key) {
             setIsActive({
@@ -27,16 +28,23 @@ export default function AboutUs() {
 
     useEffect(()=>{
         const fetchData = async()=>{
-            const response ={
-                aboutUs: await fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/about-us`,{cache:'no-store'}).then(res => res.json()),
-                alumni: await fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/alumni?isShown=true`,{cache:'no-store'}).then(res => res.json()),
-                dewan: await fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/dewan`,{cache:'no-store'}).then(res => res.json()),
-                pengurus: await fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/pengurus`,{cache:'no-store'}).then(res => res.json()),
+            try {
+                setLoading(true)
+                const response ={
+                    aboutUs: await fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/about-us`,{cache:'no-store'}).then(res => res.json()),
+                    alumni: await fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/alumni?isShown=true`,{cache:'no-store'}).then(res => res.json()),
+                    dewan: await fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/dewan`,{cache:'no-store'}).then(res => res.json()),
+                    pengurus: await fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/pengurus`,{cache:'no-store'}).then(res => res.json()),
+                }
+                setData(response)
+                setLoading(false)
+            } catch (error) {
+                setLoading(false)
             }
-            setData(response)
         }
         fetchData()
     },[])
+    if (loading) return <Preloader />;
     return (
         <>
             <Layout headerStyle={1} footerStyle={1} breadcrumbTitle="About us">

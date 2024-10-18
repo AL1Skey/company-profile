@@ -60,8 +60,10 @@ export default function Footer1() {
                             </div>
                         </div> */}
             <div
-              className="android:tw-hidden lg:tw-grid col-lg hadding2"
-              style={{ transform: "translateX(8rem)" }}
+              className="android:tw-hidden lg:tw-grid col-lg"
+              style={{ transform: "translateX(8rem)",
+                maxWidth: "10rem",
+               }}
             >
               <div className="single-footer">
                 <h3 className="font-f-2 font-20 weight-700 line-height-20">
@@ -91,7 +93,7 @@ export default function Footer1() {
                 </div>
               </div>
             </div>
-            <div className="col-lg-3 col-sm-6 hadding2">
+            <div className="col-lg-3 col-sm-6 hadding2 md:tw-translate-x-[18rem]">
               <div className="single-footer-contact">
                 <h3 className="font-f-2 font-20 weight-700 line-height-20">
                   Get in touch
@@ -99,7 +101,7 @@ export default function Footer1() {
                 <div className="foonter-contact-1">
                   <div className="foonter-contact-icon-1">
                     <div>
-                      <Link href="#">
+                      <Link href={data?.addressUrl ? data?.addressUrl : "#"}>
                         <i className="tw-text-blue-700 fas fa-map-marker-alt" />
                       </Link>
                     </div>
@@ -113,7 +115,9 @@ export default function Footer1() {
                 <div className="foonter-contact-1">
                   <div className="foonter-contact-icon-1">
                     <div>
+                    <Link href={`https://wa.me/${data?.phone}`}>
                       <img src="/assets/img/icons/footer-icon-1.svg" alt="" className="tw-translate-x-[7px] tw-translate-y-[7px]" />
+                      </Link>
                     </div>
                   </div>
                   <div className="foonter-contact-p">
@@ -125,7 +129,9 @@ export default function Footer1() {
                 <div className="foonter-contact-1">
                   <div className="foonter-contact-icon-1">
                     <div>
+                    <Link href={`/mailto:${data?.email}`}>
                       <img src="/assets/img/icons/footer-icon-2.svg" alt="" className="tw-translate-x-[7px] tw-translate-y-[7px]" />
+                      </Link>
                     </div>
                   </div>
                   <div className="foonter-contact-p">
