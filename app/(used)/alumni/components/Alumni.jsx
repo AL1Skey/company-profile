@@ -90,7 +90,7 @@ export default function Alumni({showPagination=true }) {
       const response2 = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/jurusan`,{cache:'no-store'}).then(res => res.json())
       console.log(response2)
       setData(response)
-      setJurusan(response2)
+      setJurusan(response2.splice(0,3))
       setLoading(false)
     }
     fetchData()
