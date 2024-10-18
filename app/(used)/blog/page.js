@@ -4,6 +4,8 @@ import Layout from "@/components/layout/Layout";
 import React from "react";
 import Blog from "./components/Blog";
 import Breadcrumb from "@/components/layout/Breadcrumb";
+import TitleWithSubheader from "./components/Title";
+import loader from "@/app/loading"
 // import data from './blogTemplate.json'
 export default async function Page() {
   const [blog, setBlog] = React.useState([]);
@@ -22,12 +24,12 @@ export default async function Page() {
     };
     fetchBlog();
   }, []);
-  if (loading) return <div>Loading...</div>;
+  if (loading) return loader;
   return (
     <>
-      <Layout headerStyle={1} footerStyle={1}>
-        <Breadcrumb breadcrumbTitle={"Blog"} />
+      <Layout headerStyle={1} footerStyle={1} breadcrumbTitle={"Our Blog"}>
         <div className="blog-page-boxs-all sp2">
+        <TitleWithSubheader title={"Blog:"}  />
           <div className="container">
             <div className="row">
               <BlogPost
@@ -39,7 +41,7 @@ export default async function Page() {
             </div>
             <div className="space24" />
           </div>
-          <Breadcrumb breadcrumbTitle={"Buletin"} />
+          <TitleWithSubheader title={"Buletin:"}  />
           <div className="container">
             <div className="row">
               <BlogPost
