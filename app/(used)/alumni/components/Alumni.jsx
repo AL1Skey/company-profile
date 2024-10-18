@@ -43,6 +43,8 @@ export default function Alumni({showPagination=true }) {
     status: false,
     key: "",
   });
+  const [jurusan,setJurusan] = useState([])
+  const [loading,setLoading] = useState(false)
   /*Pagination*/
   let [currentPage, setCurrentPage] = useState(1);
   let showLimit = 6,
@@ -50,8 +52,13 @@ export default function Alumni({showPagination=true }) {
   const [data, setData] = useState([]);
   useEffect(()=>{
     const fetchData = async()=>{
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/alumni?reformat=1`,{cache:'no-store'}).then(res => res.json())
+      setLoading(true)
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/alumni?reformat=1&offset=false`,{cache:'no-store'}).then(res => res.json())
+      const response2 = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/jurusan`,{cache:'no-store'}).then(res => res.json())
+      console.log(response2)
       setData(response)
+      setJurusan(response2)
+      setLoading(false)
     }
     fetchData()
   },[])
@@ -106,6 +113,9 @@ export default function Alumni({showPagination=true }) {
       });
     }
   };
+  if(loading){
+    return <div>Loading.....</div>
+  }
   return (
     <>
       <Layout headerStyle={1} footerStyle={1} breadcrumbTitle="Alumni">
@@ -314,12 +324,12 @@ export default function Alumni({showPagination=true }) {
                           name="angkatan"
                         />
                       </div>
+                      {/* {jurusan?.map((data)=>`${data.id} Jurusan`)} */}
                       <div className="massge-single-inputs">
-                        <input
-                          type="text"
-                          placeholder="Jurusan**"
-                          name="jurusan"
-                        />
+                        <select name="jurusan" id="">
+                          <option></option>
+                          {jurusan?.map((data,index)=>(<option value={data.id}>{data.name}</option>))}
+                        </select>
                       </div>
                       <button type="submit" className="massge-button">
                         <div className="massge-btn">

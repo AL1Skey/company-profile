@@ -113,7 +113,7 @@ export default function Footer1() {
                 <div className="foonter-contact-1">
                   <div className="foonter-contact-icon-1">
                     <div>
-                      <img src="/assets/img/icons/footer-icon-1.svg" alt="" />
+                      <img src="/assets/img/icons/footer-icon-1.svg" alt="" className="tw-translate-x-[7px] tw-translate-y-[7px]" />
                     </div>
                   </div>
                   <div className="foonter-contact-p">
@@ -125,7 +125,7 @@ export default function Footer1() {
                 <div className="foonter-contact-1">
                   <div className="foonter-contact-icon-1">
                     <div>
-                      <img src="/assets/img/icons/footer-icon-2.svg" alt="" />
+                      <img src="/assets/img/icons/footer-icon-2.svg" alt="" className="tw-translate-x-[7px] tw-translate-y-[7px]" />
                     </div>
                   </div>
                   <div className="foonter-contact-p">

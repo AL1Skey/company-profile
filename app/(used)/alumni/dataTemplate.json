@@ -5,7 +5,7 @@
         "alumni": [
             {
             "Jurusan": "Teknik Informatika",
-            "Alumni": [
+            "Teknik Informatika": [
                 "Achmad Fauzi",
                 "Ade Fadilah",
                 "Ade Setiawan",
@@ -17,19 +17,18 @@
             },
             {
             "Jurusan": "Teknik Elektro",
-            "Alumni": [
+            "Teknik Elektro": [
                 "Budi Santoso",
                 "Citra Dewi",
                 "Dewi Sartika",
-                "Eko Prasetyo",
-                "Fajar Nugraha",
-                "Gita Permata"
+                "Eko Prasetyo"
+                
             ],
-            "total": 6
+            "total": 4
             },
             {
             "Jurusan": "Teknik Mesin",
-            "Alumni": [
+            "Teknik Mesin": [
                 "Hendra Wijaya",
                 "Indra Gunawan",
                 "Joko Susilo",
@@ -41,7 +40,7 @@
             },
             {
             "Jurusan": "Jurusan 7",
-            "Alumni": [
+            "Jurusan 7": [
                 "Alumni 7.1",
                 "Alumni 7.2",
                 "Alumni 7.3",
@@ -53,7 +52,7 @@
             },
             {
             "Jurusan": "Jurusan 8",
-            "Alumni": [
+            "Jurusan 8": [
                 "Alumni 8.1",
                 "Alumni 8.2",
                 "Alumni 8.3",
@@ -65,7 +64,7 @@
             },
             {
             "Jurusan": "Jurusan 9",
-            "Alumni": [
+            "Jurusan 9": [
                 "Alumni 9.1",
                 "Alumni 9.2",
                 "Alumni 9.3",
@@ -77,7 +76,7 @@
             },
             {
             "Jurusan": "Jurusan 10",
-            "Alumni": [
+            "Jurusan 10": [
                 "Alumni 10.1",
                 "Alumni 10.2",
                 "Alumni 10.3",
@@ -89,7 +88,7 @@
             },
             {
             "Jurusan": "Jurusan 11",
-            "Alumni": [
+            "Jurusan 11": [
                 "Alumni 11.1",
                 "Alumni 11.2",
                 "Alumni 11.3",
@@ -101,7 +100,7 @@
             },
             {
             "Jurusan": "Jurusan 12",
-            "Alumni": [
+            "Jurusan 12": [
                 "Alumni 12.1",
                 "Alumni 12.2",
                 "Alumni 12.3",

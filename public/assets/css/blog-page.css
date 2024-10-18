@@ -448,7 +448,6 @@ ul.nav.nav-tabs {
   padding: 50px 48px;
   margin: 0 90px;
 }
-
 .massge-single-inputs input {
   background: none;
   border: none;
@@ -458,6 +457,28 @@ ul.nav.nav-tabs {
   font-size: 16px;
   color: #fff;
 }
+
+.massge-single-inputs select {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #fff;
+  width: 100%;
+  padding: 17px;
+  font-size: 16px;
+  color: #fff;
+}
+
+
+.massge-single-inputs select option {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #fff;
+  width: 100%;
+  padding: 17px;
+  font-size: 16px;
+  color: #000;
+}
+
 .massge-single-inputs input::placeholder {
   color: #fff;
 }
