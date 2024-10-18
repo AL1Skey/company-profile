@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import React from "react";
 import Pagination from "./Pagination";
+import {handleSubmit} from "../action/action"
 /*
     
     return (
@@ -292,9 +293,9 @@ export default function Alumni({showPagination=true }) {
                       </h4>
                       <div className="space10" />
                     </div>
-                    <form action="" className="massge-inputs">
+                    <form action={handleSubmit} className="massge-inputs">
                       <div className="massge-single-inputs">
-                        <input type="text" placeholder="Nama*" name="nama" />
+                        <input type="text" placeholder="Nama*" name="name" />
                       </div>
                       <div className="massge-single-inputs">
                         <input
@@ -305,16 +306,16 @@ export default function Alumni({showPagination=true }) {
                       </div>
                       <div className="massge-single-inputs">
                         <input
-                          type="number"
+                          type="text"
                           placeholder="No. HP**"
-                          name="nomor"
+                          name="phone"
                         />
                       </div>
                       <div className="massge-single-inputs">
                         <input
                           type="text"
                           placeholder="Pekerjaan**"
-                          name="perusahaan"
+                          name="jobs"
                         />
                       </div>
                       <div className="massge-single-inputs">
@@ -327,7 +328,7 @@ export default function Alumni({showPagination=true }) {
                       {/* {jurusan?.map((data)=>`${data.id} Jurusan`)} */}
                       <div className="massge-single-inputs">
                         <select name="jurusan" id="">
-                          <option></option>
+                          <option>Jurusan**</option>
                           {jurusan?.map((data,index)=>(<option value={data.id}>{data.name}</option>))}
                         </select>
                       </div>
