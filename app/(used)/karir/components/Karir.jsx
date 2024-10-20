@@ -80,9 +80,14 @@ export default function Karir() {
                             <div key={index} id={`${value.id}${value.title}`} className="row align-items-center w-10!">
                                 <div className="space100" />
                                 <div className="col-md-6">
-                                    <div className="apartment-imgs tw-flex">
-                                        <div className="apartment-img2 border15">
-                                            <img src={value?.image} alt="" className='tw-min-w-[30rem] tw-min-h-[30rem] tw-max-w-[30rem] tw-max-h-[30rem]' />
+                                    <div className="apartment-imgs
+                                    tw-min-w-[30rem] tw-min-h-[30rem] tw-max-w-[30rem] tw-max-h-[30rem]
+                                
+                                            android:tw-min-w-[22rem] android:tw-min-h-[18rem] android:tw-max-w-[22rem] android:tw-max-h-[18rem]
+                                    tw-flex">
+                                        <div className="apartment-img2 border15 tw-w-full tw-h-full">
+                                            <img src={value?.image} alt="" className='tw-w-full tw-h-full
+                                            ' />
                                         </div>
                                     </div>
                                 </div>

@@ -61,7 +61,7 @@ export default function KarirSlider({ data }) {
         <Swiper {...swiperOptions}>
           {data?.map((karir, index) => (
             <SwiperSlide className="citie-box" key={index}>
-              <div className="citie-box-img text-center">
+              <div className=" text-center">
                 <img src={`${karir.image}`} alt="" className='tw-min-w-72 tw-min-h-40 tw-max-w-72 tw-max-h-40' />
               </div>
               <div className="citie-haddings">

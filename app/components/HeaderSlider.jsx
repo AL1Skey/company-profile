@@ -74,7 +74,7 @@ export default function HeaderSlider({ slider, ...props }) {
                       </h1>
                       <div className="space24" />
                       <p
-                        className="tw-text-[1.6rem] font-f-2 weight-400 line-height-p-30 android:tw-text-[0.9rem] "
+                        className="tw-text-[1.6rem] font-f-2 weight-400 line-height-p-30 android:tw-text-[1.3rem] android:tw-w-[20rem]"
                         data-aos="fade-right"
                         style={{
                           color: "white",
