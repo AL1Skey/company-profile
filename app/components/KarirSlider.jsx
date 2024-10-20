@@ -62,7 +62,7 @@ export default function KarirSlider({ data }) {
           {data?.map((karir, index) => (
             <SwiperSlide className="citie-box" key={index}>
               <div className="citie-box-img text-center">
-                <img src={`${karir.image}`} alt="" className='tw-w-72 tw-h-40' />
+                <img src={`${karir.image}`} alt="" className='tw-min-w-72 tw-min-h-40 tw-max-w-72 tw-max-h-40' />
               </div>
               <div className="citie-haddings">
                 <div>
@@ -166,7 +166,7 @@ export default function KarirSlider({ data }) {
                         </div>
                     </SwiperSlide> */}
         </Swiper>
-        <div className="owl-nav">
+        <div className="owl-nav android:tw-hidden">
           <button type="button" role="presentation" className="owl-prev h1p">
             <i className="fa-solid fa-arrow-left" />
           </button>

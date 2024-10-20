@@ -80,9 +80,9 @@ export default function Karir() {
                             <div key={index} id={`${value.id}${value.title}`} className="row align-items-center w-10!">
                                 <div className="space100" />
                                 <div className="col-md-6">
-                                    <div className="apartment-imgs">
+                                    <div className="apartment-imgs tw-flex">
                                         <div className="apartment-img2 border15">
-                                            <img src={value?.image} alt="" />
+                                            <img src={value?.image} alt="" className='tw-min-w-[30rem] tw-min-h-[30rem] tw-max-w-[30rem] tw-max-h-[30rem]' />
                                         </div>
                                     </div>
                                 </div>

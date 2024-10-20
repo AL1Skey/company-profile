@@ -1,3 +1,5 @@
+add mode of jit
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   mode: 'jit',

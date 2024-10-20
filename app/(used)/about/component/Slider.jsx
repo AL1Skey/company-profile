@@ -66,12 +66,12 @@ export default function Slider({ className = "",useIcon=true,data, ...props }) {
               <div className=" tw-overflow-hidden">
                 <img
                   src={slide?.image}
-                  className={`tw-transition-transform tw-duration-300 tw-ease-in-out ${className !=="" ?  className : "tw-scale-75 tw-w-full tw-h-[25rem] group-hover:tw-scale-100"}`}
+                  className={`tw-transition-transform tw-duration-300 tw-ease-in-out ${className !=="" ?  className : "tw-scale-75 tw-w-full tw-h-[25rem] group-hover:tw-scale-100 android:tw-scale-[0.5]"}`}
                   alt="Team member"
                 />
               </div>
               {useIcon && (
-                <div className="about-team-hover tw-translate-x-[-0.5rem]">
+                <div className="about-team-hover  tw-translate-x-[-0.5rem] android:tw-translate-x-6">
                 <div className="about-hover-icons">
                   <ul>
                     <li>

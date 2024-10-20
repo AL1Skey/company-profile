@@ -53,7 +53,7 @@ export default function AboutUs() {
                     <div className="about-besniess sp2">
                         <div className="container">
                             <div className="row">
-                                <div className="col-md-6">
+                                <div className="col-md-6 ">
                                     <div className="apartment-imgs">
                                         {/* <div className="apartment-img1">
                                             <img src="/assets/img/shapes/apartment-img-1.svg" alt="" />
@@ -66,7 +66,7 @@ export default function AboutUs() {
                                         </div> */}
                                     </div>
                                 </div>
-                                <div className="col-md-6">
+                                <div className="col-md-6 android:tw-mt-[10rem]">
                                     <div className="hadding2 font-f-2">
                                         <h1 className="font-f-2 weight-700 font-30 font-lg-45 line-height-30 line-height-lg-55">
                                             {data?.aboutUs?.data?.title}
@@ -76,11 +76,11 @@ export default function AboutUs() {
                                             {data?.aboutUs?.data?.description}
                                         </p>
                                         <div className="about-icon-box">
-                                            <div >
+                                            {/* <div >
                                                 <div className="about-icon-box-icon">
                                                     <img className="tw-w-[10rem] tw-h-[10rem]" src="/assets/img/icons/about-besniess-iocn-1.svg" alt="" />
                                                 </div>
-                                            </div>
+                                            </div> */}
                                             <div >
                                                 <div className="hadding2">
                                                     <h4 className="font-f-2 font-22 line-height-22 weight-500"> <Link href="#">Visi</Link></h4>
@@ -90,11 +90,11 @@ export default function AboutUs() {
                                             </div>
                                         </div>
                                         <div className="about-icon-box">
-                                            <div >
+                                            {/* <div >
                                                 <div className="about-icon-box-icon">
                                                     <img className="tw-w-[20rem] tw-h-[20rem]" src="/assets/img/icons/about-besniess-iocn-2.svg" alt="" />
                                                 </div>
-                                            </div>
+                                            </div> */}
                                             <div >
                                                 <div className="hadding2">
                                                     <h4 className="font-f-2 font-22 line-height-22 weight-400"> <Link href="#">Misi</Link></h4>
@@ -129,7 +129,7 @@ export default function AboutUs() {
                             </div>
                             <div className="space60" />
                             <div className="row">
-                                <AlumniSlider data={data?.alumni} className="tw-scale-100 tw-w-full group-hover:tw-scale-110" useIcon={false} />
+                                <AlumniSlider data={data?.alumni} className="tw-scale-100 tw-w-full group-hover:tw-scale-110 android:tw-scale-[0.5] android:group-hover:tw-scale-75" useIcon={false} />
                             </div>
                         </div>
                     </div>

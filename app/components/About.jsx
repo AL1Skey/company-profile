@@ -23,8 +23,8 @@ export default function About() {
     
     return (
         <>
-            <div className="apartment sp2" id="apartment">
-                <div className="container">
+            <div className="apartment sp2 " id="apartment">
+                <div className="container tw-flex tw-flex-col">
                     <div className="row align-items-center">
                         <div className="col-md-6">
                             <div className="apartment-imgs">
@@ -39,9 +39,9 @@ export default function About() {
                                 </div> */}
                             </div>
                         </div>
-                        <div className="col-md-6">
+                        <div className="col-md-6 android:tw-mt-[10rem]">
                             <div className="hadding2 apartment-hadding font-f-2">
-                                <h1 className="font-f-2 weight-700 font-30 font-lg-45 line-height-lg-55" data-aos="fade-left" data-aos-duration={800}>
+                                <h1 className=" font-f-2 weight-700 font-30 font-lg-45 line-height-lg-55" data-aos="fade-left" data-aos-duration={800}>
                                     About <span className="after">Us</span>
                                 </h1>
                                 <div className="space32" />

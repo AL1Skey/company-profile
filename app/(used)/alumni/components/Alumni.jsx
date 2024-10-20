@@ -84,6 +84,16 @@ export default function Alumni({showPagination=true }) {
   let showLimit = 6,
     paginationItem = 4;
   const [data, setData] = useState([]);
+  const [formData, setFormData] = useState({}); 
+
+  function handleChange(e) {
+    console.log(e.target.name)
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  }
+
   useEffect(()=>{
     const fetchData = async()=>{
       setLoading(true)
@@ -318,12 +328,13 @@ export default function Alumni({showPagination=true }) {
                       </h4>
                       <div className="space10" />
                     </div>
-                    <form action={handleSubmit} className="massge-inputs">
+                    <form className="massge-inputs">
                       <div className="massge-single-inputs">
-                        <input type="text" placeholder="Nama*" name="name" />
+                        <input onChange={handleChange} type="text" placeholder="Nama*" name="name" />
                       </div>
                       <div className="massge-single-inputs">
                         <input
+                        onChange={handleChange}
                           type="email"
                           placeholder="Email**"
                           name="email"
@@ -331,6 +342,7 @@ export default function Alumni({showPagination=true }) {
                       </div>
                       <div className="massge-single-inputs">
                         <input
+                        onChange={handleChange}
                           type="text"
                           placeholder="No. HP**"
                           name="phone"
@@ -338,6 +350,7 @@ export default function Alumni({showPagination=true }) {
                       </div>
                       <div className="massge-single-inputs">
                         <input
+                        onChange={handleChange}
                           type="text"
                           placeholder="Pekerjaan**"
                           name="jobs"
@@ -345,6 +358,7 @@ export default function Alumni({showPagination=true }) {
                       </div>
                       <div className="massge-single-inputs">
                         <input
+                        onChange={handleChange}
                           type="text"
                           placeholder="Angkatan-ke**"
                           name="angkatan"
@@ -352,16 +366,16 @@ export default function Alumni({showPagination=true }) {
                       </div>
                       {/* {jurusan?.map((data)=>`${data.id} Jurusan`)} */}
                       <div className="massge-single-inputs">
-                        <select name="jurusan" id="">
+                        <select name="jurusan" onChange={handleChange} id="">
                           <option>Jurusan**</option>
                           {jurusan?.map((data,index)=>(<option value={data.id}>{data.name}</option>))}
                         </select>
                       </div>
-                      <button type="submit" className="massge-button">
+                      <button type="button" onClick={handleSubmit(formData)} className="massge-button">
                         <div className="massge-btn">
-                          <Link href="#" className="font-f-2">
+                       
                             Submit now
-                          </Link>
+                          
                         </div>
                       </button>
                     </form>

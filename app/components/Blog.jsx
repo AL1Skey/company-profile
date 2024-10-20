@@ -78,7 +78,7 @@ export default function Blog({...props}) {
                                 </h1>
                             </div>
                         </div>
-                        <div className="col-lg-6" data-aos="fade-up" data-aos-duration={900}>
+                        <div className="col-lg-6 android:tw-hidden" data-aos="fade-up" data-aos-duration={900}>
                             <div className="slider-arrows">
                                 <div className="testimonial-next-arrow testimonial-next-arrow1">
                                     <span><i className="fa-solid fa-arrow-left" /></span>
@@ -93,12 +93,11 @@ export default function Blog({...props}) {
                     <div className="row">
                         <Swiper {...swiperOptions} className="ml--15">
                             {data?.map((blog, index) => (
-                            <SwiperSlide className="siting-single-sliider">
+                            <SwiperSlide className="siting-single-sliider android:tw-pr-10">
                                 <div className="liting-slider-img comon-slider-img">
                                     <div className="img-border">
                                         <img src={`${blog?.image}`} alt={`${blog?.image}`} className='tw-w-full tw-h-52' />
                                     </div>
-
                                 </div>
                                 <div className="space20" />
                                 <div className="liting-hadding-all hadding2">
