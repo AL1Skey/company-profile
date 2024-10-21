@@ -97,7 +97,7 @@ export default function Alumni({showPagination=true }) {
   useEffect(()=>{
     const fetchData = async()=>{
       setLoading(true)
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/alumni?reformat=1&offset=false`,{cache:'no-store'}).then(res => res.json())
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/alumni?approval=true&reformat=1&offset=false`,{cache:'no-store'}).then(res => res.json())
       const response2 = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/jurusan`,{cache:'no-store'}).then(res => res.json())
       console.log(response2)
       setData(response)
@@ -313,8 +313,8 @@ export default function Alumni({showPagination=true }) {
                   </div>
                 </div>
                 {/* Right */}
-                <div className="col-lg-6 text-center">
-                  <div className="faq-massge-box-all android:tw-w-full android:tw-m-0">
+                <div className="col-lg-6 text-center ">
+                  <div className="faq-massge-box-all android:tw-w-full android:tw-m-0 ">
                     <div className="massge-box-img">
                       <img
                         src="/assets/img/icons/faq-company-massge.svg"

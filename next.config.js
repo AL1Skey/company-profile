@@ -5,6 +5,7 @@ const nextConfig = {
   },
   distDir: "iaajofficial.com",
   output: "export",
+  trailingSlash: true,
 };
 
 module.exports = nextConfig;
