@@ -72,7 +72,7 @@ export default function KarirSlider({ data }) {
                     </h4>
                     <div className="space10" />
                     <p className="font-f-2 !tw-text-white font-16 line-height-16 weight-400">
-                      Berakhir pada {karir.end_date}
+                      Expired on {karir.end_date}
                     </p>
                   </div>
                 </div>

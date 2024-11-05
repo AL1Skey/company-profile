@@ -1,8 +1,14 @@
 export const handleSubmit=async(e)=>{
+    console.log(e)
    if(!e?.name){
         return {message:"Name is required"}
    }
-
+    if(!e?.angkatan){
+          return {message:"Angkatan is required"}
+    }
+    if(!e?.jurusan){
+          return {message:"Jurusan is required"}
+    }
     try {
         const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/alumni`,
             {

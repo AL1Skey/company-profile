@@ -76,6 +76,10 @@ export default function Alumni({ showPagination = true }) {
   const [formData, setFormData] = useState({});
   const [currentPage, setCurrentPage] = useState(1);
   const [pages, setPages] = useState(1);
+  const [havePrevious, setHavePrevious] = useState(false);
+  console.log(havePrevious,"SSSSSSSSSSSAAAAAAAAAASSSSSSSS")
+  const [haveNext, setHaveNext] = useState(true);
+  console.log(haveNext,"ASSSSSSSSSSSSSSSSSSS")
   function handleChange(e) {
     console.log(e.target.name);
     setFormData({
@@ -116,47 +120,11 @@ export default function Alumni({ showPagination = true }) {
   const [getPaginationGroup, setGetPaginationGroup] = useState([1, 2]);
 
   const next = () => {
-    async function fetchData() {
-      setLoading(true)
-      const response = await fetch(
-        `${
-          process.env.NEXT_PUBLIC_API_URL
-        }/public/alumni-angkatan?approval=true&reformat=1&pages=${
-          currentPage + 1
-        }`
-      ).then((res) => res.json());
-      if (response.length === 0) {
-        setLoading(false)
-        return;
-      }
-      setData(response);
-      setCurrentPage((page) => page + 1);
-      setGetPaginationGroup((group) => group.map((item) => item + 1));
-      setLoading(false)
-    }
-    fetchData();
+    handleActive(currentPage + 1);
   };
 
   const prev = () => {
-    async function fetchData() {
-      setLoading(true)
-      const response = await fetch(
-        `${
-          process.env.NEXT_PUBLIC_API_URL
-        }/public/alumni-angkatan?approval=true&reformat=1&pages=${
-          currentPage + 1
-        }`
-      ).then((res) => res.json());
-      if (response.length === 0) {
-        setLoading(false)
-        return;
-      }
-      setData(response);
-      setCurrentPage((page) => page - 1);
-      setGetPaginationGroup((group) => group.map((item) => item - 1));
-      setLoading(false)
-    }
-    fetchData();
+    handleActive(currentPage - 1);
   };
 
   const handleActive = (item) => {
@@ -202,6 +170,12 @@ export default function Alumni({ showPagination = true }) {
       }
       setData(response);
       // If Exists
+      if(responsePrev.length > 0){
+        setHavePrevious(true)
+      }
+      if(responseNext.length > 0){
+        setHaveNext(true)
+      }
       if(currentPage > item && responsePrev.length > 0){
         setGetPaginationGroup((group) => group.map((item) => item - 1));
       }
@@ -383,7 +357,7 @@ export default function Alumni({ showPagination = true }) {
                       <div className="col-12 m-auto">
                         <div className="theme-pagination text-center">
                           <ul>
-                            {/* {getPaginationGroup.length <= 0 ? null : (
+                            {!havePrevious ? null : (
                               <li
                                 onClick={prev}
                                 className="next_link page-item"
@@ -394,7 +368,7 @@ export default function Alumni({ showPagination = true }) {
                                   </a>
                                 )}
                               </li>
-                            )} */}
+                            )}
 
                             {getPaginationGroup.map((item, index) => {
                               return (
@@ -412,18 +386,18 @@ export default function Alumni({ showPagination = true }) {
                               );
                             })}
 
-                            {/* {getPaginationGroup.length >= 0 ? null : (
+                            {!haveNext ? null : (
                               <li
                                 onClick={next}
                                 className="next_link page-item"
                               >
-                                {currentPage >= pages ? null : (
+                                {!haveNext ? null : (
                                   <a>
                                     <i className="fa-solid fa-angle-right" />
                                   </a>
                                 )}
                               </li>
-                            )} */}
+                            )}
                           </ul>
                         </div>
                       </div>
@@ -474,7 +448,6 @@ export default function Alumni({ showPagination = true }) {
                           type="email"
                           placeholder="Email**"
                           name="email"
-                          required={true}
                         />
                       </div>
                       <div className="massge-single-inputs">
@@ -504,7 +477,7 @@ export default function Alumni({ showPagination = true }) {
                       </div>
                       {/* {jurusan?.map((data)=>`${data.id} Jurusan`)} */}
                       <div className="massge-single-inputs">
-                        <select name="jurusan" onChange={handleChange} id="">
+                        <select name="jurusan" onChange={handleChange} id="" required={true}>
                           <option>Jurusan**</option>
                           {jurusan?.map((data, index) => (
                             <option value={data.id}>{data.name}</option>
@@ -513,7 +486,20 @@ export default function Alumni({ showPagination = true }) {
                       </div>
                       <button
                         type="button"
-                        onClick={handleSubmit(formData)}
+                        onClick={()=>{
+                          if(!formData.name || !formData.angkatan || !formData.jurusan){
+                            alert("Data tidak boleh kosong")
+                            return
+                          }
+                          const message = handleSubmit(formData)
+                          if(message?.message){
+                            alert(message.message)
+                            return
+                          }
+                          toast.success("Data berhasil di input")
+                          alert("Data berhasil di input")
+                          return
+                        }}
                         className="massge-button"
                       >
                         <div className="massge-btn">Submit now</div>
