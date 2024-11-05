@@ -75,7 +75,7 @@ export default function AlumniSlider({ className = "",useIcon=false,data, ...pro
                   <ul>
                     <li>
                       <Link href="#">
-                        <i className="fa-brands fa-twitter" />
+                        <i className="fa-brands fa-x" />
                       </Link>
                       <Link href="#">
                         <i className="fa-brands fa-facebook-f" />

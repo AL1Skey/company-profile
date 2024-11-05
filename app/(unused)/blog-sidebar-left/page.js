@@ -112,7 +112,7 @@ export default function Page() {
                                             <div className="space24" />
                                             <div className="details-side-box-icon">
                                                 <ul>
-                                                    <li><Link href="#"><i className="fa-brands fa-twitter" /></Link></li>
+                                                    <li><Link href="#"><i className="fa-brands fa-x" /></Link></li>
                                                     <li><Link href="#"><i className="fa-brands fa-facebook-f" /></Link></li>
                                                     <li><Link href="#"><i className="fa-brands fa-instagram" /></Link></li>
                                                 </ul>
@@ -255,7 +255,7 @@ export default function Page() {
                                                 <div className="blogp-details-icon-list">
                                                     <ul>
                                                         <li>
-                                                            <Link href="#"><i className="fa-brands fa-twitter" /></Link>
+                                                            <Link href="#"><i className="fa-brands fa-x" /></Link>
                                                         </li>
                                                         <li>
                                                             <Link href="#"><i className="fa-brands fa-facebook-f" /></Link>

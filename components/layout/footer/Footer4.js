@@ -30,7 +30,7 @@ export default function Footer4() {
                                             <Link href="#"><i className="fa-brands fa-instagram" /></Link>
                                         </li>
                                         <li>
-                                            <Link href="#"><i className="fa-brands fa-twitter" /></Link>
+                                            <Link href="#"><i className="fa-brands fa-x" /></Link>
                                         </li>
                                     </ul>
                                 </div>

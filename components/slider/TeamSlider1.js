@@ -64,7 +64,7 @@ export default function TeamSlider1() {
                             <div className="about-hover-icons">
                                 <ul>
                                     <li>
-                                        <Link href="#"><i className="fa-brands fa-twitter" /></Link>
+                                        <Link href="#"><i className="fa-brands fa-x" /></Link>
                                         <Link href="#"><i className="fa-brands fa-facebook-f" /></Link>
                                         <Link href="#"><i className="fa-brands fa-instagram" /></Link>
                                         <Link href="#"><i className="fa-brands fa-github" /></Link>
@@ -88,7 +88,7 @@ export default function TeamSlider1() {
                             <div className="about-hover-icons">
                                 <ul>
                                     <li>
-                                        <Link href="#"><i className="fa-brands fa-twitter" /></Link>
+                                        <Link href="#"><i className="fa-brands fa-x" /></Link>
                                         <Link href="#"><i className="fa-brands fa-facebook-f" /></Link>
                                         <Link href="#"><i className="fa-brands fa-instagram" /></Link>
                                         <Link href="#"><i className="fa-brands fa-github" /></Link>
@@ -112,7 +112,7 @@ export default function TeamSlider1() {
                             <div className="about-hover-icons">
                                 <ul>
                                     <li>
-                                        <Link href="#"><i className="fa-brands fa-twitter" /></Link>
+                                        <Link href="#"><i className="fa-brands fa-x" /></Link>
                                         <Link href="#"><i className="fa-brands fa-facebook-f" /></Link>
                                         <Link href="#"><i className="fa-brands fa-instagram" /></Link>
                                         <Link href="#"><i className="fa-brands fa-github" /></Link>
@@ -135,7 +135,7 @@ export default function TeamSlider1() {
                             <div className="about-hover-icons">
                                 <ul>
                                     <li>
-                                        <Link href="#"><i className="fa-brands fa-twitter" /></Link>
+                                        <Link href="#"><i className="fa-brands fa-x" /></Link>
                                         <Link href="#"><i className="fa-brands fa-facebook-f" /></Link>
                                         <Link href="#"><i className="fa-brands fa-instagram" /></Link>
                                         <Link href="#"><i className="fa-brands fa-github" /></Link>
@@ -159,7 +159,7 @@ export default function TeamSlider1() {
                             <div className="about-hover-icons">
                                 <ul>
                                     <li>
-                                        <Link href="#"><i className="fa-brands fa-twitter" /></Link>
+                                        <Link href="#"><i className="fa-brands fa-x" /></Link>
                                         <Link href="#"><i className="fa-brands fa-facebook-f" /></Link>
                                         <Link href="#"><i className="fa-brands fa-instagram" /></Link>
                                         <Link href="#"><i className="fa-brands fa-github" /></Link>
@@ -183,7 +183,7 @@ export default function TeamSlider1() {
                             <div className="about-hover-icons">
                                 <ul>
                                     <li>
-                                        <Link href="#"><i className="fa-brands fa-twitter" /></Link>
+                                        <Link href="#"><i className="fa-brands fa-x" /></Link>
                                         <Link href="#"><i className="fa-brands fa-facebook-f" /></Link>
                                         <Link href="#"><i className="fa-brands fa-instagram" /></Link>
                                         <Link href="#"><i className="fa-brands fa-github" /></Link>
@@ -206,7 +206,7 @@ export default function TeamSlider1() {
                             <div className="about-hover-icons">
                                 <ul>
                                     <li>
-                                        <Link href="#"><i className="fa-brands fa-twitter" /></Link>
+                                        <Link href="#"><i className="fa-brands fa-x" /></Link>
                                         <Link href="#"><i className="fa-brands fa-facebook-f" /></Link>
                                         <Link href="#"><i className="fa-brands fa-instagram" /></Link>
                                         <Link href="#"><i className="fa-brands fa-github" /></Link>
@@ -230,7 +230,7 @@ export default function TeamSlider1() {
                             <div className="about-hover-icons">
                                 <ul>
                                     <li>
-                                        <Link href="#"><i className="fa-brands fa-twitter" /></Link>
+                                        <Link href="#"><i className="fa-brands fa-x" /></Link>
                                         <Link href="#"><i className="fa-brands fa-facebook-f" /></Link>
                                         <Link href="#"><i className="fa-brands fa-instagram" /></Link>
                                         <Link href="#"><i className="fa-brands fa-github" /></Link>

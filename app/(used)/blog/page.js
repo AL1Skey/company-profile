@@ -29,8 +29,8 @@ export default async function Page() {
     <>
       <Layout headerStyle={1} footerStyle={1} breadcrumbTitle={"Our Blog"}>
         <div className="blog-page-boxs-all sp2">
-        <TitleWithSubheader title={"Blog:"}  />
           <div className="container">
+        <TitleWithSubheader title={"Blog"}  />
             <div className="row">
               <BlogPost
                 showItem={6}
@@ -41,8 +41,8 @@ export default async function Page() {
             </div>
             <div className="space24" />
           </div>
-          <TitleWithSubheader title={"Buletin:"}  />
           <div className="container">
+          <TitleWithSubheader title={"Buletin"}  />
             <div className="row">
               <BlogPost
                 showItem={6}

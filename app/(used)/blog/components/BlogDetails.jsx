@@ -35,7 +35,7 @@ export default function BlogDetails({ id, data }) {
             breadcrumbTitle={blogPost.title}
           >
             <div className="execution-img2">
-              <img src={blogPost.img} alt="" className="tw-h-[40rem]" />
+              <img src={blogPost.img} alt="" className="tw-h-[60rem]" />
             </div>
             <div className="blog-page sp2">
               <div className="container">
@@ -96,7 +96,7 @@ export default function BlogDetails({ id, data }) {
                       </article>
                       {/* Blog details tags */}
                       <div className="blog-details-tags">
-                        <div className="blog-details-tag">
+                        {/* <div className="blog-details-tag">
                           <div className="hadding2">
                             <h4 className="font-f-2 font-16 weight-700 line-height-16">
                               Tags :
@@ -106,22 +106,12 @@ export default function BlogDetails({ id, data }) {
                             <ul>
                               <li>
                                 <Link href="#" className="font-f-2">
-                                  Business consult
+                                  {blogPost.category}
                                 </Link>
                               </li>
-                              <li>
-                                <Link href="#" className="font-f-2">
-                                  Consultant
-                                </Link>
-                              </li>
-                              <li>
-                                <Link href="#" className="font-f-2">
-                                  Consulting
-                                </Link>
-                              </li>
-                            </ul>
+                              </ul>
                           </div>
-                        </div>
+                        </div> */}
                         <div className="blog-details-icons">
                           <div className="hadding2">
                             <h4 className="font-f-2 font-16 weight-700 line-height-16">
@@ -132,7 +122,7 @@ export default function BlogDetails({ id, data }) {
                             <ul>
                               <li>
                                 <Link href="#">
-                                  <i className="fa-brands fa-twitter" />
+                                  <i className="fa-brands fa-x" />
                                 </Link>
                               </li>
                               <li>

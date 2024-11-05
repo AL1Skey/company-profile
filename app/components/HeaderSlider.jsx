@@ -55,10 +55,10 @@ export default function HeaderSlider({ slider, ...props }) {
                   }}
                 >
                   <div
-                    className="home1-hero-hadding container android:tw-px-10 android:-tw-translate-y-[10rem]"
+                    className=" home1-hero-hadding container tw-translate-y-20 android:tw-px-10 android:-tw-translate-y-[10rem]"
                     style={{ height: "40rem" }}
                   >
-                    <div className="hadding2 hadding2-main home2-header-hadding">
+                    <div className="android:!tw-pl-1 hadding2  hadding2-main home2-header-hadding">
                       <h1
                         className="font-f-2 weight-700 font-40 font-lg-60 android:tw-text-[2rem] line-height-48 line-height-lg-65"
                         style={{

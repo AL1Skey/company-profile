@@ -925,16 +925,16 @@ HOME2 HERO AREA ALL CSS----
 
 /*----===========HOME2 CITIE AREA CSS----============*/
 .citie-box {
-  background-color: #fafafa;
+  background-color: #3e90ba;
   border-radius: 15px;
   padding: 24px;
   transition: all.4s;
   min-height: 350px;
 }
-.citie-box:hover {
+/* .citie-box:hover {
   background-color: #f0fbff;
   transition: all.3s;
-}
+} */
 .citie-box-img {
   background-color: #fff;
   border-radius: 15px;
@@ -1432,6 +1432,7 @@ form.domain-search-form.my-4 {
   transition: all.4s;
   position: relative;
   overflow: hidden;
+  background-color: #006fff;
 }
 .home2-btn a::before {
   content: "";
@@ -4771,7 +4772,7 @@ p.details-p-hadding.font-18.line-height-18.weight-500.font-f-2 {
   }
 
   .cities.sp2._relative {
-    padding: 60px 0 140px 0;
+    padding: 20px 0 140px 0;
 }
 }
 

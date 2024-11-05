@@ -3,7 +3,7 @@ export default function TitleWithSubheader({
     subheader = "An amazing subheader goes here" 
   }) {
     return (
-      <div className="tw-p-4 tw-translate-x-[4rem]">
+      <div className="">
         <h1 className="tw-text-4xl md:tw-text-6xl tw-font-extrabold tw-text-gray-800 tw-mb-2">
           {title}
         </h1>

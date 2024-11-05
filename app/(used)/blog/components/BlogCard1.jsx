@@ -20,7 +20,7 @@ export default function BlogCard1({ item }) {
             </h4>
             <div className="space16" />
             <p className="font-f-2 weight-400 line-height-28 font-16">
-              ${item?.content}
+              {item?.content}
             </p>
           </div>
           <div className="space24" />

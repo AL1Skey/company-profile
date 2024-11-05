@@ -22,7 +22,7 @@ export default function Page() {
                                 <div className="col-lg-6 m-auto text-center">
                                     <div className="hadding2">
                                         <h1 className="font-f-2 weight-700 font-30 font-lg-45 line-height-30 line-height-lg-45">
-                                            Request a <span className="after">Call Back</span>
+                                            Request a Call Back
                                         </h1>
                                     </div>
                                     <div className="space60" />
@@ -48,9 +48,9 @@ export default function Page() {
                                         </div>
                                         <div className="space20" />
                                         <div className="contact-hadding">
-                                            <h4><Link href="#" className="font-f-2 font-24 line-height-24 weight-700">Phone Number</Link></h4>
+                                            <h4><Link href={`https://wa.me/${data?.phone?.replace("0","+62")}`}  className="font-f-2 font-24 line-height-24 weight-700">Phone Number</Link></h4>
                                             <div className="space20" />
-                                            <Link href={`https://wa.me/${data?.phone}`} className="font-f-2 font-20 weight-400 line-height-30">{data?.phone}</Link> <br />
+                                            <Link href={`https://wa.me/${data?.phone?.replace("0","+62")}`} className="font-f-2 font-20 weight-400 line-height-30">{data?.phone}</Link> <br />
                                         </div>
                                     </div>
                                 </div>
@@ -61,7 +61,7 @@ export default function Page() {
                                         </div>
                                         <div className="space20" />
                                         <div className="contact-hadding">
-                                            <h4><Link href="" className="font-f-2 font-24 line-height-24 weight-700">Email</Link></h4>
+                                            <h4><Link href={`/mailto:${data?.email}`} className="font-f-2 font-24 line-height-24 weight-700">Email</Link></h4>
                                             <div className="space20" />
                                             <Link href={`/mailto:${data?.email}`} className="font-f-2 font-20 weight-400 line-height-30">{data?.email}
                                             </Link>

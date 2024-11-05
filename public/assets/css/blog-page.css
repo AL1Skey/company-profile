@@ -448,6 +448,14 @@ ul.nav.nav-tabs {
   padding: 50px 48px;
   margin: 0 90px;
 }
+
+@media screen and (max-width: 769px) {
+  .faq-massge-box-all {
+    margin: 0 30px;
+  }
+  
+}
+
 .massge-single-inputs input {
   background: none;
   border: none;
@@ -782,7 +790,7 @@ margin-bottom: 36px;
   }
 }
 
-@media screen and (max-width: 426px) {
+@media screen and (max-width: 450px) {
   .blog-details-tags {
     padding: 40px 0;
     display: block; 

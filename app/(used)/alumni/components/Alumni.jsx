@@ -7,7 +7,7 @@ import React from "react";
 import Pagination from "./Pagination";
 import {handleSubmit} from "../action/action"
 import Preloader from "@/components/elements/Preloader";
-
+import {toast} from 'sonner';
 
 function getMaxAlumniLength(data) {
 
@@ -78,6 +78,7 @@ export default function Alumni({showPagination=true }) {
     key: "",
   });
   const [jurusan,setJurusan] = useState([])
+  const [dataAlumni,setDataAlumni] = useState([])
   const [loading,setLoading] = useState(false)
   /*Pagination*/
   let [currentPage, setCurrentPage] = useState(1);
@@ -97,11 +98,16 @@ export default function Alumni({showPagination=true }) {
   useEffect(()=>{
     const fetchData = async()=>{
       setLoading(true)
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/alumni?approval=true&reformat=1&offset=false`,{cache:'no-store'}).then(res => res.json())
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/alumni?approval=true&reformat=1&offset=false&limit=75`,{cache:'no-store'}).then(res => res.json())
+      const alumni = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/alumni`,{cache:'no-store'}).then(res => res.json())
+      const formattedAlumni = alumni.map((value,index)=>{
+        return value.name.toLowerCase()
+      })
       const response2 = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/jurusan`,{cache:'no-store'}).then(res => res.json())
       console.log(response2)
       setData(response)
-      setJurusan(response2.splice(0,3))
+      setDataAlumni(formattedAlumni)
+      setJurusan(response2)
       setLoading(false)
     }
     fetchData()
@@ -174,7 +180,7 @@ export default function Alumni({showPagination=true }) {
                   <div className="hadding2">
                     {/* Title */}
                     <h1 className="font-f-2 weight-700 font-30 font-lg-45 line-height-30 line-height-lg-45">
-                      Daftar <span className="after">Alumni</span>
+                      Daftar Alumni
                     </h1>
                     <div className="space24" />
                     {/* Description */}
@@ -314,7 +320,7 @@ export default function Alumni({showPagination=true }) {
                 </div>
                 {/* Right */}
                 <div className="col-lg-6 text-center ">
-                  <div className="faq-massge-box-all android:tw-w-full android:tw-m-0 ">
+                  <div className="faq-massge-box-all android:tw-w-full android:!tw-m-0 ">
                     <div className="massge-box-img">
                       <img
                         src="/assets/img/icons/faq-company-massge.svg"
@@ -330,7 +336,11 @@ export default function Alumni({showPagination=true }) {
                     </div>
                     <form className="massge-inputs">
                       <div className="massge-single-inputs">
-                        <input onChange={handleChange} type="text" placeholder="Nama*" name="name" />
+                        <input onChange={handleChange} type="text" placeholder="Nama*" name="name" required={true}/>
+                        {dataAlumni.includes(formData?.name?.toLowerCase()) && <p style={{
+                          backgroundColor:"red",
+                          color:"white"
+                        }} className="py-2 px-3">Nama sudah terdaftar</p>}
                       </div>
                       <div className="massge-single-inputs">
                         <input
@@ -338,6 +348,7 @@ export default function Alumni({showPagination=true }) {
                           type="email"
                           placeholder="Email**"
                           name="email"
+                          required={true}
                         />
                       </div>
                       <div className="massge-single-inputs">
@@ -362,6 +373,7 @@ export default function Alumni({showPagination=true }) {
                           type="text"
                           placeholder="Angkatan-ke**"
                           name="angkatan"
+                          required={true}
                         />
                       </div>
                       {/* {jurusan?.map((data)=>`${data.id} Jurusan`)} */}
@@ -373,12 +385,17 @@ export default function Alumni({showPagination=true }) {
                       </div>
                       <button type="button" onClick={handleSubmit(formData)} className="massge-button">
                         <div className="massge-btn">
-                       
                             Submit now
-                          
                         </div>
                       </button>
+
                     </form>
+                    <div className="hadding-massge">
+                      <div className="space10" />
+                      <p className=" line-height-20 font-w">
+                      *Bila ada kendala saat mengisi data silahkan hubungi admin di Contact us
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>

@@ -70,11 +70,11 @@ export default function MobileMenu({ isMobileMenu, handleMobileMenu }) {
                 Contact Us
               </Link>
             </li>
-            <li className="d-lg-none d-block hash-has-sub">
+            {/* <li className="d-lg-none d-block hash-has-sub">
               <Link href="#" className="hash-nav">
                 Sign In / Sign up{" "}
               </Link>
-            </li>
+            </li> */}
           </div>
         </div>
       </div>

@@ -390,7 +390,7 @@ a.home3-cta {
   transition: all.3s;
 }
 .main-menu-ex li a:hover {
-  color: #0263e0;
+  color: #fff;
   transition: all.3s;
 }
 .main-menu-ex li {
@@ -611,7 +611,7 @@ li.has-dropdown1 span {
   animation-duration: 1s;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
-  background-color: #ffffff;
+  background-color: #3e90ba;
   transition: all 0.3s ease-in-out;
   z-index: 99;
 }

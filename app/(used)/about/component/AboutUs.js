@@ -50,7 +50,7 @@ export default function AboutUs() {
             <Layout headerStyle={1} footerStyle={1} breadcrumbTitle="About us">
                 <div>
                     {/*=====about besnisess start=======*/}
-                    <div className="about-besniess sp2">
+                    <div className="about-besniess sp2 ">
                         <div className="container">
                             <div className="row">
                                 <div className="col-md-6 ">
@@ -66,13 +66,13 @@ export default function AboutUs() {
                                         </div> */}
                                     </div>
                                 </div>
-                                <div className="col-md-6 android:tw-mt-[10rem]">
+                                <div className="col-md-6 android:tw-mt-[10rem] ">
                                     <div className="hadding2 font-f-2">
                                         <h1 className="font-f-2 weight-700 font-30 font-lg-45 line-height-30 line-height-lg-55">
                                             {data?.aboutUs?.data?.title}
                                         </h1>
                                         <div className="space20" />
-                                        <p className="font-18 line-height-p-30 weight-400 fotn-f-2">
+                                        <p className="font-18 line-height-p-30 weight-400 fotn-f-2 !tw-text-[#202c4a]">
                                             {data?.aboutUs?.data?.description}
                                         </p>
                                         <div className="about-icon-box">
@@ -116,13 +116,13 @@ export default function AboutUs() {
                     
                     {/*=====about mission end=======*/}
                     {/*=====about choose us start=======*/}
-                    <div className="about-team sp2 page-bg">
+                    <div className="tw-bg-[#3e90ba] tw-py-5 page-bg">
                         <div className="container">
                             <div className="row">
                                 <div className="col-md-6">
                                     <div className="hadding2">
                                         <h1 className="font-f-2 weight-700 font-30 font-lg-45 line-height-30 line-height-lg-45">
-                                             <span className="after">Alumni</span>
+                                            Alumni
                                         </h1>
                                     </div>
                                 </div>
@@ -135,13 +135,13 @@ export default function AboutUs() {
                     </div>
                     {/*=====about choose us end=======*/}
                     {/*=====about vision start=======*/}
-                    <div className="about-team sp2 page-bg">
+                    <div className=" tw-py-5 page-bg">
                         <div className="container">
                             <div className="row">
                                 <div className="col-md-6">
                                     <div className="hadding2">
                                         <h1 className="font-f-2 weight-700 font-30 font-lg-45 line-height-30 line-height-lg-45">
-                                            Dewan <span className="after">Pembina</span>
+                                            Dewan Pembina
                                         </h1>
                                     </div>
                                 </div>
@@ -154,13 +154,13 @@ export default function AboutUs() {
                     </div>
                     {/*=====about vision end=======*/}
                     {/*=====about team start=======*/}
-                    <div className="about-team sp2 page-bg">
+                    <div className="tw-bg-[#3e90ba] tw-py-5 page-bg">
                         <div className="container">
                             <div className="row">
                                 <div className="col-md-6">
                                     <div className="hadding2">
                                         <h1 className="font-f-2 weight-700 font-30 font-lg-45 line-height-30 line-height-lg-45">
-                                            Tim <span className="after">Kepengurusan</span>
+                                            Pengurus IAAJ
                                         </h1>
                                     </div>
                                 </div>

@@ -115,13 +115,13 @@ export default function Footer1() {
                 <div className="foonter-contact-1">
                   <div className="foonter-contact-icon-1">
                     <div>
-                    <Link href={`https://wa.me/${data?.phone}`}>
+                    <Link href={`https://wa.me/${data?.phone?.replace("0","+62")}`}>
                       <img src="/assets/img/icons/footer-icon-1.svg" alt="" className="tw-translate-x-[7px] tw-translate-y-[7px]" />
                       </Link>
                     </div>
                   </div>
                   <div className="foonter-contact-p">
-                    <Link href={`https://wa.me/${data?.phone}`}>
+                    <Link href={`https://wa.me/${data?.phone?.replace("0","+62")}`}>
                       {data?.phone}
                     </Link>
                   </div>
@@ -146,7 +146,7 @@ export default function Footer1() {
                     <ul>
                       <li>
                         <Link href={`${data?.twitter ? data?.twitter : "#"}`}>
-                          <i className="fa-brands fa-twitter" />
+                          <i className="fa-brands fa-x" />
                         </Link>
                       </li>
                       <li>

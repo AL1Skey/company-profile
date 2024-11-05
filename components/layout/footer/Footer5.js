@@ -23,7 +23,7 @@ export default function Footer5() {
                             <div className="social social1 social5 text-start">
                                 <ul>
                                     <li>
-                                        <Link href="#"><i className="fa-brands fa-twitter" /></Link>
+                                        <Link href="#"><i className="fa-brands fa-x" /></Link>
                                     </li>
                                     <li>
                                         <Link href="#"><i className="fa-brands fa-facebook-f" /></Link>

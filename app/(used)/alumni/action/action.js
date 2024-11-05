@@ -1,5 +1,7 @@
 export const handleSubmit=async(e)=>{
-   
+   if(!e?.name){
+        return {message:"Name is required"}
+   }
 
     try {
         const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/alumni`,

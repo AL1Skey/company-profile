@@ -3,8 +3,8 @@ import Link from "next/link"
 export default function Header1({ scroll, isMobileMenu, handleMobileMenu }) {
     return (
         <>
-            <header className="">
-                <div className={`header-area d-none d-lg-block ${scroll ? "sticky" : ""}`} id="header">
+            <header className="!tw-bg-[#3e90ba]">
+                <div className={`!tw-bg-[#3e90ba] header-area d-none d-lg-block ${scroll ? "sticky" : ""}`} id="header">
                     <div className="container">
                         <div className="row">
                             <div className="col-12">
@@ -44,7 +44,7 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu }) {
                                                 </ul>
                                             </li> */}
                                             <li><Link href="/contact">Contact Us</Link></li>
-                                            <li className="d-lg-none"><Link href="#">Sign In / Sign up</Link> </li>
+                                            {/* <li className="d-lg-none"><Link href="#">Sign In / Sign up</Link> </li> */}
                                         </ul>
                                     </div>
                                     {/* <div className="header-site-btn">

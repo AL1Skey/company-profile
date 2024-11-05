@@ -12,7 +12,7 @@ export default function Karir() {
         const fetchData = async()=>{
             try {
                 setLoading(true)
-                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/karir`,{cache:'no-store'}).then(res=>res.json())
+                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/karir?skip=1`,{cache:'no-store'}).then(res=>res.json())
                 setData(response)
                 setLoading(false)
             } catch (error) {
@@ -25,13 +25,13 @@ export default function Karir() {
     console.log(data,"KARIRAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
     return (
         <>
-            <div className="cities sp2 _relative" id="cities">
+            <div className="cities tw-my-[5rem] _relative" id="cities">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-6" data-aos="fade-up" data-aos-duration={800}>
                             <div className="hadding2">
                                 <h1 className="font-f-2 weight-700 font-30 font-lg-45 line-height-30 line-height-lg-45">
-                                    <span className="after">Karir</span>
+                                    Karir
                                 </h1>
                             </div>
                         </div>

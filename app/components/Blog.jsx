@@ -68,13 +68,14 @@ export default function Blog({...props}) {
     if (loading) return <Preloader/>;
     return (
         <>
-            <div className="litings sp2" id="listings">
+            <div className="litings tw-pb-5 !tw-bg-[#3e90ba]" id="listings">
                 <div className="container">
+                <div className="space60" />
                     <div className="row align-items-center">
                         <div className="col-md-6">
                             <div className="hadding2" data-aos="fade-up" data-aos-duration={600}>
                                 <h1 className="font-f-2 weight-700 font-30 font-lg-45 line-height-30 line-height-lg-45">
-                                    Our <span className="after">Blog</span>
+                                    Our Blog
                                 </h1>
                             </div>
                         </div>
@@ -93,7 +94,7 @@ export default function Blog({...props}) {
                     <div className="row">
                         <Swiper {...swiperOptions} className="ml--15">
                             {data?.map((blog, index) => (
-                            <SwiperSlide className="siting-single-sliider android:tw-pr-10">
+                            <SwiperSlide className="siting-single-sliider android:!tw-pr-10">
                                 <div className="liting-slider-img comon-slider-img">
                                     <div className="img-border">
                                         <img src={`${blog?.image}`} alt={`${blog?.image}`} className='tw-w-full tw-h-52' />
@@ -106,12 +107,12 @@ export default function Blog({...props}) {
                                         {blog?.title}
                                         </h4>
                                         <div className="space8" />
-                                        <p className="font-16 line-height-16 weight-400">
+                                        <p className="font-16 line-height-16 weight-400 ">
                                         {blog?.description}
                                         </p>
                                         <div className="space24" />
                                         <div className="all-read-btn">
-                                            <Link href={`/blog/${index+1}`} className="font-f-2 line--height-16 font-16 weight-700">Read more <i className="fa-solid fa-arrow-right" /></Link>
+                                            <Link href={`/blog/${blog?.id}`} className="font-f-2 line--height-16 font-16 weight-700">Read more <i className="fa-solid fa-arrow-right" /></Link>
                                         </div>
                                     </div>
                                     <div className="space24" />

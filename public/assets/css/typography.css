@@ -110,6 +110,16 @@ html {
   height: 32px;
 }
 
+
+.space48 {
+  height: 48px;
+}
+
+
+.space64 {
+  height: 64px;
+}
+
 ul {
   padding: 0;
   margin: 0;

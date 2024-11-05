@@ -1,17 +1,17 @@
-
 import Layout from "@/components/layout/Layout"
 import Link from "next/link"
 export default function Page() {
 
     return (
         <>
-            <Layout headerStyle={1} footerStyle={1} breadcrumbTitle="Blog sidebar right">
+            <Layout headerStyle={1} footerStyle={1} breadcrumbTitle="Blog formats">
                 <div>
                     <div className="blog-page sp2">
                         <div className="container">
                             <div className="row">
-                                <div className="col-lg-8">
-                                    <div className="blogs padding-right">
+                                <div className="col-lg-12">
+                                    <div className="blogs">
+                                    {/* Start Detail Blog Page (Author, Date Category) */}
                                         <article className="post-blog post-format-image">
                                             <div className="single-blog">
                                                 <div className="execution-images">
@@ -49,10 +49,11 @@ export default function Page() {
                                                 </div>
                                             </div>
                                         </article>
+                                    {/* End Detail Blog Page (Author, Date Category) */}
                                         <article className="post-blog">
                                             <div className="space10" />
                                             <div className="hadding2">
-                                                <h4 className="font-f-2 font-22 line-height-22 weight-500"> <Link href="/blog-single">Business opportunities are like buses, there's always one coming</Link></h4>
+                                                <h4 className="font-f-2 font-24 line-height-28 weight-500"> <Link href="/blog-single">Business opportunities are like buses, there's always one coming</Link></h4>
                                                 <div className="space20" />
                                                 <p className="font-f-2 weight-400 line-height-28 font-16">It is important for leaders to pause and brainstorm ideas to help employees rejuvenate. Companies often believe that devoting work hours to team socialization is a waste of time. Let us consider a situation. Imagine a book with no spaces. Yes, all the words put together with the aim to make sense and deliver knowledge but without spaces. Will it be of any use? What value can it provide one it? All it can lead to is stress and confusion. Hence, it is important to take breaks.</p>
                                                 <div className="space30" />
@@ -66,12 +67,12 @@ export default function Page() {
                                             <div className="space30" />
                                             <div className="row">
                                                 <div className="col-lg-6">
-                                                    <div className="blog-post-img">
+                                                    <div className="blog-post-img border15">
                                                         <img src="/assets/img/image/blog-page1.png" alt="" />
                                                     </div>
                                                 </div>
                                                 <div className="col-lg-6">
-                                                    <div className="blog-post-img">
+                                                    <div className="blog-post-img border15">
                                                         <img src="/assets/img/image/blog-page2.png" alt="" />
                                                     </div>
                                                 </div>
@@ -94,7 +95,7 @@ export default function Page() {
                                             </div>
                                             <div className="space40" />
                                             <div className="hadding2">
-                                                <h4 className="font-f-2 font-24 line-height-24 weight-700"> <Link href="/blog-single">Groups of a dozen or more small business owners (stores, CPA's, restaurants, attorneys, real estate agents or offices</Link></h4>
+                                                <h4 className="font-f-2 font-24 line-height-28 weight-500"> <Link href="/blog-single">Groups of a dozen or more small business owners (stores, CPA's, restaurants, attorneys, real estate agents or offices</Link></h4>
                                                 <div className="space24" />
                                                 <p className="font-f-2 weight-400 line-height-28 font-16">It is important for leaders to pause and brainstorm ideas to help employees rejuvenate. Companies often believe that devoting work hours to team socialization is a waste of time. Let us consider a situation. Imagine a book with no spaces. Yes, all the words put together with the aim to make sense and deliver knowledge but without spaces. Will it be of any use? What value can it provide one it? All it can lead to is stress and confusion. Hence, it is important to take breaks. It is important to declutter and detox. It is important to clear your head and reset. We bring to you our top 5 game suggestions to engage with your team today!</p>
                                                 <div className="space24" />
@@ -132,7 +133,7 @@ export default function Page() {
                                                 <div className="blogp-details-icon-list">
                                                     <ul>
                                                         <li>
-                                                            <Link href="#"><i className="fa-brands fa-twitter" /></Link>
+                                                            <Link href="#"><i className="fa-brands fa-x" /></Link>
                                                         </li>
                                                         <li>
                                                             <Link href="#"><i className="fa-brands fa-facebook-f" /></Link>
@@ -176,7 +177,7 @@ export default function Page() {
                                                 </div>
                                                 <div >
                                                     <div className="hadding2">
-                                                        <h4 className="font-f-2 font-24 line-height-28 weight-500"> <Link href="/blog-single">Violet DuBuque</Link></h4>
+                                                        <h4 className="font-f-2 font-22 line--height-22 weight-500"> <Link href="/blog-details">Violet DuBuque</Link></h4>
                                                         <div className="space20" />
                                                         <p className="font-f-2 weight-400 line-height-28 font-16">When it comes to business, listen to Henry David Thoreau: things usually don’t happen overnight – instead, to find success takes a lot of time, effort, and courage. Opus includes everything you need to build a beautiful website. </p>
                                                     </div>
@@ -193,7 +194,7 @@ export default function Page() {
                                                 </div>
                                                 <div >
                                                     <div className="hadding2">
-                                                        <h4 className="font-f-2 font-24 line--height-28 weight-500"> <Link href="/blog-single">Forrest Altenwerth</Link></h4>
+                                                        <h4 className="font-f-2 font-22 line--height-22 weight-500"> <Link href="/blog-details">Forrest Altenwerth</Link></h4>
                                                         <div className="space20" />
                                                         <p className="font-f-2 weight-400 line-height-28 font-16">When it comes to business, listen to Henry David Thoreau: things usually don’t happen overnight – instead, to find success takes a lot of time, effort, and courage. Opus includes everything you need to build a beautiful website. </p>
                                                     </div>
@@ -209,7 +210,7 @@ export default function Page() {
                                         <div className="space50" />
                                         <div className="contact-form-all">
                                             <div className="hadding2">
-                                                <h4 className="font-f-2 font-24 line-height-28 weight-500"> <Link href="/blog-single">Leave a Comment</Link></h4>
+                                                <h4 className="font-f-2 font-22 line--height-22 weight-500"> <Link href="/blog-details">Leave a Comment</Link></h4>
                                             </div>
                                             <div className="space30" />
                                             <form action="#">
@@ -237,154 +238,16 @@ export default function Page() {
                                             </form>
                                         </div>
                                     </div>
-                                    <div className="space60" />
-                                    <div className="row text-center">
-                                        <div className="col-12 m-auto text-center">
-                                            <div className="theme-pagination text-center">
-                                                <ul>
-                                                    <li><Link href="#"><i className="fa-solid fa-angle-left" /></Link></li>
-                                                    <li><Link className="active" href="#">01</Link></li>
-                                                    <li><Link href="#">02</Link></li>
-                                                    <li>...</li>
-                                                    <li><Link href="#">12</Link></li>
-                                                    <li><Link href="#"><i className="fa-solid fa-angle-right" /></Link></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-lg-4 col-md-6">
-                                    <div className="widgets lg-ml-15">
-                                        <div className="single-widget widget_search">
-                                            <h3 className="font-f-2">Search</h3>
-                                            <div className="search-form-widget">
-                                                <form action="#">
-                                                    <input type="search" placeholder="Type keyword here" />
-                                                    <button type="submit" className="search-icon"><i className="fa-solid fa-magnifying-glass" /></button>
-                                                </form>
-                                            </div>
-                                        </div>
-                                        <div className="single-widget widget_categories">
-                                            <h3 className="font-f-2">Blog Category</h3>
-                                            <div className="space10" />
-                                            <div className="blog-category-list">
-                                                <ul>
-                                                    <li><Link className="active" href="#">Excutive consultant (10) <span><i className="fa-solid fa-angle-right" /></span></Link></li>
-                                                    <li><Link href="#" className="font-f-2">Marketing  advertising (12) <span><i className="fa-solid fa-angle-right" /></span></Link></li>
-                                                    <li><Link href="#" className="font-f-2">Accounbility  execution (08)<span><i className="fa-solid fa-angle-right" /></span></Link></li>
-                                                    <li><Link href="#" className="font-f-2">Business planning (21)<span><i className="fa-solid fa-angle-right" /></span></Link></li>
-                                                    <li><Link href="#" className="font-f-2">Privet planning (13)<span><i className="fa-solid fa-angle-right" /></span></Link></li>
-                                                    <li><Link href="#" className="font-f-2">Mutual invest planning (06)<span><i className="fa-solid fa-angle-right" /></span></Link></li>
-                                                    <li><Link href="#" className="font-f-2">Project managment  (1)<span><i className="fa-solid fa-angle-right" /></span></Link></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div className="single-widget single-widget-post-sidebar">
-                                            <h3 className="font-f-2">Search</h3>
-                                            <div className="recent-post">
-                                                <div >
-                                                    <div className="recent-img">
-                                                        <img src="/assets/img/image/blog-details-side1.png" alt="" />
-                                                    </div>
-                                                </div>
-                                                <div className="recent-post-content">
-                                                    <div className="blog-date-time">
-                                                        <ul className="blog-date">
-                                                            <li><img src="/assets/img/icons/date.svg" alt="" /> 11/02/2022</li>
-                                                        </ul>
-                                                    </div>
-                                                    <h6><Link href="#" className="font-f-2">Leadership Burnout: What causes it and how avoid it.</Link></h6>
-                                                </div>
-                                            </div>
-                                            <div className="recent-post">
-                                                <div >
-                                                    <div className="recent-img">
-                                                        <img src="/assets/img/image/blog-details-side2.png" alt="" />
-                                                    </div>
-                                                </div>
-                                                <div className="recent-post-content">
-                                                    <div className="blog-date-time">
-                                                        <ul className="blog-date">
-                                                            <li><img src="/assets/img/icons/date.svg" alt="" /> 11/02/2022</li>
-                                                        </ul>
-                                                    </div>
-                                                    <h6><Link href="#" className="font-f-2">New Consulting For All Kind Offer Finance...</Link></h6>
-                                                </div>
-                                            </div>
-                                            <div className="recent-post">
-                                                <div >
-                                                    <div className="recent-img">
-                                                        <img src="/assets/img/image/blog-details-side3.png" alt="" />
-                                                    </div>
-                                                </div>
-                                                <div className="recent-post-content">
-                                                    <div className="blog-date-time">
-                                                        <ul className="blog-date">
-                                                            <li><img src="/assets/img/icons/date.svg" alt="" /> 11/02/2022</li>
-                                                        </ul>
-                                                    </div>
-                                                    <h6><Link href="#" className="font-f-2">What we are capable to usually discovered...</Link></h6>
-                                                </div>
-                                            </div>
-                                            <div className="recent-post">
-                                                <div >
-                                                    <div className="recent-img">
-                                                        <img src="/assets/img/image/blog-details-side4.png" alt="" />
-                                                    </div>
-                                                </div>
-                                                <div className="recent-post-content">
-                                                    <div className="blog-date-time">
-                                                        <ul className="blog-date">
-                                                            <li><img src="/assets/img/icons/date.svg" alt="" /> 11/02/2022</li>
-                                                        </ul>
-                                                    </div>
-                                                    <h6><Link href="#" className="font-f-2">Questions every work business owner able...</Link></h6>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="sidebar-img-box-all text-center">
-                                            <div className="sidebar-img">
-                                                <img src="/assets/img/image/sidebar-box-img.png" alt="" />
-                                            </div>
-                                            <div className="sidebar-box-hadding">
-                                                <div className="space16" />
-                                                <h4><Link href="#" className="font-f-2 font-20 line-height-20 weight-500 font-w">Alex Blake</Link></h4>
-                                                <div className="space24" />
-                                                <p className="font-f-2 font-16 line-height-26 weight-400 font-w">When it comes to business, listen to Henry David Thoreau: things usually don’t happen overnight – instead, to find success takes a lot of time, effort, and courage. Opus includes everything you need to build a beautiful website.</p>
-                                            </div>
-                                            <div className="details-side-box-icon">
-                                                <div className="space24" />
-                                                <ul>
-                                                    <li><Link href="#"><i className="fa-brands fa-twitter" /></Link></li>
-                                                    <li><Link href="#"><i className="fa-brands fa-facebook-f" /></Link></li>
-                                                    <li><Link href="#"><i className="fa-brands fa-instagram" /></Link></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div className="single-widget widget_tag_cloud">
-                                            <h3 className="font-f-2">Tags</h3>
-                                            <div className="space10" />
-                                            <div className="tagcloud">
-                                                <Link href="#" className="font-f-2">Healthcare</Link>
-                                                <Link href="#" className="font-f-2">Consult</Link>
-                                                <Link href="#" className="font-f-2">Cahless</Link>
-                                                <Link href="#" className="font-f-2">Cyberattacks</Link>
-                                                <Link href="#" className="font-f-2">Meeting</Link>
-                                                <Link href="#" className="font-f-2">Leadership</Link>
-                                                <Link href="#" className="font-f-2">Health Insurace</Link>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="page-bg sp2">
+                    <div className="blog-realeted page-bg sp2">
                         <div className="container">
                             <div className="row">
                                 <div className="col-lg-8">
                                     <div className="hadding2 font-f-2">
-                                        <h1 className="font-f-2 weight-700 font-30 font-lg-45 line-height-30 line-height-lg-45">
+                                        <h1 className="font-f-2 weight-500 font-30 font-lg-45 line-height-30 line-height-lg-45">
                                             Read our <span className="after">realeted blog</span>
                                         </h1>
                                     </div>
@@ -393,7 +256,7 @@ export default function Page() {
                             <div className="space40" />
                             <div className="row">
                                 <div className="col-lg-4">
-                                    <div className="blog-page-boxs">
+                                    <div className="blog-page-boxs blog-page-boxs1">
                                         <div className="blog-boxs-img">
                                             <img src="/assets/img/image/blog-page1.png" alt="" />
                                         </div>
@@ -410,7 +273,7 @@ export default function Page() {
                                     </div>
                                 </div>
                                 <div className="col-lg-4">
-                                    <div className="blog-page-boxs">
+                                    <div className="blog-page-boxs blog-page-boxs1">
                                         <div className="blog-boxs-img">
                                             <img src="/assets/img/image/blog-page2.png" alt="" />
                                         </div>
@@ -427,7 +290,7 @@ export default function Page() {
                                     </div>
                                 </div>
                                 <div className="col-lg-4">
-                                    <div className="blog-page-boxs">
+                                    <div className="blog-page-boxs blog-page-boxs1">
                                         <div className="blog-boxs-img">
                                             <img src="/assets/img/image/blog-page3.png" alt="" />
                                         </div>

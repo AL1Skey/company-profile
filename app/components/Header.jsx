@@ -28,7 +28,7 @@ export default function Header() {
     console.log(data,"HEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD")
     return (
         <>
-        <div className="hero-area" style={{ marginTop:"7rem" }}>
+        <div className="hero-area" style={{ marginTop:"6rem" }}>
         <HeaderSlider slider={data} />
         </div>
         </>

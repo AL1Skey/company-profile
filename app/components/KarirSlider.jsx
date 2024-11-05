@@ -67,19 +67,20 @@ export default function KarirSlider({ data }) {
               <div className="citie-haddings">
                 <div>
                   <div className="citie-hadding hadding2">
-                    <h4 className="font-f-2 line-height-22 font-20 weight-500">
+                    <h4 className="font-f-2 tw-text-white line-height-22 font-20 weight-500">
                       {karir.title}
                     </h4>
                     <div className="space10" />
-                    <p className="font-f-2 font-16 line-height-16 weight-400">
+                    <p className="font-f-2 !tw-text-white font-16 line-height-16 weight-400">
                       Berakhir pada {karir.end_date}
                     </p>
                   </div>
                 </div>
                 <div>
-                  <div className="citie-bottom-btn">
+                  {/* <div className="citie-bottom-btn"> */}
+                    <div className="">
                     <Link
-                      className="font-f-2 font-16 weight-500"
+                      className="font-f-2 font-16 weight-500 tw-py-4 tw-px-3 tw-rounded-xl tw-bg-white tw-text-black hover:tw-bg-[#E4322C] hover:tw-text-[#fff]"
                       href={`/karir#${karir.id}${karir.title}`}
                     >
                       Details

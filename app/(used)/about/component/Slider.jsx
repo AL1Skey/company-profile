@@ -76,7 +76,7 @@ export default function Slider({ className = "",useIcon=true,data, ...props }) {
                   <ul>
                     <li>
                       <Link href={slide?.twitter}>
-                        <i className="fa-brands fa-twitter" />
+                        <i className="fa-brands fa-x" />
                       </Link>
                       <Link href={slide?.facebook}>
                         <i className="fa-brands fa-facebook-f" />

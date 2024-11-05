@@ -96,7 +96,7 @@ export default function BlogDetails() {
                                                     <div className="blogp-details-icon-list">
                                                         <ul>
                                                             <li>
-                                                                <Link href="#"><i className="fa-brands fa-twitter" /></Link>
+                                                                <Link href="#"><i className="fa-brands fa-x" /></Link>
                                                             </li>
                                                             <li>
                                                                 <Link href="#"><i className="fa-brands fa-facebook-f" /></Link>
@@ -211,7 +211,7 @@ export default function BlogDetails() {
                                     <div className="col-lg-8">
                                         <div className="hadding2 font-f-2">
                                             <h1 className="font-f-2 weight-500 font-30 font-lg-45 line-height-30 line-height-lg-45">
-                                                Read our <span className="after">realeted blog</span>
+                                                Read our realeted blog
                                             </h1>
                                         </div>
                                     </div>
