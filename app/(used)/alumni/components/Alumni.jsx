@@ -5,39 +5,30 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import React from "react";
 import Pagination from "./Pagination";
-import {handleSubmit} from "../action/action"
+import { handleSubmit } from "../action/action";
 import Preloader from "@/components/elements/Preloader";
-import {toast} from 'sonner';
+import { toast } from "sonner";
+import { isPagesAPIRouteMatch } from "next/dist/server/future/route-matches/pages-api-route-match";
 
 function getMaxAlumniLength(data) {
-
   let maxLength = 0; // Initialize maxLength to 0
-
 
   // Iterate through each angkatan
 
+  data.forEach((alumniEntry) => {
+    // Check the length of the Alumni array
 
-      data.forEach(alumniEntry => {
+    const currentLength = alumniEntry.Alumni.length;
 
-          // Check the length of the Alumni array
+    // Update maxLength if currentLength is greater
 
-          const currentLength = alumniEntry.Alumni.length;
-
-          // Update maxLength if currentLength is greater
-
-          if (currentLength > maxLength) {
-
-              maxLength = currentLength;
-
-          }
-
+    if (currentLength > maxLength) {
+      maxLength = currentLength;
+    }
   });
 
-
   return maxLength; // Return the maximum length found
-
 }
-
 
 /*
     
@@ -72,82 +63,155 @@ function getMaxAlumniLength(data) {
     )
 */
 
-export default function Alumni({showPagination=true }) {
+export default function Alumni({ showPagination = true }) {
   const [isActive, setIsActive] = useState({
     status: false,
     key: "",
   });
-  const [jurusan,setJurusan] = useState([])
-  const [dataAlumni,setDataAlumni] = useState([])
-  const [loading,setLoading] = useState(false)
+  const [jurusan, setJurusan] = useState([]);
+  const [dataAlumni, setDataAlumni] = useState([]);
+  const [loading, setLoading] = useState(false);
   /*Pagination*/
-  let [currentPage, setCurrentPage] = useState(1);
-  let showLimit = 6,
-    paginationItem = 4;
   const [data, setData] = useState([]);
-  const [formData, setFormData] = useState({}); 
-
+  const [formData, setFormData] = useState({});
+  const [currentPage, setCurrentPage] = useState(1);
+  const [pages, setPages] = useState(1);
   function handleChange(e) {
-    console.log(e.target.name)
+    console.log(e.target.name);
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
   }
 
-  useEffect(()=>{
-    const fetchData = async()=>{
-      setLoading(true)
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/alumni?approval=true&reformat=1&offset=false&limit=75`,{cache:'no-store'}).then(res => res.json())
-      const alumni = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/alumni`,{cache:'no-store'}).then(res => res.json())
-      const formattedAlumni = alumni.map((value,index)=>{
-        return value.name.toLowerCase()
-      })
-      const response2 = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/jurusan`,{cache:'no-store'}).then(res => res.json())
-      console.log(response2)
-      setData(response)
-      setDataAlumni(formattedAlumni)
-      setJurusan(response2)
-      setLoading(false)
-    }
-    fetchData()
-  },[])
-  let [pagination, setPagination] = useState([]);
-  let [limit, setLimit] = useState(showLimit);
-  let [pages, setPages] = useState(Math.ceil(data?.length / limit));
-
   useEffect(() => {
-    cratePagination();
-  }, [limit, pages, data?.length]);
+    const fetchData = async () => {
+      setLoading(true);
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/public/alumni-angkatan?approval=true&reformat=1`,
+        { cache: "no-store" }
+      ).then((res) => res.json());
+      const alumni = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/public/alumni-angkatan`,
+        { cache: "no-store" }
+      ).then((res) => res.json());
+      const formattedAlumni = alumni.map((value, index) => {
+        return value.name.toLowerCase();
+      });
+      const response2 = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/public/jurusan`,
+        { cache: "no-store" }
+      ).then((res) => res.json());
+      console.log(response2);
+      setData(response);
+      setDataAlumni(formattedAlumni);
+      setJurusan(response2);
+      setLoading(false);
+    };
+    fetchData();
+  }, []);
 
-  const cratePagination = () => {
-    // set pagination
-    let arr = new Array(Math.ceil(data?.length / limit))
-      .fill()
-      .map((_, idx) => idx + 1);
+  const getPaginatedProducts = data;
 
-    setPagination(arr);
-    setPages(Math.ceil(data?.length / limit));
-  };
-
-  const startIndex = currentPage * limit - limit;
-  const endIndex = startIndex + limit;
-  const getPaginatedProducts = data?.slice(startIndex, endIndex);
-
-  let start = Math.floor((currentPage - 1) / paginationItem) * paginationItem;
-  let end = start + paginationItem;
-  const getPaginationGroup = pagination.slice(start, end);
+  const [getPaginationGroup, setGetPaginationGroup] = useState([1, 2]);
 
   const next = () => {
-    setCurrentPage((page) => page + 1);
+    async function fetchData() {
+      setLoading(true)
+      const response = await fetch(
+        `${
+          process.env.NEXT_PUBLIC_API_URL
+        }/public/alumni-angkatan?approval=true&reformat=1&pages=${
+          currentPage + 1
+        }`
+      ).then((res) => res.json());
+      if (response.length === 0) {
+        setLoading(false)
+        return;
+      }
+      setData(response);
+      setCurrentPage((page) => page + 1);
+      setGetPaginationGroup((group) => group.map((item) => item + 1));
+      setLoading(false)
+    }
+    fetchData();
   };
 
   const prev = () => {
-    setCurrentPage((page) => page - 1);
+    async function fetchData() {
+      setLoading(true)
+      const response = await fetch(
+        `${
+          process.env.NEXT_PUBLIC_API_URL
+        }/public/alumni-angkatan?approval=true&reformat=1&pages=${
+          currentPage + 1
+        }`
+      ).then((res) => res.json());
+      if (response.length === 0) {
+        setLoading(false)
+        return;
+      }
+      setData(response);
+      setCurrentPage((page) => page - 1);
+      setGetPaginationGroup((group) => group.map((item) => item - 1));
+      setLoading(false)
+    }
+    fetchData();
   };
 
   const handleActive = (item) => {
-    setCurrentPage(item);
+    async function fetchData() {
+      setLoading(true)
+      const response = await fetch(
+        `${
+          process.env.NEXT_PUBLIC_API_URL
+        }/public/alumni-angkatan?approval=true&reformat=1&pages=${
+          item
+        }`
+      ).then((res) => res.json());
+      // Response Next
+      const responseNext = await fetch(
+        `${
+          process.env.NEXT_PUBLIC_API_URL
+        }/public/alumni-angkatan?approval=true&reformat=1&pages=${
+          item+1
+        }`
+      ).then((res) => res.json());
+      // Response Prev
+      const responsePrev = await fetch(
+        `${
+          process.env.NEXT_PUBLIC_API_URL
+        }/public/alumni-angkatan?approval=true&reformat=1&pages=${
+          item-1
+        }`
+      ).then((res) => res.json());
+
+      // Log
+      console.log("ITEMAHSDKASHEUFHU", `${
+        process.env.NEXT_PUBLIC_API_URL
+      }/public/alumni-angkatan?approval=true&reformat=1&pages=${
+        item
+      }`);
+      console.log("RESPONSESSIDAFHAOHSDFLAHDSFH",response);
+      
+      // If not Exists
+      if (response.length === 0) {
+        alert("NoResponse")
+        setLoading(false)
+        return;
+      }
+      setData(response);
+      // If Exists
+      if(currentPage > item && responsePrev.length > 0){
+        setGetPaginationGroup((group) => group.map((item) => item - 1));
+      }
+      if(currentPage < item && responseNext.length > 0){
+        setGetPaginationGroup((group) => group.map((item) => item + 1));
+      }
+      setCurrentPage(item);
+      setLoading(false)
+    }
+    fetchData();
   };
 
   /* Ebd of Pagination*/
@@ -163,8 +227,8 @@ export default function Alumni({showPagination=true }) {
       });
     }
   };
-  if(loading){
-    return <Preloader/>
+  if (loading) {
+    return <Preloader />;
   }
   return (
     <>
@@ -239,7 +303,9 @@ export default function Alumni({showPagination=true }) {
                                     ))}
                                   </thead>
                                   <tbody className="tw-divide-y tw-divide-gray-200">
-                                    {Array.from({length:getMaxAlumniLength(value.alumni)}).map((alumni, index2) => (
+                                    {Array.from({
+                                      length: getMaxAlumniLength(value.alumni),
+                                    }).map((alumni, index2) => (
                                       <tr
                                         className={
                                           index2 % 2 === 0
@@ -248,11 +314,16 @@ export default function Alumni({showPagination=true }) {
                                         }
                                         key={index2}
                                       >
-                                        {Array.from({length:value.alumni.length}).map((nama, index3) => (
-                                            <td className="tw-px-6 tw-py-4 tw-whitespace-nowrap tw-text-sm tw-font-medium">
-                                              {value.alumni[index3].Alumni[index2]}
-                                            </td>
-                                      
+                                        {Array.from({
+                                          length: value.alumni.length,
+                                        }).map((nama, index3) => (
+                                          <td className="tw-px-6 tw-py-4 tw-whitespace-nowrap tw-text-sm tw-font-medium">
+                                            {
+                                              value.alumni[index3].Alumni[
+                                                index2
+                                              ]
+                                            }
+                                          </td>
                                         ))}
                                       </tr>
                                     ))}
@@ -306,16 +377,58 @@ export default function Alumni({showPagination=true }) {
                                             </div>
                                             </div> */}
                     </div>
-                    {showPagination && (
-                      <Pagination
-                        getPaginationGroup={getPaginationGroup}
-                        currentPage={currentPage}
-                        pages={pages}
-                        next={next}
-                        prev={prev}
-                        handleActive={handleActive}
-                      />
-                    )}
+                    {/* PAGINATION */}
+                    <div className="space60" />
+                    <div className="row">
+                      <div className="col-12 m-auto">
+                        <div className="theme-pagination text-center">
+                          <ul>
+                            {/* {getPaginationGroup.length <= 0 ? null : (
+                              <li
+                                onClick={prev}
+                                className="next_link page-item"
+                              >
+                                {currentPage === 1 ? null : (
+                                  <a>
+                                    <i className="fa-solid fa-angle-left" />
+                                  </a>
+                                )}
+                              </li>
+                            )} */}
+
+                            {getPaginationGroup.map((item, index) => {
+                              return (
+                                <li
+                                  onClick={() => handleActive(item)}
+                                  key={index}
+                                  className={
+                                    currentPage === item
+                                      ? "page-item active"
+                                      : "page-item"
+                                  }
+                                >
+                                  <a className="page-link">{item}</a>
+                                </li>
+                              );
+                            })}
+
+                            {/* {getPaginationGroup.length >= 0 ? null : (
+                              <li
+                                onClick={next}
+                                className="next_link page-item"
+                              >
+                                {currentPage >= pages ? null : (
+                                  <a>
+                                    <i className="fa-solid fa-angle-right" />
+                                  </a>
+                                )}
+                              </li>
+                            )} */}
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    {/* END OF PAGINATION */}
                   </div>
                 </div>
                 {/* Right */}
@@ -336,15 +449,28 @@ export default function Alumni({showPagination=true }) {
                     </div>
                     <form className="massge-inputs">
                       <div className="massge-single-inputs">
-                        <input onChange={handleChange} type="text" placeholder="Nama*" name="name" required={true}/>
-                        {dataAlumni.includes(formData?.name?.toLowerCase()) && <p style={{
-                          backgroundColor:"red",
-                          color:"white"
-                        }} className="py-2 px-3">Nama sudah terdaftar</p>}
+                        <input
+                          onChange={handleChange}
+                          type="text"
+                          placeholder="Nama*"
+                          name="name"
+                          required={true}
+                        />
+                        {dataAlumni.includes(formData?.name?.toLowerCase()) && (
+                          <p
+                            style={{
+                              backgroundColor: "red",
+                              color: "white",
+                            }}
+                            className="py-2 px-3"
+                          >
+                            Nama sudah terdaftar
+                          </p>
+                        )}
                       </div>
                       <div className="massge-single-inputs">
                         <input
-                        onChange={handleChange}
+                          onChange={handleChange}
                           type="email"
                           placeholder="Email**"
                           name="email"
@@ -353,7 +479,7 @@ export default function Alumni({showPagination=true }) {
                       </div>
                       <div className="massge-single-inputs">
                         <input
-                        onChange={handleChange}
+                          onChange={handleChange}
                           type="text"
                           placeholder="No. HP**"
                           name="phone"
@@ -361,7 +487,7 @@ export default function Alumni({showPagination=true }) {
                       </div>
                       <div className="massge-single-inputs">
                         <input
-                        onChange={handleChange}
+                          onChange={handleChange}
                           type="text"
                           placeholder="Pekerjaan**"
                           name="jobs"
@@ -369,7 +495,7 @@ export default function Alumni({showPagination=true }) {
                       </div>
                       <div className="massge-single-inputs">
                         <input
-                        onChange={handleChange}
+                          onChange={handleChange}
                           type="text"
                           placeholder="Angkatan-ke**"
                           name="angkatan"
@@ -380,20 +506,24 @@ export default function Alumni({showPagination=true }) {
                       <div className="massge-single-inputs">
                         <select name="jurusan" onChange={handleChange} id="">
                           <option>Jurusan**</option>
-                          {jurusan?.map((data,index)=>(<option value={data.id}>{data.name}</option>))}
+                          {jurusan?.map((data, index) => (
+                            <option value={data.id}>{data.name}</option>
+                          ))}
                         </select>
                       </div>
-                      <button type="button" onClick={handleSubmit(formData)} className="massge-button">
-                        <div className="massge-btn">
-                            Submit now
-                        </div>
+                      <button
+                        type="button"
+                        onClick={handleSubmit(formData)}
+                        className="massge-button"
+                      >
+                        <div className="massge-btn">Submit now</div>
                       </button>
-
                     </form>
                     <div className="hadding-massge">
                       <div className="space10" />
                       <p className=" line-height-20 font-w">
-                      *Bila ada kendala saat mengisi data silahkan hubungi admin di Contact us
+                        *Bila ada kendala saat mengisi data silahkan hubungi
+                        admin di Contact us
                       </p>
                     </div>
                   </div>
