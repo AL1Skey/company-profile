@@ -102,12 +102,25 @@ export default function Alumni({ showPagination = true }) {
       const formattedAlumni = alumni.map((value, index) => {
         return value.name.toLowerCase();
       });
+      const sortedAlumni = alumni.map((value, index) => {
+        const sortedItem = value.alumni.sort((item1, item2) => {
+          let val1 = item1.attr,
+              val2 = item2.attr;
+          if (val1 == val2) return 0;
+          if (val1 > val2) return 1;
+          if (val1 < val2) return -1;
+        })
+        return {
+          ...value,
+          alumni: sortedItem
+        }
+      });
       const response2 = await fetch(
         `${process.env.NEXT_PUBLIC_API_URL}/public/jurusan`,
         { cache: "no-store" }
       ).then((res) => res.json());
       console.log(response2);
-      setData(response);
+      setData(sortedAlumni);
       setDataAlumni(formattedAlumni);
       setJurusan(response2);
       setLoading(false);

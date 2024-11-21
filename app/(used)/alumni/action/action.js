@@ -20,6 +20,9 @@ export const handleSubmit=async(e)=>{
             }
         ).then(res=>res.json()).catch((err)=>{throw new Error(err)})
         console.log(response)
+        if(response?.message){
+            return response
+        }
         return true
     } catch (error) {
         console.log(error)

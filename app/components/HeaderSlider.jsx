@@ -33,7 +33,7 @@ export default function HeaderSlider({ slider, ...props }) {
   return (
     <header className="w-full">
       <Swiper
-        spaceBetween={30}
+        // spaceBetween={30}
         centeredSlides={true}
         autoplay={{
           delay: 5000,

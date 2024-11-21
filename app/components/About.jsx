@@ -32,7 +32,7 @@ export default function About() {
                                     <img src="/assets/img/shapes/apartment-img-1.svg" alt="" />
                                 </div> */}
                                 <div className="apartment-img2 tw-p-5 tw-w-full tw-h-full" >
-                                    <img className="tw-w-full tw-h-full" src={data?.image} alt="" />
+                                    <img className="tw-w-[470px] tw-h-[600px]" src={data?.image} alt="" />
                                 </div>
                                 {/* <div className="apartment-img3" data-aos="zoom-out" data-aos-duration={1300}>
                                     <img src="/assets/img/shapes/apartment-img-3.svg" alt="" />

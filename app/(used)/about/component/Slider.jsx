@@ -101,6 +101,9 @@ export default function Slider({ className = "",useIcon=true,data, ...props }) {
               <p className="font-f-2 weight-400 line-height-28 font-16">
               {slide?.position}
               </p>
+              <p className="font-f-2 weight-400 line-height-28 font-16">
+              Angkatan Ke-{slide?.angkatan}
+              </p>
               <div className="space10" />
               <p className="font-f-2 weight-400 line-height-28 font-16">
               {slide?.description}

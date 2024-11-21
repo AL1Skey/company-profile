@@ -1,5 +1,5 @@
 import Link from "next/link";
-
+import truncate from 'truncate-html'
 export default function BlogCard1({ item }) {
   return (
     <>
@@ -19,9 +19,9 @@ export default function BlogCard1({ item }) {
               <Link href={`/blog/${item.id}`}>{item.title}</Link>
             </h4>
             <div className="space16" />
-            <p className="font-f-2 weight-400 line-height-28 font-16">
-              {item?.content}
-            </p>
+            <div dangerouslySetInnerHTML={{__html:`${truncate(item.content,10,{byWords:true})}` }} className="font-f-2 weight-400 line-height-28 font-16">
+              
+            </div>
           </div>
           <div className="space24" />
           <div className="all-read-btn">

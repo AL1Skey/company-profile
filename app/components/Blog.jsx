@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { Navigation} from "swiper/modules"
 import { Swiper, SwiperSlide } from "swiper/react"
-
+import truncate from 'truncate-html'
 const swiperOptions = {
     modules: [Navigation],
     slidesPerView: 3,
@@ -107,9 +107,11 @@ export default function Blog({...props}) {
                                         {blog?.title}
                                         </h4>
                                         <div className="space8" />
-                                        <p className="font-16 line-height-16 weight-400 ">
-                                        {blog?.description}
-                                        </p>
+                                        <div className="font-16 line-height-16 weight-400 "
+                                        dangerouslySetInnerHTML={{__html:`${truncate(blog.description,10,{byWords:true})}` }}
+                                        >
+                                        
+                                        </div>
                                         <div className="space24" />
                                         <div className="all-read-btn">
                                             <Link href={`/blog/${blog?.id}`} className="font-f-2 line--height-16 font-16 weight-700">Read more <i className="fa-solid fa-arrow-right" /></Link>

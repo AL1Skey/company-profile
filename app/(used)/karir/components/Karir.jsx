@@ -49,7 +49,7 @@ export default function Karir() {
     const [data, setData] = useState([])
     useEffect(()=>{
         const fetchData = async()=>{
-            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/karir`,{cache:'no-store'}).then(res=>res.json())
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/karir?skip=1`,{cache:'no-store'}).then(res=>res.json())
             setData(response)
         }
         fetchData()

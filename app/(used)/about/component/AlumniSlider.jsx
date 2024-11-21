@@ -12,7 +12,7 @@ export default function AlumniSlider({ className = "",useIcon=false,data, ...pro
       delay: 2500,
       disableOnInteraction: false,
     },
-    loop: true,
+    // loop: true,
 
     // Navigation
     navigation: {
@@ -59,6 +59,12 @@ export default function AlumniSlider({ className = "",useIcon=false,data, ...pro
         {...swiperOptions}
         className="about-team-slider-all tw-overflow-visible! comon-slider"
       >
+        <div className="h1p">
+          <i className="fa fa-angle-left" />
+        </div>
+        <div className="h1n">
+          <i className="fa fa-angle-right" />
+        </div>
         {data?.map((alumni, index) => (
           <SwiperSlide key={index} className="about-slider-single text-center">
             <div className="tw-group tw-relative tw-overflow-hidden tw-rounded-lg tw-transition-all tw-duration-300 tw-ease-in-out hover:tw-z-10 hover:tw-shadow-xl">
@@ -97,6 +103,9 @@ export default function AlumniSlider({ className = "",useIcon=false,data, ...pro
                 <Link href="#">{alumni.name}</Link>
               </h4>
               {/* <div className="space10" /> */}
+              <p className="font-f-2 weight-400 line-height-28 font-16">
+                Angkatan-{alumni.angkatan}
+              </p>
               <p className="font-f-2 weight-400 line-height-28 font-16">
                 {alumni.jobs}
               </p>

@@ -6,15 +6,23 @@ import Layout from "@/components/layout/Layout";
 import Link from "next/link";
 // import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import { usePathname } from 'next/navigation'
 
+const isBrowser = () => typeof window !== 'undefined';
 export default function BlogDetails({ id, data }) {
   const [isOpen, setOpen] = useState(false);
   // const Router = useParams(); // Get the dynamic ID from the URL
   const [blogPost, setBlogPost] = useState(data);
   // Get the dynamic id // Default to 1 if no ID is provided
-
+  const [pathname, setPathname] = useState('');
+  const message = `Check this out: ${pathname}`;
+  const instagramUrl = `instagram://direct-share/share?text=${encodeURIComponent(message)}`;
+  
   useEffect(() => {
     // Fetch blog post by id on the client side
+    if (isBrowser()) {
+      setPathname(window.location.href);
+    }
     const fetchBlogPost = async () => {
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_API_URL}/public/blog/${id}?reformat=1`,
@@ -81,15 +89,9 @@ export default function BlogDetails({ id, data }) {
                               <Link href="/blog-single">{blogPost.title}</Link>
                             </h4>
                             <div className="space32" />
-                            <p className="font-f-2 weight-400 line-height-28 font-16">
-                              {blogPost?.content?.split("\n")?.length > 0
-                                ? blogPost.content
-                                    .split("\n")
-                                    .map((value, index) => (
-                                      <p key={index}>{value}</p>
-                                    ))
-                                : blogPost.content}
-                            </p>
+                            <div dangerouslySetInnerHTML={{__html:`${blogPost.content}` }} className="font-f-2 weight-400 line-height-28 font-16">
+                              
+                            </div>
                             <div className="space40" />
                           </div>
                         </div>
@@ -121,23 +123,23 @@ export default function BlogDetails({ id, data }) {
                           <div className="blogp-details-icon-list">
                             <ul>
                               <li>
-                                <Link href="#">
+                                <Link href={`https://twitter.com/intent/tweet?text=Check%20this%20out!&url=${pathname}`}>
                                   <i className="fa-brands fa-x" />
                                 </Link>
                               </li>
                               <li>
-                                <Link href="#">
+                                <Link href={`https://www.facebook.com/sharer/sharer.php?u=${pathname}`}>
                                   <i className="fa-brands fa-facebook-f" />
                                 </Link>
                               </li>
-                              <li>
-                                <Link href="#">
+                              {/* <li>
+                                <Link href={instagramUrl}>
                                   <i className="fa-brands fa-instagram" />
                                 </Link>
-                              </li>
+                              </li> */}
                               <li>
                                 <Link
-                                  href="whatsapp://send?text=The text to share!"
+                                  href={`whatsapp://send?text=Check out this blog post: ${pathname}`}
                                   data-action="share/whatsapp/share"
                                 >
                                   <i className="fa-brands fa-whatsapp" />
