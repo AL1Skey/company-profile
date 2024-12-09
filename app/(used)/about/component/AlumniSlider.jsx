@@ -67,11 +67,12 @@ export default function AlumniSlider({ className = "",useIcon=false,data, ...pro
         </div>
         {data?.map((alumni, index) => (
           <SwiperSlide key={index} className="about-slider-single text-center">
-            <div className="tw-group tw-relative tw-overflow-hidden tw-rounded-lg tw-transition-all tw-duration-300 tw-ease-in-out hover:tw-z-10 hover:tw-shadow-xl">
+            <div className="tw-group tw-relative tw-overflow-hidden tw-rounded-lg tw-transition-all tw-duration-300 tw-ease-in-out hover:tw-z-10">
               <div className=" tw-overflow-hidden">
                 <img
                   src={alumni?.image}
-                  className={`tw-transition-transform tw-duration-300 tw-ease-in-out ${className !=="" ?  className : "tw-scale-75  tw-w-full tw-h-[25rem] group-hover:tw-scale-100"}`}
+                  // className={`tw-transition-transform tw-duration-300 tw-ease-in-out ${className !=="" ?  className : "tw-scale-75  tw-w-full tw-h-[25rem] group-hover:tw-scale-100"}`}
+                  className="tw-w-[9rem] tw-h-[9rem] tw-mx-auto tw-transition-transform tw-duration-300 tw-ease-in-out tw-scale-100  group-hover:tw-scale-125"
                   alt="Team member"
                 />
               </div>
@@ -103,11 +104,11 @@ export default function AlumniSlider({ className = "",useIcon=false,data, ...pro
                 <Link href="#">{alumni.name}</Link>
               </h4>
               {/* <div className="space10" /> */}
-              <p className="font-f-2 weight-400 line-height-28 font-16">
-                Angkatan-{alumni.angkatan}
-              </p>
-              <p className="font-f-2 weight-400 line-height-28 font-16">
+              <p className="font-f-2 !tw-text-white weight-400 line-height-28 font-16">
                 {alumni.jobs}
+              </p>
+              <p className="font-f-2 !tw-text-white weight-400 line-height-28 font-16">
+                Angkatan-{alumni.angkatan}
               </p>
               <div className="space10" />
             </div>

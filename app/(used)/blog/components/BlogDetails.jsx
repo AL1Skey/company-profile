@@ -42,8 +42,8 @@ export default function BlogDetails({ id, data }) {
             footerStyle={1}
             breadcrumbTitle={blogPost.title}
           >
-            <div className="execution-img2">
-              <img src={blogPost.img} alt="" className="tw-h-[60rem]" />
+            <div className="">
+              <img src={blogPost.img} alt="" className="tw-h-[35rem] !tw-max-w-[100000960px] md:tw-w-full android:tw-w-auto !tw-overflow-clip" />
             </div>
             <div className="blog-page sp2">
               <div className="container">

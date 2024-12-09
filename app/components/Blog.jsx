@@ -68,7 +68,7 @@ export default function Blog({...props}) {
     if (loading) return <Preloader/>;
     return (
         <>
-            <div className="litings tw-pb-5 !tw-bg-[#3e90ba]" id="listings">
+            <div className="comon-slider tw-pb-5 !tw-bg-[#3e90ba]" id="listings">
                 <div className="container">
                 <div className="space60" />
                     <div className="row align-items-center">
@@ -94,7 +94,7 @@ export default function Blog({...props}) {
                     <div className="row">
                         <Swiper {...swiperOptions} className="ml--15">
                             {data?.map((blog, index) => (
-                            <SwiperSlide className="siting-single-sliider android:!tw-pr-10">
+                            <SwiperSlide className="citie-box !tw-bg-white android:!tw-pr-10">
                                 <div className="liting-slider-img comon-slider-img">
                                     <div className="img-border">
                                         <img src={`${blog?.image}`} alt={`${blog?.image}`} className='tw-w-full tw-h-52' />
@@ -110,7 +110,6 @@ export default function Blog({...props}) {
                                         <div className="font-16 line-height-16 weight-400 "
                                         dangerouslySetInnerHTML={{__html:`${truncate(blog.description,10,{byWords:true})}` }}
                                         >
-                                        
                                         </div>
                                         <div className="space24" />
                                         <div className="all-read-btn">

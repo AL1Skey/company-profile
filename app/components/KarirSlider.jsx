@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 const swiperOptions = {
   modules: [Autoplay, Pagination, Navigation],
-  slidesPerView: 2,
+  slidesPerView: 3,
   spaceBetween: 30,
   autoplay: {
     delay: 2500,
@@ -43,11 +43,11 @@ const swiperOptions = {
       spaceBetween: 30,
     },
     1199: {
-      slidesPerView: 2,
+      slidesPerView: 3,
       spaceBetween: 30,
     },
     1350: {
-      slidesPerView: 2,
+      slidesPerView: 3,
       spaceBetween: 30,
     },
   },
@@ -62,7 +62,7 @@ export default function KarirSlider({ data }) {
           {data?.map((karir, index) => (
             <SwiperSlide className="citie-box " key={index}>
               <div className="text-center">
-                <img src={`${karir.image}`} alt="" className='tw-min-w-[30rem] tw-min-h-[30rem] tw-max-w-[30rem] tw-max-h-[30rem] android:tw-min-w-[22rem] android:tw-min-h-[18rem] android:tw-max-w-[22rem] android:tw-max-h-[18rem]' />
+                <img src={`${karir.image}`} alt="" className='tw-w-full tw-h-[22rem]  android:tw-min-w-[20rem] android:tw-min-h-[20rem] ' />
               </div>
               <div className="citie-haddings">
                 <div>

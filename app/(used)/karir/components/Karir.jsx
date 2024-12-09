@@ -103,16 +103,19 @@ export default function Karir() {
                                         </h1>
                                         {/* Description */}
                                         <div className="space12" />
-                                        {value?.description?.split("\n").length > 0 ? value?.description.split("\n").map((text, index) => (
-                                        <p key={index} className="font-16 font-f-2 line-height-p-30 font-18 weight-400">
-                                            {text}
+
+                                        <div key={index} className="font-16 font-f-2 line-height-p-30 font-18 weight-400" dangerouslySetInnerHTML={{ __html:`${value?.description}` }}>
+                                            
                                             {/* <br /> */}
-                                        </p>
+                                        </div>
+                                        
+                                        {/* {value?.description?.split("\n").length > 0 ? value?.description.split("\n").map((text, index) => (
+                                        
                                         )) : (
                                             <p className="font-16 font-f-2 line-height-p-30 font-18 weight-400">
                                             {value?.description}
                                             </p>
-                                        )}
+                                        )} */}
 {/*                                         
                                         <div className="space16" />
                                         <p className="font-f-2 weight-400 line-height-28 font-16">We won’t just tell you what to do; we will show the ‘how to’ execute the proven strategies and systems.</p>

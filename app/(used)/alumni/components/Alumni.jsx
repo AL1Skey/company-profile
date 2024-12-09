@@ -71,15 +71,16 @@ export default function Alumni({ showPagination = true }) {
   const [jurusan, setJurusan] = useState([]);
   const [dataAlumni, setDataAlumni] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [pending, setPending] = useState(false);
   /*Pagination*/
   const [data, setData] = useState([]);
   const [formData, setFormData] = useState({});
   const [currentPage, setCurrentPage] = useState(1);
   const [pages, setPages] = useState(1);
   const [havePrevious, setHavePrevious] = useState(false);
-  console.log(havePrevious,"SSSSSSSSSSSAAAAAAAAAASSSSSSSS")
+  console.log(havePrevious, "SSSSSSSSSSSAAAAAAAAAASSSSSSSS");
   const [haveNext, setHaveNext] = useState(true);
-  console.log(haveNext,"ASSSSSSSSSSSSSSSSSSS")
+  console.log(haveNext, "ASSSSSSSSSSSSSSSSSSS");
   function handleChange(e) {
     console.log(e.target.name);
     setFormData({
@@ -90,40 +91,63 @@ export default function Alumni({ showPagination = true }) {
 
   useEffect(() => {
     const fetchData = async () => {
-      setLoading(true);
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/public/alumni-angkatan?approval=true&reformat=1`,
-        { cache: "no-store" }
-      ).then((res) => res.json());
-      const alumni = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/public/alumni-angkatan`,
-        { cache: "no-store" }
-      ).then((res) => res.json());
-      const formattedAlumni = alumni.map((value, index) => {
-        return value.name.toLowerCase();
-      });
-      const sortedAlumni = alumni.map((value, index) => {
-        const sortedItem = value.alumni.sort((item1, item2) => {
-          let val1 = item1.attr,
-              val2 = item2.attr;
-          if (val1 == val2) return 0;
-          if (val1 > val2) return 1;
-          if (val1 < val2) return -1;
-        })
-        return {
-          ...value,
-          alumni: sortedItem
-        }
-      });
-      const response2 = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/public/jurusan`,
-        { cache: "no-store" }
-      ).then((res) => res.json());
-      console.log(response2);
-      setData(sortedAlumni);
-      setDataAlumni(formattedAlumni);
-      setJurusan(response2);
-      setLoading(false);
+      try {
+        setLoading(true);
+        const response = await fetch(
+          `${process.env.NEXT_PUBLIC_API_URL}/public/alumni-angkatan?approval=true&reformat=1`,
+          { cache: "no-store" }
+        ).then((res) => res.json());
+        const alumni = await fetch(
+          `${process.env.NEXT_PUBLIC_API_URL}/public/alumni-angkatan`,
+          { cache: "no-store" }
+        ).then((res) => res.json());
+        const formattedAlumni = alumni.map((value, index) => {
+          return value.name.toLowerCase();
+        });
+
+        const sortedAlumni = response.map((value, index) => {
+          const formattedAlumni = value.alumni.map((value, index) => {
+            const capslockAlumni = value.Alumni.map((value, index) => {
+              return value.toUpperCase();
+            });
+            capslockAlumni.sort();
+            if (capslockAlumni.length > 4) {
+              // throw new Error(JSON.stringify(capslockAlumni))
+            }
+            return {
+              ...value,
+              Alumni: capslockAlumni,
+            };
+          });
+
+          // if (formattedAlumni) {
+          //   formattedAlumni.sort((item1, item2) => {
+          //     let val1 = item1.Alumni.attr,
+          //       val2 = item2.Alumni.attr;
+          //     if (val1 == val2) return 0;
+          //     if (val1 > val2) return 1;
+          //     if (val1 < val2) return -1;
+          //   });
+          // }
+          console.log(formattedAlumni);
+          return {
+            ...value,
+            alumni: formattedAlumni,
+          };
+        });
+        setData(sortedAlumni);
+        const response2 = await fetch(
+          `${process.env.NEXT_PUBLIC_API_URL}/public/jurusan`,
+          { cache: "no-store" }
+        ).then((res) => res.json());
+        console.log(response2);
+        setDataAlumni(formattedAlumni);
+        setJurusan(response2);
+        setLoading(false);
+      } catch (error) {
+        setLoading(false);
+        throw new Error(error);
+      }
     };
     fetchData();
   }, []);
@@ -141,62 +165,107 @@ export default function Alumni({ showPagination = true }) {
   };
 
   const handleActive = (item) => {
+    const page = item - 1;
     async function fetchData() {
-      setLoading(true)
-      const response = await fetch(
-        `${
-          process.env.NEXT_PUBLIC_API_URL
-        }/public/alumni-angkatan?approval=true&reformat=1&pages=${
-          item
-        }`
-      ).then((res) => res.json());
-      // Response Next
-      const responseNext = await fetch(
-        `${
-          process.env.NEXT_PUBLIC_API_URL
-        }/public/alumni-angkatan?approval=true&reformat=1&pages=${
-          item+1
-        }`
-      ).then((res) => res.json());
-      // Response Prev
-      const responsePrev = await fetch(
-        `${
-          process.env.NEXT_PUBLIC_API_URL
-        }/public/alumni-angkatan?approval=true&reformat=1&pages=${
-          item-1
-        }`
-      ).then((res) => res.json());
+      try {
+        setLoading(true);
+        const response = await fetch(
+          `${process.env.NEXT_PUBLIC_API_URL}/public/alumni-angkatan?approval=true&reformat=1&pages=${page}`
+        )
+          .catch((error) => [])
+          .then((res) => res.json());
+        // Response Next
+        const responseNext = await fetch(
+          `${
+            process.env.NEXT_PUBLIC_API_URL
+          }/public/alumni-angkatan?approval=true&reformat=1&pages=${page + 1}`
+        )
+          .catch((error) => [])
+          .then((res) => res.json());
+        // Response Prev
+        const responsePrev = await fetch(
+          `${
+            process.env.NEXT_PUBLIC_API_URL
+          }/public/alumni-angkatan?approval=true&reformat=1&pages=${page - 1}`
+        )
+          .catch((error) => [])
+          .then((res) => res.json());
 
-      // Log
-      console.log("ITEMAHSDKASHEUFHU", `${
-        process.env.NEXT_PUBLIC_API_URL
-      }/public/alumni-angkatan?approval=true&reformat=1&pages=${
-        item
-      }`);
-      console.log("RESPONSESSIDAFHAOHSDFLAHDSFH",response);
-      
-      // If not Exists
-      if (response.length === 0) {
-        alert("NoResponse")
-        setLoading(false)
-        return;
+        // Log
+        console.log(
+          "ITEMAHSDKASHEUFHU",
+          `${process.env.NEXT_PUBLIC_API_URL}/public/alumni-angkatan?approval=true&reformat=1&pages=${page}`
+        );
+        console.log("RESPONSESSIDAFHAOHSDFLAHDSFH", response);
+
+        // If not Exists
+        if (response.length === 0) {
+          alert("NoResponse");
+          setLoading(false);
+          return;
+        }
+        // Reformat and Sort
+        const sortedAlumni = response.map((value, index) => {
+          const formattedAlumni = value.alumni.map((value, index) => {
+            const capslockAlumni = value.Alumni.map((value, index) => {
+              return value.toUpperCase();
+            });
+            capslockAlumni.sort();
+            if (capslockAlumni.length > 4) {
+              // throw new Error(JSON.stringify(capslockAlumni))
+            }
+            return {
+              ...value,
+              Alumni: capslockAlumni,
+            };
+          });
+
+          // if (formattedAlumni) {
+          //   formattedAlumni.sort((item1, item2) => {
+          //     let val1 = item1.Alumni.attr,
+          //       val2 = item2.Alumni.attr;
+          //     if (val1 == val2) return 0;
+          //     if (val1 > val2) return 1;
+          //     if (val1 < val2) return -1;
+          //   });
+          // }
+          console.log(formattedAlumni);
+          return {
+            ...value,
+            alumni: formattedAlumni,
+          };
+        });
+        setData(sortedAlumni);
+        // If Exists
+        if (responsePrev.length > 0) {
+          setHavePrevious(true);
+        }
+        if (responseNext.length > 0) {
+          setHaveNext(true);
+        }
+
+        //
+        let count = 0;
+        if (currentPage > item && responsePrev.length > 0) {
+          count -= 1;
+          // setGetPaginationGroup((group) => group.map((item) => item - 1));
+          console.log("FIRST", getPaginationGroup);
+        }
+        if (currentPage < item && responseNext.length > 0) {
+          count += 1;
+          console.log("Second", getPaginationGroup);
+        }
+        if (item == 1) {
+          count -= 1;
+        }
+        setGetPaginationGroup((group) => group.map((item) => item + count));
+        console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+        setCurrentPage(item);
+        setLoading(false);
+      } catch (error) {
+        setLoading(false);
+        throw new Error(error);
       }
-      setData(response);
-      // If Exists
-      if(responsePrev.length > 0){
-        setHavePrevious(true)
-      }
-      if(responseNext.length > 0){
-        setHaveNext(true)
-      }
-      if(currentPage > item && responsePrev.length > 0){
-        setGetPaginationGroup((group) => group.map((item) => item - 1));
-      }
-      if(currentPage < item && responseNext.length > 0){
-        setGetPaginationGroup((group) => group.map((item) => item + 1));
-      }
-      setCurrentPage(item);
-      setLoading(false)
     }
     fetchData();
   };
@@ -490,33 +559,62 @@ export default function Alumni({ showPagination = true }) {
                       </div>
                       {/* {jurusan?.map((data)=>`${data.id} Jurusan`)} */}
                       <div className="massge-single-inputs">
-                        <select name="jurusan" onChange={handleChange} id="" required={true}>
+                        <select
+                          name="jurusan"
+                          onChange={handleChange}
+                          id=""
+                          required={true}
+                        >
                           <option>Jurusan**</option>
                           {jurusan?.map((data, index) => (
                             <option value={data.id}>{data.name}</option>
                           ))}
                         </select>
                       </div>
-                      <button
-                        type="button"
-                        onClick={()=>{
-                          if(!formData.name || !formData.angkatan || !formData.jurusan){
-                            alert("Data tidak boleh kosong")
-                            return
-                          }
-                          const message = handleSubmit(formData)
-                          if(message?.message){
-                            alert(message.message)
-                            return
-                          }
-                          toast.success("Data berhasil di input")
-                          alert("Data berhasil di input")
-                          return
-                        }}
-                        className="massge-button"
-                      >
-                        <div className="massge-btn">Submit now</div>
-                      </button>
+                      {pending && (
+                        <button
+                          type="button"
+                          disabled={true}
+                          className="massge-button"
+                        >
+                          <div className="massge-btn">Pending..</div>
+                        </button>
+                      )}
+                      {!pending && (
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setPending(true);
+                            try {
+                              if (
+                                !formData.name ||
+                                !formData.angkatan ||
+                                !formData.jurusan
+                              ) {
+                                alert("Data tidak boleh kosong");
+                                return;
+                              }
+                              const message = handleSubmit(formData);
+                              // if (message) {
+                              //   alert("Message",message);
+                              //   return;
+                              // }
+                              // toast.success("Data berhasil di input");
+                              alert("Data berhasil di input");
+                              if(typeof window !== "undefined"){
+                                window.location.reload();
+                              }
+                              return;
+                              setPending(false);
+                            } catch (error) {
+                              setPending(false);
+                            }
+                          }}
+                          className="massge-button"
+                        >
+                          <div className="massge-btn">Submit now</div>
+                        </button>
+                      )}
                     </form>
                     <div className="hadding-massge">
                       <div className="space10" />

@@ -42,8 +42,7 @@ export default function AboutUs() {
             `${process.env.NEXT_PUBLIC_API_URL}/public/dewan`,
             { cache: "no-store" }
           )
-            .then((res) => res.json())
-            .then((res) => res.map((item) => {})),
+            .then((res) => res.json()),
           pengurus: await fetch(
             `${process.env.NEXT_PUBLIC_API_URL}/public/pengurus`,
             { cache: "no-store" }
@@ -52,7 +51,7 @@ export default function AboutUs() {
         const sortingItem = (item) => {
             // throw new Error(JSON.stringify(item));
             const returnItem = item;
-            returnItem.sort((a, b) => a.angkatan - b.angkatan);
+            returnItem.sort((a, b) => b.angkatan - a.angkatan);
             console.log(returnItem);
           return returnItem;
         };
@@ -63,23 +62,24 @@ export default function AboutUs() {
         if(response.dewan?.length > 0){
         response.dewan = response?.dewan.map((item)=>{
             if(item?.angkatan){
-                return sortingItem(item)
+                return item
             }
-            const findData = response.alumni.find((alumni)=>alumni.name === item.name)
-            const angkatan = `${findData?.angkatan}`
-            return sortingItem({...item,angkatan})
-
+            // throw new Error(JSON.stringify(item))
+            const angkatan = 0
+            return {...item, angkatan}
         })
+        // throw new Error(JSON.stringify(response.dewan))
+        response.dewan = sortingItem(response.dewan)
         }
         if(response.pengurus?.length > 0){
         response.pengurus = response?.pengurus.map((item)=>{
             if(item?.angkatan){
-                return sortingItem(item)
+                return item
             }
-            const findData = response.alumni.find((alumni)=>alumni.name === item.name)
-            const angkatan = `${findData?.angkatan}`
-            return sortingItem({...item,angkatan})
+            const angkatan = 0
+            return {...item,angkatan}
         })
+        response.pengurus = sortingItem(response.pengurus)
         }
         setData(response);
         setLoading(false);
@@ -199,7 +199,7 @@ export default function AboutUs() {
           </div>
           {/*=====about choose us end=======*/}
           {/*=====about vision start=======*/}
-          <div className=" tw-py-5 page-bg">
+          <div className="tw-bg-[#34abd9] tw-py-5 page-bg">
             <div className="container">
               <div className="row">
                 <div className="col-md-6">
@@ -218,7 +218,7 @@ export default function AboutUs() {
           </div>
           {/*=====about vision end=======*/}
           {/*=====about team start=======*/}
-          <div className="tw-bg-[#3e90ba] tw-py-5 page-bg">
+          <div className="tw-bg-[#34abd9] tw-py-5 page-bg">
             <div className="container">
               <div className="row">
                 <div className="col-md-6">

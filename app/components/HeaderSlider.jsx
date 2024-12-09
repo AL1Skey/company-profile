@@ -33,7 +33,7 @@ export default function HeaderSlider({ slider, ...props }) {
   return (
     <header className="w-full">
       <Swiper
-        // spaceBetween={30}
+        spaceBetween={15}
         centeredSlides={true}
         autoplay={{
           delay: 5000,
@@ -44,14 +44,15 @@ export default function HeaderSlider({ slider, ...props }) {
       >
         {slider?.map((slide, index) => (
           <SwiperSlide className="h-full" key={index}>
-            <div>
+
               <div className="row align-items-center">
                 <div
                   className="bg-cover bg-center bg-no-repeat"
                   style={{
                     backgroundImage: `url("${slide.image}")`,
                     backgroundSize: 'cover',
-                    width: "100vw",
+                    minWidth: "100vw",
+
                   }}
                 >
                   <div
@@ -91,7 +92,6 @@ export default function HeaderSlider({ slider, ...props }) {
                   </div>
                 </div>
               </div>
-            </div>
           </SwiperSlide>
         ))}
       </Swiper>

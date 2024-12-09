@@ -62,11 +62,11 @@ export default function Slider({ className = "",useIcon=true,data, ...props }) {
       >
         {data?.map((slide, index) => (
           <SwiperSlide key={index} className="about-slider-single text-center">
-            <div className="tw-group tw-relative tw-overflow-hidden tw-rounded-lg tw-transition-all tw-duration-300 tw-ease-in-out hover:tw-z-10 hover:tw-shadow-xl">
-              <div className=" tw-overflow-hidden">
+            <div className="tw-group tw-relative tw-overflow-hidden tw-rounded-lg tw-transition-all tw-duration-300 tw-ease-in-out hover:tw-z-10">
+              <div className=" tw-overflow-hidden tw-justify-center tw-flex">
                 <img
-                  src={slide?.image}
-                  className={`tw-transition-transform tw-duration-300 tw-ease-in-out ${className !=="" ?  className : "tw-scale-75 tw-w-full tw-h-[25rem] group-hover:tw-scale-100 android:tw-scale-[0.5]"}`}
+                  src={`${slide?.image}`}
+                  className={`tw-transition-transform tw-duration-300 tw-ease-in-out ${className !=="" ?  className : "tw-scale-75 tw-w-[17rem] tw-h-[17rem] group-hover:tw-scale-100 tw-rounded-full"}`}
                   alt="Team member"
                 />
               </div>
@@ -75,13 +75,13 @@ export default function Slider({ className = "",useIcon=true,data, ...props }) {
                 <div className="about-hover-icons">
                   <ul>
                     <li>
-                      <Link href={slide?.twitter}>
+                      <Link href={`${slide?.twitter}`}>
                         <i className="fa-brands fa-x" />
                       </Link>
-                      <Link href={slide?.facebook}>
+                      <Link href={`${slide?.facebook}`}>
                         <i className="fa-brands fa-facebook-f" />
                       </Link>
-                      <Link href={slide?.instagram}>
+                      <Link href={`${slide?.instagram}`}>
                         <i className="fa-brands fa-instagram" />
                       </Link>
                     </li>
@@ -98,14 +98,14 @@ export default function Slider({ className = "",useIcon=true,data, ...props }) {
                 <Link href="#">{slide?.name}</Link>
               </h4>
               {/* <div className="space10" /> */}
-              <p className="font-f-2 weight-400 line-height-28 font-16">
+              <p className="!tw-text-white font-f-2 weight-400 line-height-28 font-16">
               {slide?.position}
               </p>
-              <p className="font-f-2 weight-400 line-height-28 font-16">
+              <p className="!tw-text-white font-f-2 weight-400 line-height-28 font-16">
               Angkatan Ke-{slide?.angkatan}
               </p>
               <div className="space10" />
-              <p className="font-f-2 weight-400 line-height-28 font-16">
+              <p className="!tw-text-white font-f-2 weight-400 line-height-28 font-16">
               {slide?.description}
               </p>
             </div>

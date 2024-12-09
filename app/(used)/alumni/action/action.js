@@ -18,14 +18,17 @@ export const handleSubmit=async(e)=>{
                 },
                 body:JSON.stringify(e),
             }
-        ).then(res=>res.json()).catch((err)=>{throw new Error(err)})
+        ).then(res=>res.json())
         console.log(response)
         if(response?.message){
-            return response
+            alert(response.message)
         }
         return true
     } catch (error) {
         console.log(error)
-        return {message:"Data is not valid"}
+        if(error?.message){
+            alert(error.message)
+        }
+        alert("Failed to submit")
     }
 }
